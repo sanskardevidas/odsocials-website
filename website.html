@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Playfair+Display:ital@1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0A0D14; }
+  * { box-sizing: border-box; }
+  a { color: #A99BF5; text-decoration: none; }
+  a:hover { color: #FFFFFF; }
+  @keyframes wb-left { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @media (prefers-reduced-motion: reduce) { [data-wb-track] { animation: none !important; } }
+  @media (min-width: 900px) { [data-g3] { grid-template-columns: repeat(3, minmax(0,1fr)) !important; } }
+  @media (min-width: 1040px) { [data-g5] { grid-template-columns: repeat(5, minmax(0,1fr)) !important; } }
+  [data-od-nav] a { white-space: nowrap; }
+  [data-wb-rail]:hover [data-wb-track] { animation-play-state: paused; }
+  [data-wb-card] { transition: opacity 420ms cubic-bezier(.16,1,.3,1), box-shadow 420ms cubic-bezier(.16,1,.3,1); }
+  [data-wb-card][data-wb-pick="dim"] { opacity: 0.5; }
+  [data-wb-card][data-wb-pick="on"] { box-shadow: 0 0 0 1px #6B5BE0, 0 22px 64px rgba(107,91,224,0.42); }
+  [data-wb-plus] { transition: transform 420ms cubic-bezier(.22,1.4,.36,1), color 420ms ease; }
+  @property --wb-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+  @keyframes wb-angle { to { --wb-angle: 360deg; } }
+  @media (max-width: 900px) { [data-wb-buildgrid] { grid-template-columns: minmax(0, 1fr) !important; } }
+  @media (max-width: 760px) {
+    [data-wb-inc] { grid-template-columns: 40px minmax(0, 1fr) 26px !important; row-gap: 8px !important; }
+    [data-wb-inc] > span:nth-child(1) { grid-area: 1 / 1 / 2 / 2; }
+    [data-wb-inc] > span:nth-child(2) { grid-area: 1 / 2 / 2 / 3; }
+    [data-wb-inc] > span:nth-child(3) { grid-area: 2 / 2 / 3 / 4; }
+    [data-wb-incart] { display: none !important; }
+    [data-wb-inc] > span:nth-child(5) { grid-area: 1 / 3 / 2 / 4; }
+  }
+  @media (max-width: 780px) {
+    [data-od-header] { padding: 10px clamp(14px, 4vw, 20px) !important; gap: 10px !important; }
+    [data-od-nav] { gap: 16px !important; }
+    [data-od-nav] { flex-wrap: nowrap !important; overflow-x: auto; justify-content: flex-start; width: 100%; scrollbar-width: none; }
+    [data-od-nav]::-webkit-scrollbar { display: none; }
+    [data-od-nav] a { white-space: nowrap; }
+  }
+</style>
+<script>window.ODMotionConfig = { motionIntensity: 1, enableCursor: true, playLoaderOnce: true, accent: "#6B5BE0", accent2: "#A99BF5" };</script>
+<script src="./od-motion.js"></script>
+</helmet>
+
+<div style="font-family: Archivo, Helvetica, sans-serif; background: #0A0D14; color: #F7F4ED; width: 100%; overflow-x: clip;">
+  <div style="height: 4px; background: #6B5BE0;"></div>
+
+  <header data-od-header="" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 72px); border-bottom: 1px solid rgba(247,244,237,0.14); position: sticky; top: 0; background: rgba(10,13,20,0.93); backdrop-filter: blur(10px); z-index: 20; flex-wrap: wrap;">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: #F7F4ED;">
+      <span style="background: #F7F4ED; border-radius: 6px; padding: 6px 9px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #A99BF5; border-left: 1px solid rgba(247,244,237,0.2); padding-left: 10px;">Web</span>
+    </a>
+    <nav data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.2vw, 28px); flex-wrap: wrap;">
+      <span data-od-counter="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(247,244,237,0.4);">01 / 06</span>
+      <a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.7);" style-hover="color: #FFFFFF;">Home</a>
+      <a href="social-media.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.7);" style-hover="color: #FFFFFF;">Social Media</a>
+      <a href="website.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #F7F4ED; border-bottom: 2px solid #6B5BE0; padding-bottom: 2px;">Website</a>
+      <a href="ai-automation.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.7);" style-hover="color: #FFFFFF;">AI Automation</a>
+      <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; background: #6B5BE0; color: #FFFFFF; padding: 11px 18px; border-radius: 2px;" style-hover="background: #F7F4ED; color: #0A0D14;">Start Project ↗</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(28px, 4vw, 48px) clamp(20px, 5vw, 72px) 0;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.5);"><a href="index.html" style="color: rgba(247,244,237,0.5);">Home</a> / Services / <span style="color: #A99BF5;">Website</span></div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #A99BF5; border-bottom: 1px solid rgba(247,244,237,0.16); padding: clamp(28px, 4vw, 44px) 0 14px;">Website Design &amp; Development</div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: clamp(30px, 5vw, 64px); align-items: end; padding-top: clamp(32px, 4vw, 52px);">
+        <div style="min-width: 0; container-type: inline-size;">
+          <h1 data-reveal="rise" style="margin: 0; font-size: clamp(34px, 9.2cqw, 64px); line-height: 0.96; letter-spacing: -0.035em; font-weight: 900; text-transform: uppercase; overflow-wrap: break-word;">We don't just build websites. We build <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A99BF5; letter-spacing: -0.01em;">digital experiences.</span></h1>
+          <div style="height: 1px; background: rgba(247,244,237,0.18); margin: clamp(24px, 3vw, 34px) 0 20px;"></div>
+          <p style="margin: 0; max-width: 48ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(247,244,237,0.78); text-wrap: pretty;">Strategy, design and development combined to create websites that look premium, feel effortless and turn visitors into customers.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px;">
+            <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; background: #6B5BE0; color: #FFFFFF; padding: 15px 24px; border-radius: 2px;" style-hover="background: #F7F4ED; color: #0A0D14;" data-magnetic="" data-od-sweep="" data-cursor="START">Start a Project <span data-od-arrow="">→</span></a>
+            <a href="#featured-work" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(247,244,237,0.34); color: #F7F4ED; padding: 15px 24px; border-radius: 2px;" style-hover="border-color: #F7F4ED; background: rgba(247,244,237,0.08);" data-magnetic="">View Our Work <span data-od-arrow="">↗</span></a>
+          </div>
+        </div>
+        <div style="min-width: 0;">
+          <div data-wb-frame="" style="border: 1px solid rgba(247,244,237,0.22); border-radius: 10px; overflow: hidden; background: rgba(247,244,237,0.03); max-width: 100%; margin: 0 auto; transition: max-width 620ms cubic-bezier(.22,1.4,.36,1);">
+            <div style="display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-bottom: 1px solid rgba(247,244,237,0.18);">
+              <span style="display: flex; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 50%; background: rgba(247,244,237,0.3);"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: rgba(247,244,237,0.3);"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: rgba(247,244,237,0.3);"></span></span>
+              <span style="flex: 1; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: rgba(247,244,237,0.6); background: rgba(247,244,237,0.06); border-radius: 4px; padding: 5px 10px;" data-wb-url="">thenook.co.uk</span>
+            </div>
+            <div data-wb-stage="" style="position: relative;">
+              <img data-wb-shot="" src="images/web-hero.jpg" alt="NOOK coffee house website designed by OD Socials" style="width: 100%; height: auto; display: block;" />
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.5);">NOOK — Coffee &amp; Cocktails, Southampton</div>
+            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+              <sc-for list="{{ devices }}" as="dv" hint-placeholder-count="3">
+                <button type="button" data-od-chip="" aria-pressed="{{ dv.on }}" onClick="{{ dv.pick }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.66); border: 1px solid rgba(247,244,237,0.28); border-radius: 999px; padding: 0 14px; min-height: 40px; cursor: pointer;">{{ dv.label }}</button>
+              </sc-for>
+              <button type="button" data-wb-replay="" style="display: none; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; background: transparent; color: #A99BF5; border: 1px solid rgba(169,155,245,0.5); border-radius: 999px; padding: 0 14px; min-height: 40px; cursor: pointer;">Replay ↻</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-wb-rail="" style="margin-top: clamp(44px, 6vw, 76px); overflow: hidden; background: #6B5BE0; color: #FFFFFF; padding: 14px 0;">
+    <div data-wb-track="" style="display: flex; width: max-content; animation: wb-left 40s linear infinite;">
+      <sc-for list="{{ ticker }}" as="t">
+        <span data-wb-word="" style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(12px, 1.3vw, 15px); letter-spacing: 0.2em; text-transform: uppercase; padding: 0 22px; white-space: nowrap; transition: opacity 260ms ease, color 260ms ease; opacity: 0.62;">{{ t }}<span style="opacity: 0.6; padding-left: 22px;">✦</span></span>
+      </sc-for>
+    </div>
+  </div>
+
+  <section data-wb-blink="" style="background: #F7F4ED; color: #0A0D14; padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #5B4BD6; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);" data-od-section="" data-decode="">01 — More than a website<span data-wb-impression="" style="float: right; color: rgba(10,13,20,0.45);">First impression: 0.00s</span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(20px, 4vw, 56px); align-items: end; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(30px, 4vw, 54px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Your website is often the first impression. <span data-wb-underline="" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #5B4BD6; position: relative;">Let's make it count.</span></h2>
+        <p style="margin: 0; max-width: 44ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(10,13,20,0.7); text-wrap: pretty;">We combine strategy, strong visual direction and clean development to create websites that actually feel like your brand.</p>
+      </div>
+
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #5B4BD6; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16); margin-top: clamp(44px, 6vw, 76px);" data-od-section="" data-decode="">02 — What's included</div>
+      <div style="display: flex; flex-direction: column; margin-top: clamp(26px, 3vw, 40px); border-top: 1px solid rgba(10,13,20,0.16);">
+        <sc-for list="{{ included }}" as="s" hint-placeholder-count="6">
+          <a href="index.html#contact" data-wb-inc="{{ s.key }}" style="display: grid; grid-template-columns: 52px minmax(0, 1.1fr) minmax(0, 1.4fr) 64px 30px; gap: 16px; align-items: baseline; padding: clamp(18px, 2.4vw, 28px) 0; border-bottom: 1px solid rgba(10,13,20,0.16); color: #0A0D14;" style-hover="background: rgba(107,91,224,0.09); color: #0A0D14;">
+            <span data-decode="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5B4BD6;">{{ s.n }}</span>
+            <span style="font-weight: 800; font-size: clamp(18px, 2vw, 26px); line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase;">{{ s.title }}</span>
+            <span style="font-size: clamp(14px, 1.05vw, 16px); line-height: 1.55; color: rgba(10,13,20,0.68); text-wrap: pretty;">{{ s.body }}</span>
+            <span data-wb-incart="" style="align-self: center; justify-self: end;"></span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #5B4BD6; text-align: right;"><span data-od-arrow="">↗</span></span>
+          </a>
+        </sc-for>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: clamp(40px, 5vw, 64px);">
+        <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+          <div style="min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div data-count="{{ st.v }}" data-count-flash="" data-od-at="0.6" style="font-size: clamp(38px, 5vw, 66px); font-weight: 900; letter-spacing: -0.045em; line-height: 0.9; color: #5B4BD6;">{{ st.v }}</div>
+              <div data-wb-statart="{{ st.v }}" style="flex: none;"></div>
+            </div>
+            <div data-reveal="rule" style="height: 1px; background: rgba(10,13,20,0.18); margin: 12px 0 10px;"></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.62);">{{ st.k }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(30px, 5vw, 64px); align-items: center;">
+        <div style="min-width: 0;">
+          <h2 style="margin: 0; font-size: clamp(34px, 4.8vw, 66px); line-height: 0.94; letter-spacing: -0.035em; font-weight: 900; text-transform: uppercase;">Not just <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A99BF5;">"good looking."</span></h2>
+          <p style="margin: 22px 0 0; max-width: 42ch; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.55; color: rgba(247,244,237,0.82); text-wrap: pretty;">A beautiful website means nothing if people don't know what to do when they land on it.</p>
+        </div>
+        <div style="min-width: 0;">
+          <div data-wb-annotate="" style="position: relative; border: 1px solid rgba(247,244,237,0.22); border-radius: 8px; overflow: hidden; background: rgba(247,244,237,0.04);">
+            <img src="images/web-project-01.jpg" alt="Consultant ophthalmologist website built by OD Socials" loading="lazy" style="width: 100%; height: auto; display: block;" />
+          </div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.5); margin-top: 12px;">Nishani Amerasinghe — consultant ophthalmologist</div>
+        </div>
+      </div>
+
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #A99BF5; border-top: 1px solid rgba(247,244,237,0.18); border-bottom: 1px solid rgba(247,244,237,0.18); padding: 14px 0; margin-top: clamp(40px, 5vw, 64px);">Strategy · Design · Code · <span style="color: rgba(247,244,237,0.6);">Built to work as hard as it looks.</span></div>
+
+      <div data-wb-buildgrid="" style="display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(24px, 4vw, 64px); align-items: start; margin-top: clamp(34px, 4vw, 52px);">
+        <div style="display: flex; flex-direction: column; gap: clamp(18px, 2.4vw, 30px); min-width: 0;">
+          <sc-for list="{{ process }}" as="p" hint-placeholder-count="5">
+            <div data-wb-step="" style="min-width: 0; padding-top: 14px; position: relative;">
+              <span style="position: absolute; left: 0; right: 0; top: 0; height: 2px; background: rgba(247,244,237,0.2);"></span>
+              <span data-wb-stepfill="" style="position: absolute; left: 0; top: 0; height: 2px; width: 0%; background: linear-gradient(90deg, #6B5BE0, #C9C0FA); transition: width 620ms cubic-bezier(.16,1,.3,1);"></span>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #A99BF5;"><span>{{ p.n }}</span><span style="color: rgba(247,244,237,0.4);">→</span></div>
+              <h3 style="margin: clamp(14px, 2vw, 22px) 0 8px; font-size: clamp(19px, 2vw, 25px); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1;">{{ p.title }}</h3>
+              <p data-wb-stepbody="" style="margin: 0; font-size: 14px; line-height: 1.55; color: rgba(247,244,237,0.5); text-wrap: pretty; transition: color 420ms ease;">{{ p.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+        <div style="min-width: 0; position: sticky; top: clamp(96px, 12vh, 132px);">
+          <div data-wb-panel="" style="position: relative; aspect-ratio: 4 / 3; border: 1px solid rgba(247,244,237,0.22); border-radius: 8px; background: rgba(247,244,237,0.04); overflow: hidden;"></div>
+          <div data-wb-panellabel="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.5); margin-top: 12px;">01 — Strategy</div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(247,244,237,0.18); margin-top: clamp(40px, 5vw, 64px); padding-top: clamp(30px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: clamp(24px, 4vw, 56px); align-items: end;">
+        <h3 style="margin: 0; font-size: clamp(26px, 3.4vw, 44px); line-height: 1; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">One team. From first idea <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A99BF5;">to final launch.</span></h3>
+        <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 2; color: rgba(247,244,237,0.72);">Strategy. Design.<br />Code. Growth.<br /><span style="color: #F7F4ED;">All under one roof.</span></p>
+      </div>
+      <div data-wb-untangle="" style="margin-top: clamp(20px, 2.6vw, 32px); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(10px, 1.6vw, 22px); align-items: stretch;">
+        <div style="display: grid; grid-template-rows: repeat(4, 1fr); justify-items: end; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.85vw, 11px); letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap;">
+          <span data-wb-vendor="0" style="color: rgba(247,244,237,0.92);">Strategist</span>
+          <span data-wb-vendor="1" style="color: rgba(247,244,237,0.92);">Designer</span>
+          <span data-wb-vendor="2" style="color: rgba(247,244,237,0.92);">Developer</span>
+          <span data-wb-vendor="3" style="color: rgba(247,244,237,0.92);">Marketer</span>
+        </div>
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" role="img" aria-label="Four separate vendors merging into one team" style="width: 100%; height: clamp(76px, 9vw, 116px); display: block; overflow: visible;">
+          <path data-wb-tail="" d="M900 60 L1200 60" fill="none" stroke="#A99BF5" stroke-width="2.2" opacity="0"></path>
+          <path data-wb-thread="0" fill="none" stroke="rgba(169,155,245,0.75)" stroke-width="1.6" stroke-linecap="round"></path>
+          <path data-wb-thread="1" fill="none" stroke="rgba(169,155,245,0.75)" stroke-width="1.6" stroke-linecap="round"></path>
+          <path data-wb-thread="2" fill="none" stroke="rgba(169,155,245,0.75)" stroke-width="1.6" stroke-linecap="round"></path>
+          <path data-wb-thread="3" fill="none" stroke="rgba(169,155,245,0.75)" stroke-width="1.6" stroke-linecap="round"></path>
+          <circle data-wb-knot="" cx="900" cy="60" r="5" fill="#A99BF5" opacity="0"></circle>
+        </svg>
+        <div data-wb-oneteam="" style="display: flex; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.85vw, 11px); letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; color: rgba(247,244,237,0.28);">One team</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-work" style="background: #F7F4ED; color: #0A0D14; padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #5B4BD6; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);" data-od-section="" data-decode="">03 — What we build</div>
+      <h2 style="margin: clamp(26px, 4vw, 40px) 0 0; font-size: clamp(30px, 4.2vw, 56px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase; max-width: 22ch;">Whatever you're building, we <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #5B4BD6;">make it digital.</span></h2>
+      <div data-g5="" style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1px; background: rgba(10,13,20,0.18); border: 1px solid rgba(10,13,20,0.18); margin-top: clamp(30px, 4vw, 48px);">
+        <sc-for list="{{ builds }}" as="b" hint-placeholder-count="5">
+          <div data-wb-build="{{ b.key }}" style="position: relative; overflow: hidden; background: #F7F4ED; padding: clamp(22px, 2.6vw, 30px); min-width: 0; cursor: pointer;">
+            <h3 style="position: relative; z-index: 2; margin: 0 0 10px; font-size: clamp(18px, 1.9vw, 23px); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.05;">{{ b.title }}</h3>
+            <p style="position: relative; z-index: 2; margin: 0; font-size: 14px; line-height: 1.55; color: rgba(10,13,20,0.68); text-wrap: pretty;">{{ b.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #5B4BD6; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16); margin-top: clamp(44px, 6vw, 76px);" data-od-section="" data-decode="">04 — Same business</div>
+      <h2 style="margin: clamp(26px, 4vw, 40px) 0 0; font-size: clamp(30px, 4.2vw, 56px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase; max-width: 22ch;">Same business. Completely <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #5B4BD6;">different experience.</span></h2>
+      <div data-wb-compare="" role="slider" tabindex="0" aria-label="Compare the previous website with the rebuild" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="position: relative; margin-top: clamp(30px, 4vw, 48px); border: 1px solid #5B4BD6; overflow: hidden; touch-action: pan-y; user-select: none; cursor: ew-resize;">
+        <div style="position: relative; aspect-ratio: 16 / 11; background: #E6E1D6;">
+          <img src="images/web-before.jpg" alt="The previous website" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; filter: grayscale(0.5) contrast(0.95);" />
+          <div data-wb-after="" style="position: absolute; top: 0; left: 0; bottom: 0; width: 50%; overflow: hidden;">
+            <img src="images/web-after.jpg" alt="The rebuilt website" loading="lazy" style="position: absolute; top: 0; left: 0; height: 100%; width: var(--wb-w, 100%); max-width: none; object-fit: cover; object-position: top center; display: block;" />
+          </div>
+          <div data-wb-handle="" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #F7F4ED; pointer-events: none; box-shadow: 0 0 0 1px rgba(10,13,20,0.2);">
+            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #F7F4ED; color: #0A0D14; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; padding: 10px 13px; border-radius: 999px; white-space: nowrap;">Drag</span>
+          </div>
+          <span style="position: absolute; left: 12px; bottom: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #FFFFFF; background: #5B4BD6; padding: 7px 11px;">After</span>
+          <span style="position: absolute; right: 12px; bottom: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(10,13,20,0.7); background: rgba(247,244,237,0.9); padding: 7px 11px;">Before</span>
+        </div>
+      </div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(10,13,20,0.45); margin-top: 12px;">Drag the handle — or use the arrow keys</div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #A99BF5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.16);" data-od-section="" data-decode="">05 — Choose your system</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 4vw, 56px); align-items: end; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(32px, 4.4vw, 58px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Website <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A99BF5;">system</span></h2>
+        <p style="margin: 0; max-width: 40ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(247,244,237,0.78);">Choose the level of system you want to build.</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: clamp(24px, 3vw, 34px);">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.5);">Not sure which?</span>
+        <sc-for list="{{ picks }}" as="pk" hint-placeholder-count="3">
+          <button type="button" data-od-chip="" aria-pressed="{{ pk.on }}" onClick="{{ pk.pick }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.72); border: 1px solid rgba(247,244,237,0.28); border-radius: 999px; padding: 0 16px; min-height: 44px; cursor: pointer;">{{ pk.label }}</button>
+        </sc-for>
+      </div>
+      <div data-g3="" style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); margin-top: clamp(26px, 3vw, 36px);">
+        <sc-for list="{{ systems }}" as="sy" hint-placeholder-count="3">
+          <div data-wb-card="{{ sy.key }}" data-wb-pick="{{ sy.pick }}" data-wb-pop="{{ sy.popAttr }}" data-wb-ghost="{{ sy.ghost }}" data-tilt="4" data-tilt-glare="0" style="position: relative; border: 1px solid {{ sy.border }}; background: {{ sy.bg }}; color: {{ sy.fg }}; display: flex; flex-direction: column; padding: clamp(22px, 2.6vw, 30px); min-width: 0;">
+            <sc-if value="{{ sy.popular }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; top: -10px; left: clamp(22px, 2.6vw, 30px); background: #6B5BE0; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 10px; border-radius: 2px;">Most popular</span>
+            </sc-if>
+            <div style="display: flex; align-items: baseline; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: {{ sy.accent }};"><span>{{ sy.n }}</span><span>↗</span></div>
+            <h3 style="margin: 22px 0 6px; font-size: clamp(22px, 2.4vw, 30px); font-weight: 900; letter-spacing: -0.025em; text-transform: uppercase; line-height: 1;">{{ sy.name }}</h3>
+            <p style="margin: 0 0 18px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; color: {{ sy.muted }};">{{ sy.who }}</p>
+            <div data-wb-items="" style="border-top: 1px solid {{ sy.line }}; padding-top: 16px; display: flex; flex-direction: column; gap: 9px; flex: 1; border-radius: 4px; transition: background 380ms ease; margin: 0 -8px; padding-left: 8px; padding-right: 8px;">
+              <sc-for list="{{ sy.items }}" as="it">
+                <div style="display: grid; grid-template-columns: 14px 1fr; gap: 9px; font-size: 14px; line-height: 1.45;">
+                  <span data-wb-plus="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: {{ sy.accent }};">+</span>
+                  <span>{{ it }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <a href="index.html#contact" style="margin-top: 24px; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; background: {{ sy.btnBg }}; color: {{ sy.btnFg }}; padding: 14px 18px; border-radius: 2px;" style-hover="background: #6B5BE0; color: #FFFFFF;" data-magnetic="">{{ sy.cta }}</a>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 clamp(20px, 5vw, 72px) clamp(56px, 7vw, 100px);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #A99BF5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.16);" data-od-section="" data-decode="">06 — Questions</div>
+      <h2 style="margin: clamp(26px, 4vw, 40px) 0 clamp(24px, 3vw, 36px); font-size: clamp(30px, 4vw, 52px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Frequently asked <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A99BF5;">questions.</span></h2>
+      <div style="border-top: 1px solid rgba(247,244,237,0.16);">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="8">
+          <div style="border-bottom: 1px solid rgba(247,244,237,0.16);">
+            <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.expanded }}" data-wb-q="" data-wb-open="{{ f.expanded }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 18px; text-align: left; background: transparent; border: 0; padding: clamp(16px, 2vw, 22px) 0; cursor: pointer; font-family: Archivo, sans-serif; font-size: clamp(15px, 1.5vw, 19px); font-weight: 700; letter-spacing: -0.01em; color: #F7F4ED; transition: color 260ms ease;" style-hover="color: #A99BF5;" data-cursor="OPEN">
+              <span>{{ f.q }}</span>
+              <span data-wb-sign="" style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; color: #A99BF5; flex: none; transition: transform 320ms cubic-bezier(.16,1,.3,1);">+</span>
+            </button>
+            <div data-wb-ans="" data-wb-open="{{ f.expanded }}" style="height: 0; overflow: hidden; transition: height 380ms cubic-bezier(.16,1,.3,1);">
+              <p style="margin: 0; padding: 0 0 clamp(18px, 2vw, 24px); max-width: 68ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.6; color: rgba(247,244,237,0.75); text-wrap: pretty;">{{ f.a }}</p>
+            </div>
+          </div>
+        </sc-for>
+        <a href="https://wa.me/447393121595" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: clamp(16px, 2vw, 22px) 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.6);" style-hover="color: #FFFFFF;">Something else? WhatsApp us <span data-od-arrow="">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-wb-cta="" style="position: relative; overflow: hidden; background: linear-gradient(152deg, #16113F 0%, #3A2C9E 55%, #6B5BE0 100%); color: #F7F4ED; padding: clamp(60px, 8vw, 120px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,244,237,0.68); padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.24);">Have an idea?</div>
+      <h2 style="margin: clamp(28px, 4vw, 44px) 0 0; font-size: clamp(34px, 5.6vw, 82px); line-height: 0.94; letter-spacing: -0.04em; font-weight: 900; text-transform: uppercase; max-width: 18ch;">Let's turn it into something people <span data-wb-explore="" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #C9C0FA;">want to explore.</span></h2>
+      <p style="margin: 24px 0 0; max-width: 46ch; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.55; color: rgba(247,244,237,0.84);">Tell us what you're building. We'll help you figure out what comes next.</p>
+      <div style="display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 32px;">
+        <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; background: #F7F4ED; color: #0A0D14; padding: 16px 26px; border-radius: 2px; white-space: nowrap; flex: none;" style-hover="background: #0A0D14; color: #F7F4ED;" data-magnetic="" data-od-sweep="" data-cursor="BUILD">Build With OD <span data-od-arrow="">→</span></a>
+        <a href="https://wa.me/447393121595" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(247,244,237,0.45); color: #F7F4ED; padding: 16px 26px; border-radius: 2px; white-space: nowrap; flex: none;" style-hover="border-color: #F7F4ED; background: rgba(247,244,237,0.12);">WhatsApp Us ↗</a>
+        <span data-wb-type="" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(17px, 1.6vw, 22px); color: #C9C0FA;">No boring websites. Please.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #0A0D14; color: #F7F4ED; padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 72px) 26px;">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.55);">
+      <span style="display: flex; align-items: center; gap: 12px;"><span style="background: #F7F4ED; border-radius: 6px; padding: 7px 10px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>© 2026 OD Socials</span>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="index.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Home</a>
+        <a href="social-media.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Social Media</a>
+        <a href="ai-automation.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">AI Automation</a>
+        <a href="https://www.instagram.com/od.socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Instagram</a>
+        <a href="https://www.linkedin.com/company/od-socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">LinkedIn</a>
+        <a href="privacy.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Privacy</a>
+        <a href="mailto:contact@odsocials.com" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">contact@odsocials.com</a>
+      </span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:1.5,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;tickerSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:40,&quot;min&quot;:16,&quot;max&quot;:80,&quot;step&quot;:2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;playLoaderOnce&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;enableCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { open: 0, device: "desktop", pick: "" };
+
+  componentDidMount() { this.initMotion(); }
+  componentDidUpdate() {
+    this.incArt();
+    this.syncDevice();
+    this.syncFaq();
+    if (window.ODMotion) window.ODMotion.scan();
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
+    if (this._onResize) window.removeEventListener("resize", this._onResize);
+    ["_annotateSync", "_panelSync", "_untangleSync"].forEach((k) => { if (this[k]) window.removeEventListener("scroll", this[k]); });
+  }
+
+  initMotion() {
+    if (this._m) return;
+    this._m = true;
+    const M = window.ODMotion;
+    if (!M) return;
+    M.config.intensity = this.props.motionIntensity ?? 1;
+    M.config.cursor = this.props.enableCursor !== false;
+    const reduce = M.reduced();
+    if (window.innerWidth < 760 && this.state.device === "desktop") this.setState({ device: "phone" });
+    this.heroBuild(reduce);
+    this.marquee(reduce);
+    this.impression(reduce);
+    this.statArt();
+    this.buildRows();
+    this.incArt();
+    this.annotate(reduce);
+    this.buildPanel();
+    this.untangle(reduce);
+    this.compare(reduce);
+    this.cards(reduce);
+    this.syncFaq();
+    this.ctaMoment(reduce);
+    this.syncDevice();
+    M.scan();
+  }
+
+  /* 1 — the mockup builds itself: strategy → structure → design → development */
+  heroBuild(reduce) {
+    const stage = document.querySelector("[data-wb-stage]");
+    const url = document.querySelector("[data-wb-url]");
+    const shot = document.querySelector("[data-wb-shot]");
+    const replay = document.querySelector("[data-wb-replay]");
+    if (!stage || !shot || !url) return;
+    const realUrl = "thenook.co.uk";
+    let seen = false;
+    try { seen = sessionStorage.getItem("wb-built") === "1"; } catch (e) {}
+    const showReplay = () => { if (replay) replay.style.display = "inline-flex"; };
+
+    const over = document.createElement("div");
+    over.setAttribute("aria-hidden", "true");
+    over.style.cssText = "position:absolute;inset:0;pointer-events:none;background:#12101F";
+    over.innerHTML =
+      '<div data-b="1" style="position:absolute;inset:0;opacity:0;transition:opacity 300ms linear">' +
+        '<div style="position:absolute;left:8%;right:8%;top:46%;height:1px;background:rgba(169,155,245,.6)"></div>' +
+        '<div style="position:absolute;left:8%;top:50%;font-family:\'IBM Plex Mono\',monospace;font-size:10px;letter-spacing:.16em;color:#A99BF5">GOAL: SELL COFFEE, FILL TABLES</div>' +
+      '</div>' +
+      '<div data-b="2" style="position:absolute;inset:0;opacity:0;transition:opacity 300ms linear;padding:7%;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(0,1fr);gap:3%">' +
+        '<div style="grid-column:1/-1;background:rgba(247,244,237,.22)"></div>' +
+        '<div style="background:rgba(247,244,237,.14)"></div><div style="background:rgba(247,244,237,.14)"></div><div style="background:rgba(247,244,237,.14)"></div>' +
+        '<div style="grid-column:1/-1;background:rgba(247,244,237,.1)"></div>' +
+      '</div>';
+    stage.appendChild(over);
+
+    const run = () => {
+      try { sessionStorage.setItem("wb-built", "1"); } catch (e) {}
+      if (!over.isConnected) stage.appendChild(over);
+      const b1 = over.querySelector('[data-b="1"]');
+      const b2 = over.querySelector('[data-b="2"]');
+      if (!b1 || !b2) return;
+      over.style.display = "block";
+      over.style.transition = "none";
+      over.style.opacity = "1";
+      shot.style.transition = "opacity 700ms cubic-bezier(.16,1,.3,1), filter 700ms cubic-bezier(.16,1,.3,1)";
+      shot.style.opacity = "0";
+      shot.style.filter = "grayscale(1) blur(6px)";
+      b1.style.opacity = "0"; b2.style.opacity = "0";
+      const beats = [
+        [0,    "STRATEGY",    () => { b1.style.opacity = "1"; }],
+        [800,  "STRUCTURE",   () => { b1.style.opacity = "0"; b2.style.opacity = "1"; }],
+        [1600, "DESIGN",      () => { b2.style.opacity = "0"; over.style.transition = "opacity 600ms linear"; over.style.opacity = "0"; shot.style.opacity = "1"; shot.style.filter = "none"; }],
+        [2400, "DEVELOPMENT", () => { this.pulseFrame(); }],
+        [3000, realUrl,       () => { showReplay(); }]
+      ];
+      this._timers = beats.map(([t, label, fn]) => setTimeout(() => { url.textContent = label; fn(); }, t));
+    };
+
+    if (replay) replay.addEventListener("click", () => { (this._timers || []).forEach(clearTimeout); run(); });
+    if (reduce || (this.props.playLoaderOnce !== false && seen)) {
+      over.style.display = "none";
+      over.style.opacity = "0";
+      url.textContent = realUrl;
+      showReplay();
+      return;
+    }
+    run();
+  }
+
+  pulseFrame() {
+    const frame = document.querySelector("[data-wb-frame]");
+    if (!frame || window.ODMotion.reduced()) return;
+    const dot = document.createElement("span");
+    dot.setAttribute("aria-hidden", "true");
+    dot.style.cssText = "position:absolute;right:14px;bottom:14px;width:12px;height:12px;border-radius:50%;background:#6B5BE0;box-shadow:0 0 0 0 rgba(107,91,224,.7);transition:box-shadow 900ms ease,opacity 600ms ease;pointer-events:none";
+    const stage = document.querySelector("[data-wb-stage]");
+    if (!stage) return;
+    stage.appendChild(dot);
+    requestAnimationFrame(() => { dot.style.boxShadow = "0 0 0 22px rgba(107,91,224,0)"; });
+    setTimeout(() => { dot.style.opacity = "0"; }, 900);
+    setTimeout(() => dot.remove(), 1600);
+  }
+
+  /* 3 — device switcher morphs the frame */
+  syncDevice() {
+    const frame = document.querySelector("[data-wb-frame]");
+    if (!frame) return;
+    const w = { desktop: "100%", tablet: "560px", phone: "320px" }[this.state.device] || "100%";
+    frame.style.maxWidth = w;
+  }
+
+  /* 4 — marquee: velocity coupled, centre word lights */
+  marquee(reduce) {
+    const track = document.querySelector("[data-wb-track]");
+    if (!track) return;
+    const base = parseFloat(this.props.tickerSpeed ?? 40);
+    track.style.animationDuration = base + "s";
+    if (reduce) return;
+    const words = () => Array.from(document.querySelectorAll("[data-wb-word]"));
+    const sync = () => {
+      const v = Math.abs(window.ODMotion.velocity());
+      track.style.animationDuration = Math.max(9, base / (1 + v * 2.2)).toFixed(2) + "s";
+    };
+    let raf = 0;
+    const centre = () => {
+      raf = 0;
+      const mid = window.innerWidth / 2;
+      words().forEach((w) => {
+        const r = w.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        const on = Math.abs(r.left + r.width / 2 - mid) < r.width * 0.7;
+        w.style.opacity = on ? "1" : "0.62";
+        w.style.color = on ? "#FFFFFF" : "";
+      });
+    };
+    const loop = () => { if (!raf) raf = requestAnimationFrame(centre); requestAnimationFrame(loop); };
+    this._onScroll = sync;
+    window.addEventListener("scroll", sync, { passive: true });
+    loop();
+  }
+
+  /* 5 — first-impression readout, blur-snap, underline swipe */
+  impression(reduce) {
+    const read = document.querySelector("[data-wb-impression]");
+    const sec = document.querySelector("[data-wb-blink]");
+    const line = document.querySelector("[data-wb-underline]");
+    if (!sec) return;
+    const rule = document.createElement("span");
+    rule.setAttribute("aria-hidden", "true");
+    rule.style.cssText = "position:absolute;left:0;right:0;bottom:-2px;height:3px;background:#5B4BD6;transform:scaleX(0);transform-origin:left center;transition:transform 720ms cubic-bezier(.16,1,.3,1)";
+    if (line) line.appendChild(rule);
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach((en) => {
+        if (!en.isIntersecting || en.intersectionRatio < 0.14) return;
+        io.disconnect();
+        if (!reduce) {
+          sec.style.transition = "filter 480ms cubic-bezier(.7,0,.2,1)";
+          sec.style.filter = "blur(7px)";
+          setTimeout(() => { sec.style.filter = "none"; }, 260);
+        }
+        const t0 = performance.now(), dur = reduce ? 1 : 900;
+        const step = (now) => {
+          const p = Math.min(1, (now - t0) / dur);
+          if (read) read.textContent = "First impression: " + (0.05 * p).toFixed(2) + "s";
+          if (p < 1) requestAnimationFrame(step);
+          else { if (read) read.textContent = "First impression: 0.05s"; rule.style.transform = "scaleX(1)"; }
+        };
+        requestAnimationFrame(step);
+      });
+    }, { threshold: [0, 0.14, 0.4] });
+    io.observe(sec);
+  }
+
+  /* 7 — 98% draws a ring, 4.8/5 fills stars */
+  statArt() {
+    document.querySelectorAll("[data-wb-statart]").forEach((slot) => {
+      if (slot.__done) return;
+      const v = slot.getAttribute("data-wb-statart") || "";
+      if (v.indexOf("{{") !== -1) return;
+      slot.__done = true;
+      if (v === "98%") {
+        slot.innerHTML = '<svg viewBox="0 0 44 44" width="40" height="40" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="rgba(10,13,20,0.14)" stroke-width="3"/><circle class="r" cx="22" cy="22" r="18" fill="none" stroke="#5B4BD6" stroke-width="3" stroke-linecap="round" transform="rotate(-90 22 22)" stroke-dasharray="113" stroke-dashoffset="113" style="transition:stroke-dashoffset 1100ms cubic-bezier(.16,1,.3,1)"/></svg>';
+        const io = new IntersectionObserver((e) => { if (e[0].isIntersecting) { slot.querySelector(".r").style.strokeDashoffset = String(113 * 0.02); io.disconnect(); } }, { threshold: 0.5 });
+        io.observe(slot);
+      } else if (v.indexOf("/5") !== -1) {
+        const val = parseFloat(v) || 0;
+        let s = '<span style="display:flex;gap:3px">';
+        for (let i = 0; i < 5; i++) {
+          const fill = Math.max(0, Math.min(1, val - i));
+          s += '<span class="s" data-f="' + fill + '" style="position:relative;width:12px;height:12px;display:block">' +
+               '<span style="position:absolute;inset:0;background:rgba(10,13,20,0.16);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)"></span>' +
+               '<span class="f" style="position:absolute;inset:0;background:#5B4BD6;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);width:0;transition:width 420ms cubic-bezier(.16,1,.3,1) calc(var(--i) * 90ms)"></span></span>';
+        }
+        slot.innerHTML = s + "</span>";
+        const io = new IntersectionObserver((e) => {
+          if (!e[0].isIntersecting) return;
+          slot.querySelectorAll(".s").forEach((st, i) => {
+            st.querySelector(".f").style.setProperty("--i", String(i));
+            st.querySelector(".f").style.width = (parseFloat(st.getAttribute("data-f")) * 100) + "%";
+          });
+          io.disconnect();
+        }, { threshold: 0.5 });
+        io.observe(slot);
+      }
+    });
+  }
+
+  /* 11 — what we build: violet wipe + wireframe */
+  buildRows() {
+    const art = {
+      business: '<rect x="4" y="5" width="52" height="7" rx="2"/><rect x="4" y="17" width="24" height="18" rx="2"/><rect x="32" y="17" width="24" height="8" rx="2"/><rect x="32" y="28" width="16" height="7" rx="2"/>',
+      ecommerce: '<rect x="4" y="5" width="16" height="16" rx="2"/><rect x="24" y="5" width="16" height="16" rx="2"/><rect x="44" y="5" width="12" height="16" rx="2"/><rect x="4" y="26" width="34" height="9" rx="4"/>',
+      landing: '<rect x="10" y="4" width="40" height="10" rx="2"/><rect x="18" y="18" width="24" height="7" rx="3"/><rect x="24" y="29" width="12" height="6" rx="3"/>',
+      portfolio: '<rect x="4" y="5" width="15" height="14" rx="2"/><rect x="23" y="5" width="15" height="14" rx="2"/><rect x="42" y="5" width="14" height="14" rx="2"/><rect x="4" y="24" width="52" height="11" rx="2"/>',
+      startup: '<rect x="4" y="22" width="10" height="13" rx="2"/><rect x="18" y="16" width="10" height="19" rx="2"/><rect x="32" y="10" width="10" height="25" rx="2"/><rect x="46" y="5" width="10" height="30" rx="2"/>'
+    };
+    const fine = window.ODMotion.fine();
+    document.querySelectorAll("[data-wb-build]").forEach((row) => {
+      if (row.__wired) return;
+      const key = row.getAttribute("data-wb-build");
+      if (!key || key.indexOf("{{") !== -1) return;
+      row.__wired = true;
+      const wipe = document.createElement("span");
+      wipe.setAttribute("aria-hidden", "true");
+      wipe.style.cssText = "position:absolute;inset:0;z-index:1;background:rgba(107,91,224,0.12);transform:scaleX(0);transform-origin:left center;transition:transform 520ms cubic-bezier(.16,1,.3,1);pointer-events:none";
+      const wire = document.createElement("span");
+      wire.setAttribute("aria-hidden", "true");
+      wire.style.cssText = "position:absolute;right:clamp(14px,1.6vw,20px);top:50%;z-index:2;opacity:0;transform:translate(14px,-50%);transition:opacity 420ms ease,transform 520ms cubic-bezier(.16,1,.3,1);pointer-events:none";
+      wire.innerHTML = '<svg viewBox="0 0 60 40" width="72" height="48" fill="rgba(91,75,214,0.55)">' + (art[key] || "") + "</svg>";
+      row.appendChild(wipe);
+      row.appendChild(wire);
+      const on = () => { wipe.style.transform = "scaleX(1)"; wire.style.opacity = "1"; wire.style.transform = "translate(0,-50%)"; };
+      const off = () => { wipe.style.transform = "scaleX(0)"; wire.style.opacity = "0"; wire.style.transform = "translate(14px,-50%)"; };
+      if (fine) { row.addEventListener("pointerenter", on); row.addEventListener("pointerleave", off); }
+      else {
+        row.addEventListener("click", () => {
+          const open = row.__open;
+          document.querySelectorAll("[data-wb-build]").forEach((r) => { if (r.__off) r.__off(); r.__open = false; });
+          if (!open) { on(); row.__open = true; }
+        });
+      }
+      row.__off = off;
+    });
+  }
+
+  /* 6 — line-art icons draw on the "what's included" rows */
+  incArt() {
+    const art = {
+      strategy: '<circle cx="30" cy="22" r="15"/><circle cx="30" cy="22" r="7"/><path d="M4 42 L30 22"/>',
+      uiux: '<rect x="8" y="12" width="44" height="22" rx="3"/><path d="M26 23 h14"/><path d="M34 30 l6 12 3-6 6-1z"/>',
+      dev: '<path d="M14 14 L4 24 L14 34"/><path d="M46 14 L56 24 L46 34"/><path d="M34 10 L26 40"/>',
+      landing: '<path d="M6 10 H54 L38 30 V42 L22 34 V30 Z"/>',
+      ecom: '<path d="M6 12 h7 l6 20 h24"/><path d="M15 18 h36 l-4 12"/><circle cx="24" cy="40" r="3"/><circle cx="41" cy="40" r="3"/>',
+      redesign: '<rect x="5" y="12" width="22" height="24" rx="2"/><rect x="34" y="12" width="21" height="10" rx="2"/><rect x="34" y="26" width="21" height="10" rx="2"/><path d="M28 24 h5"/>'
+    };
+    const fine = window.ODMotion.fine();
+    document.querySelectorAll("[data-wb-inc]").forEach((row) => {
+      if (row.__art) return;
+      const key = row.getAttribute("data-wb-inc");
+      if (!key || key.indexOf("{{") !== -1) return;
+      row.__art = true;
+      const slot = row.querySelector("[data-wb-incart]");
+      if (!slot) return;
+      slot.innerHTML = '<svg viewBox="0 0 60 48" width="56" height="45" fill="none" stroke="#5B4BD6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (art[key] || "") + "</svg>";
+      const paths = Array.from(slot.querySelectorAll("path,circle,rect"));
+      const prep = () => paths.forEach((p) => {
+        const len = p.getTotalLength ? p.getTotalLength() : 120;
+        p.style.strokeDasharray = len;
+        p.style.strokeDashoffset = len;
+        p.style.transition = "stroke-dashoffset 620ms cubic-bezier(.16,1,.3,1)";
+      });
+      const draw = () => paths.forEach((p, i) => { setTimeout(() => { p.style.strokeDashoffset = "0"; }, i * 90); });
+      if (window.ODMotion.reduced()) return;
+      prep();
+      if (fine) {
+        row.addEventListener("pointerenter", draw);
+        row.addEventListener("pointerleave", prep);
+      } else {
+        const io = new IntersectionObserver((e) => { if (e[0].intersectionRatio > 0.85) { draw(); io.disconnect(); } }, { threshold: [0, 0.85] });
+        io.observe(row);
+      }
+    });
+  }
+
+  /* 8 — callouts draw onto the Nishani mockup as it crosses the viewport */
+  annotate(reduce) {
+    const box = document.querySelector("[data-wb-annotate]");
+    if (!box || box.__wired) return;
+    box.__wired = true;
+    const notes = [
+      { x: 30, y: 78, label: "One obvious next step" },
+      { x: 24, y: 55, label: "Clear action" },
+      { x: 70, y: 40, label: "Trust signal" },
+      { x: 78, y: 70, label: "Social proof" }
+    ];
+    const layer = document.createElement("div");
+    layer.setAttribute("aria-hidden", "true");
+    layer.style.cssText = "position:absolute;inset:0;pointer-events:none";
+    notes.forEach((n, i) => {
+      const g = document.createElement("div");
+      g.setAttribute("data-note", String(i));
+      g.style.cssText = "position:absolute;left:" + n.x + "%;top:" + n.y + "%;opacity:0;transform:translate(-50%,-50%) scale(.9);transition:opacity 420ms ease,transform 520ms cubic-bezier(.16,1,.3,1)";
+      g.innerHTML =
+        '<span style="display:block;width:9px;height:9px;border-radius:50%;background:#A99BF5;box-shadow:0 0 0 5px rgba(169,155,245,.2)"></span>' +
+        '<span style="position:absolute;left:14px;top:-6px;white-space:nowrap;font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#0A0D14;background:#A99BF5;padding:5px 8px;border-radius:2px">' + n.label + "</span>";
+      layer.appendChild(g);
+    });
+    box.appendChild(layer);
+    const show = (k) => layer.querySelectorAll("[data-note]").forEach((g, i) => {
+      const on = i < k;
+      g.style.opacity = on ? "1" : "0";
+      g.style.transform = "translate(-50%,-50%) scale(" + (on ? 1 : 0.9) + ")";
+    });
+    if (reduce) { show(notes.length); return; }
+    const sync = () => {
+      const r = box.getBoundingClientRect();
+      const p = 1 - (r.top + r.height * 0.2) / window.innerHeight;
+      show(Math.max(0, Math.min(notes.length, Math.round(p * (notes.length + 1)))));
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    this._annotateSync = sync;
+    sync();
+  }
+
+  /* 9 — the site builds itself in a sticky panel as the process list scrolls */
+  buildPanel() {
+    const panel = document.querySelector("[data-wb-panel]");
+    const label = document.querySelector("[data-wb-panellabel]");
+    const steps = Array.from(document.querySelectorAll("[data-wb-step]"));
+    if (!panel || !steps.length || panel.__wired) return;
+    panel.__wired = true;
+    const S = "position:absolute;inset:0;opacity:0;transition:opacity 460ms cubic-bezier(.16,1,.3,1);padding:9%;";
+    const frames = [
+      '<div style="' + S + 'display:flex;flex-direction:column;justify-content:center;gap:10px"><span style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:.16em;color:#A99BF5">GOAL</span><span style="font-size:clamp(15px,1.7vw,21px);font-weight:800;text-transform:uppercase;line-height:1.1;letter-spacing:-0.02em">More enquiries from the right people.</span><span style="height:1px;background:rgba(247,244,237,.3)"></span></div>',
+      '<div style="' + S + 'display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(0,1fr);gap:7%"><div style="grid-column:1/-1;background:rgba(247,244,237,.24)"></div><div style="background:rgba(247,244,237,.14)"></div><div style="background:rgba(247,244,237,.14)"></div><div style="background:rgba(247,244,237,.14)"></div><div style="grid-column:1/-1;background:rgba(247,244,237,.1)"></div></div>',
+      '<div style="' + S + 'display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:minmax(0,1fr);gap:7%"><div style="grid-column:1/-1;background:linear-gradient(120deg,#6B5BE0,#3A2C9E)"></div><div style="background:rgba(201,192,250,.5)"></div><div style="background:rgba(201,192,250,.3)"></div><div style="background:rgba(201,192,250,.5)"></div><div style="grid-column:1/-1;background:rgba(247,244,237,.16)"></div></div>',
+      '<div style="' + S + 'display:flex;flex-direction:column;justify-content:center;gap:7px;font-family:\'IBM Plex Mono\',monospace;font-size:clamp(9px,1vw,11px);color:#A99BF5;line-height:1.8"><span>&lt;section class="hero"&gt;</span><span style="padding-left:14px">&lt;h1&gt;Book a consultation&lt;/h1&gt;</span><span style="padding-left:14px">&lt;button&gt;Book now&lt;/button&gt;</span><span>&lt;/section&gt;</span></div>',
+      '<div style="' + S + 'display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg viewBox="0 0 120 120" style="width:46%;max-width:150px"><circle cx="60" cy="60" r="48" fill="none" stroke="rgba(247,244,237,.18)" stroke-width="8"/><circle class="dial" cx="60" cy="60" r="48" fill="none" stroke="#A99BF5" stroke-width="8" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="302" stroke-dashoffset="302" style="transition:stroke-dashoffset 1200ms cubic-bezier(.16,1,.3,1)"/><text class="dialnum" x="60" y="70" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="34" fill="#F7F4ED">0</text></svg><span style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,244,237,.6)">Speed · SEO · Conversion</span></div>'
+    ];
+    panel.innerHTML = frames.join("");
+    const layers = Array.from(panel.children);
+    const names = ["01 — Strategy", "02 — Structure", "03 — Design", "04 — Development", "05 — Optimization"];
+    let cur = -1;
+    const setStep = (k) => {
+      if (k === cur) return;
+      cur = k;
+      layers.forEach((l, i) => { l.style.opacity = i === k ? "1" : "0"; });
+      if (label) label.textContent = names[k] || names[0];
+      steps.forEach((s, i) => {
+        const fill = s.querySelector("[data-wb-stepfill]");
+        const body = s.querySelector("[data-wb-stepbody]");
+        if (fill) fill.style.width = i <= k ? "100%" : "0%";
+        if (body) body.style.color = i === k ? "rgba(247,244,237,0.9)" : "rgba(247,244,237,0.5)";
+      });
+      if (k === 4) {
+        const dial = panel.querySelector(".dial"), numEl = panel.querySelector(".dialnum");
+        if (dial && !dial.__ran) {
+          dial.__ran = true;
+          dial.style.strokeDashoffset = String(302 * 0.03);
+          const t0 = performance.now();
+          const tick = (now) => {
+            const p = Math.min(1, (now - t0) / 1200);
+            if (numEl) numEl.textContent = String(Math.round(97 * (1 - Math.pow(1 - p, 3))));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      }
+    };
+    const sync = () => {
+      const mid = window.innerHeight * 0.45;
+      let k = 0;
+      steps.forEach((s, i) => { if (s.getBoundingClientRect().top <= mid) k = i; });
+      setStep(k);
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    this._panelSync = sync;
+    sync();
+  }
+
+  /* 10 — four tangled threads untangle into one line */
+  untangle(reduce) {
+    const wrap = document.querySelector("[data-wb-untangle]");
+    if (!wrap || wrap.__wired) return;
+    wrap.__wired = true;
+    const paths = Array.from(wrap.querySelectorAll("[data-wb-thread]"));
+    const starts = [15, 45, 75, 105];
+    const wobble = [52, -44, 36, -58];
+    const tail = wrap.querySelector("[data-wb-tail]");
+    const knot = wrap.querySelector("[data-wb-knot]");
+    const vendors = Array.from(wrap.querySelectorAll("[data-wb-vendor]"));
+    const oneTeam = wrap.querySelector("[data-wb-oneteam]");
+    const ease = (x) => 1 - Math.pow(1 - x, 3);
+    const draw = (raw) => {
+      const t = ease(Math.max(0, Math.min(1, raw)));
+      paths.forEach((p, i) => {
+        const s = starts[i];
+        const yEnd = s + (60 - s) * t;
+        const c1 = s + wobble[i] * (1 - t);
+        const c2 = s - wobble[i] * (1 - t) * 0.7 + (60 - s) * t;
+        p.setAttribute("d", "M0 " + s + " C 300 " + c1.toFixed(1) + ", 620 " + c2.toFixed(1) + ", 900 " + yEnd.toFixed(1));
+        const len = p.getTotalLength();
+        const reveal = Math.max(0, Math.min(1, raw * 1.5 - i * 0.06));
+        p.style.strokeDasharray = len.toFixed(1);
+        p.style.strokeDashoffset = (len * (1 - ease(reveal))).toFixed(1);
+        p.style.opacity = String(0.45 + 0.55 * t);
+      });
+      const merged = Math.max(0, (t - 0.72) / 0.28);
+      if (tail) { tail.style.opacity = merged.toFixed(2); tail.style.strokeDasharray = "300"; tail.style.strokeDashoffset = (300 * (1 - merged)).toFixed(1); }
+      if (knot) { knot.style.opacity = merged.toFixed(2); knot.setAttribute("r", (3 + 2.5 * merged).toFixed(1)); }
+      vendors.forEach((v) => { v.style.color = "rgba(247,244,237," + (0.92 - 0.2 * t).toFixed(2) + ")"; });
+      if (oneTeam) oneTeam.style.color = merged > 0 ? "rgba(169,155,245," + (0.28 + 0.72 * merged).toFixed(2) + ")" : "rgba(247,244,237,0.28)";
+    };
+    if (reduce) { draw(1); return; }
+    const sync = () => {
+      const r = wrap.getBoundingClientRect();
+      draw(1.35 - (r.top + r.height * 0.4) / window.innerHeight);
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    this._untangleSync = sync;
+    sync();
+  }
+
+  /* 12 — draggable before / after */
+  compare(reduce) {
+    const box = document.querySelector("[data-wb-compare]");
+    if (!box || box.__wired) return;
+    box.__wired = true;
+    const after = box.querySelector("[data-wb-after]");
+    const handle = box.querySelector("[data-wb-handle]");
+    let p = 50, dragging = false;
+    const sizeInner = () => { after.style.setProperty("--wb-w", box.getBoundingClientRect().width + "px"); };
+    const set = (val, snap) => {
+      p = Math.max(0, Math.min(100, val));
+      if (snap) [0, 50, 100].forEach((s) => { if (Math.abs(p - s) < 4) p = s; });
+      after.style.width = p + "%";
+      handle.style.left = p + "%";
+      box.setAttribute("aria-valuenow", String(Math.round(p)));
+    };
+    const fromEvent = (e) => {
+      const r = box.getBoundingClientRect();
+      set(((e.clientX - r.left) / r.width) * 100, true);
+    };
+    box.addEventListener("pointerdown", (e) => { dragging = true; box.setPointerCapture(e.pointerId); after.style.transition = "none"; handle.style.transition = "none"; fromEvent(e); });
+    box.addEventListener("pointermove", (e) => { if (dragging) fromEvent(e); });
+    box.addEventListener("pointerup", () => { dragging = false; });
+    box.addEventListener("keydown", (e) => {
+      const k = e.key;
+      if (k === "ArrowLeft" || k === "ArrowRight") { e.preventDefault(); set(p + (k === "ArrowRight" ? 4 : -4), false); }
+      if (k === "Home") { e.preventDefault(); set(0, false); }
+      if (k === "End") { e.preventDefault(); set(100, false); }
+    });
+    sizeInner();
+    this._onResize = sizeInner;
+    window.addEventListener("resize", sizeInner);
+    set(50, false);
+    if (reduce) return;
+    const io = new IntersectionObserver((ents) => {
+      if (!ents[0].isIntersecting) return;
+      io.disconnect();
+      after.style.transition = "width 700ms cubic-bezier(.16,1,.3,1)";
+      handle.style.transition = "left 700ms cubic-bezier(.16,1,.3,1)";
+      setTimeout(() => set(24, false), 120);
+      setTimeout(() => set(78, false), 860);
+      setTimeout(() => set(50, false), 1600);
+    }, { threshold: 0.35 });
+    io.observe(box);
+  }
+
+  /* 13 / 14 — tier cards */
+  cards(reduce) {
+    document.querySelectorAll("[data-wb-card]").forEach((card) => {
+      if (card.__wired) return;
+      const key = card.getAttribute("data-wb-card");
+      if (!key || key.indexOf("{{") !== -1) return;
+      card.__wired = true;
+
+      if (card.getAttribute("data-wb-pop") === "true" && !reduce) {
+        const ring = document.createElement("span");
+        ring.setAttribute("aria-hidden", "true");
+        ring.style.cssText = "position:absolute;inset:-2px;border-radius:3px;pointer-events:none;z-index:-1;background:conic-gradient(from var(--wb-angle),#6B5BE0,#C9C0FA,#3A2C9E,#6B5BE0);animation:wb-angle 9s linear infinite";
+        card.style.isolation = "isolate";
+        card.insertBefore(ring, card.firstChild);
+      }
+
+      const ghost = card.getAttribute("data-wb-ghost");
+      if (ghost && ghost !== "none") {
+        const target = document.querySelector('[data-wb-card="' + ghost + '"] [data-wb-items]');
+        card.addEventListener("pointerenter", () => { if (target) target.style.background = "rgba(107,91,224,0.16)"; });
+        card.addEventListener("pointerleave", () => { if (target) target.style.background = ""; });
+      }
+
+      const io = new IntersectionObserver((ents) => {
+        if (!ents[0].isIntersecting) return;
+        io.disconnect();
+        if (reduce) return;
+        card.querySelectorAll("[data-wb-plus]").forEach((pl, i) => {
+          setTimeout(() => {
+            pl.style.transform = "rotate(90deg) scale(1.35)";
+            setTimeout(() => { pl.style.transform = "rotate(0deg) scale(1)"; }, 240);
+          }, i * 70);
+        });
+      }, { threshold: 0.28 });
+      io.observe(card);
+    });
+  }
+
+  syncFaq() {
+    document.querySelectorAll("[data-wb-ans]").forEach((el) => {
+      const open = el.getAttribute("data-wb-open") === "true";
+      el.style.height = open ? el.firstElementChild.offsetHeight + "px" : "0px";
+    });
+    document.querySelectorAll("[data-wb-q]").forEach((btn) => {
+      const open = btn.getAttribute("data-wb-open") === "true";
+      const sign = btn.querySelector("[data-wb-sign]");
+      btn.style.color = open ? "#A99BF5" : "#F7F4ED";
+      if (sign) { sign.textContent = open ? "–" : "+"; sign.style.transform = open ? "rotate(180deg)" : "rotate(0deg)"; }
+    });
+  }
+
+  /* 16 — the peak-end moment */
+  ctaMoment(reduce) {
+    const sec = document.querySelector("[data-wb-cta]");
+    if (!sec || sec.__wired) return;
+    sec.__wired = true;
+    const spot = document.createElement("div");
+    spot.setAttribute("aria-hidden", "true");
+    spot.style.cssText = "position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at 50% 40%,rgba(247,244,237,0.16),transparent 66%);transition:background 260ms linear";
+    sec.insertBefore(spot, sec.firstChild);
+    const explore = sec.querySelector("[data-wb-explore]");
+    if (window.ODMotion.fine() && !reduce) {
+      sec.addEventListener("pointermove", (e) => {
+        const r = sec.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width) * 100, y = ((e.clientY - r.top) / r.height) * 100;
+        spot.style.background = "radial-gradient(420px circle at " + x.toFixed(1) + "% " + y.toFixed(1) + "%,rgba(247,244,237,0.18),transparent 66%)";
+        const head = explore && explore.parentElement;
+        if (head) {
+          const er = explore.getBoundingClientRect();
+          const dx = e.clientX - (er.left + er.width / 2), dy = e.clientY - (er.top + er.height / 2);
+          const d = Math.max(1, Math.hypot(dx, dy));
+          const f = d < 300 ? (1 - d / 300) * 9 * window.ODMotion.intensity() : 0;
+          head.style.transition = "transform 480ms cubic-bezier(.16,1,.3,1)";
+          head.style.transform = "translate3d(" + (-dx / d * f).toFixed(1) + "px," + (-dy / d * f).toFixed(1) + "px,0)";
+        }
+      });
+        sec.addEventListener("pointerleave", () => { if (explore && explore.parentElement) explore.parentElement.style.transform = ""; });
+    } else if (!reduce) {
+      let t = 0;
+      setInterval(() => {
+        if (sec.getBoundingClientRect().bottom < 0 || document.hidden) return;
+        t += 0.02;
+        spot.style.background = "radial-gradient(420px circle at " + (50 + Math.sin(t) * 26).toFixed(1) + "% " + (44 + Math.cos(t * 0.8) * 14).toFixed(1) + "%,rgba(247,244,237,0.16),transparent 66%)";
+      }, 90);
+    }
+
+    const type = sec.querySelector("[data-wb-type]");
+    if (type && !reduce) {
+      const real = type.textContent;
+      const io = new IntersectionObserver((ents) => {
+        if (!ents[0].isIntersecting) return;
+        io.disconnect();
+        type.textContent = "";
+        const caret = document.createElement("span");
+        caret.className = "od-caret";
+        caret.setAttribute("aria-hidden", "true");
+        type.appendChild(caret);
+        let i = 0;
+        const tick = () => {
+          i++;
+          caret.insertAdjacentText("beforebegin", real[i - 1]);
+          if (i < real.length) setTimeout(tick, 42);
+          else setTimeout(() => caret.remove(), 1400);
+        };
+        setTimeout(tick, 280);
+      }, { threshold: 0.4 });
+      io.observe(type);
+    }
+  }
+
+  renderVals() {
+    const t = ["Strategy", "UI/UX", "Web Design", "Development", "Responsive", "Animation", "SEO", "Performance"];
+    const faqData = [
+      ["How much does a website cost?", "It depends on scope — pages, functionality and complexity. Tell us what you need and we'll give you a clear, custom quote."],
+      ["How long does a website take to build?", "Most projects take 2–6 weeks depending on size and complexity, from strategy to launch."],
+      ["Do you handle both design and development?", "Yes — one team handles the full process, from UI/UX design through to build, so nothing gets lost between handoffs."],
+      ["Will my website work on mobile?", "Every site we build is fully responsive and tested across devices as standard, not an afterthought."],
+      ["Can you redesign an existing website?", "Yes. We can rebuild an existing site with a stronger design and cleaner structure while keeping what already works."],
+      ["Will I be able to edit the website myself?", "Yes, where a CMS is part of the build — we'll set it up so you can update content without touching code."],
+      ["Do you handle domain and hosting?", "We can guide you through domain and hosting setup, or work with what you already have in place."],
+      ["What happens after the website launches?", "We offer ongoing maintenance and support options — launch isn't where we disappear."]
+    ];
+
+    const dev = ["Desktop", "Tablet", "Phone"];
+    const pickOpts = [
+      { key: "essential", label: "I need to look credible" },
+      { key: "growth", label: "I need more leads" },
+      { key: "smart", label: "I want it to run itself" }
+    ];
+    const chosen = this.state.pick;
+
+    return {
+      ticker: [...t, ...t],
+      devices: dev.map((d) => ({
+        label: d,
+        on: this.state.device === d.toLowerCase() ? "true" : "false",
+        pick: () => this.setState({ device: d.toLowerCase() })
+      })),
+      picks: pickOpts.map((o) => ({
+        label: o.label,
+        on: chosen === o.key ? "true" : "false",
+        pick: () => {
+          const next = chosen === o.key ? "" : o.key;
+          this.setState({ pick: next }, () => {
+            if (!next) return;
+            const el = document.querySelector('[data-wb-card="' + next + '"]');
+            if (el) el.scrollIntoView ? window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 120, behavior: "smooth" }) : null;
+          });
+        }
+      })),
+      included: [
+        { n: "01", key: "strategy", title: "Website Strategy", body: "Planning built around your goals, not just your pages." },
+        { n: "02", key: "uiux", title: "UI/UX Design", body: "Interfaces designed to be intuitive, not just attractive." },
+        { n: "03", key: "dev", title: "Custom Development", body: "Built from scratch — fast, scalable, and exactly what you need." },
+        { n: "04", key: "landing", title: "Landing Pages", body: "High-converting pages built for a single, clear goal." },
+        { n: "05", key: "ecom", title: "E-Commerce", body: "Online stores built to sell, not just display." },
+        { n: "06", key: "redesign", title: "Website Redesign", body: "A modern rebuild for a site that's stopped performing." }
+      ],
+      stats: [
+        { v: "25+", k: "Websites designed" },
+        { v: "98%", k: "Responsive experience" },
+        { v: "40+", k: "Pages launched" },
+        { v: "4.9/5", k: "Client experience" }
+      ],
+      process: [
+        { n: "01", title: "Strategy", body: "Understanding your goals before a single pixel is placed.", rule: "rgba(247,244,237,0.3)" },
+        { n: "02", title: "Structure", body: "Planning the site's architecture so it makes sense to visitors.", rule: "rgba(247,244,237,0.45)" },
+        { n: "03", title: "Design", body: "Visual direction that reflects your brand, not a template.", rule: "rgba(247,244,237,0.6)" },
+        { n: "04", title: "Development", body: "Clean, fast, reliable code behind every page.", rule: "rgba(247,244,237,0.78)" },
+        { n: "05", title: "Optimization", body: "Refining speed, SEO and conversion after launch.", rule: "#F7F4ED" }
+      ],
+      builds: [
+        { key: "business", title: "Business Websites", body: "Professional sites that establish credibility and trust." },
+        { key: "ecommerce", title: "E-Commerce Stores", body: "Full online stores built to convert browsers into buyers." },
+        { key: "landing", title: "Landing Pages", body: "Focused pages built around a single conversion goal." },
+        { key: "portfolio", title: "Portfolio Websites", body: "Visually-led sites that showcase your work properly." },
+        { key: "startup", title: "Startup Websites", body: "Fast, credible sites built for early-stage momentum." }
+      ],
+      systems: [
+        {
+          key: "essential", ghost: "none", popAttr: "false", n: "System 01", name: "Essential Website", who: "Credibility & presence", cta: "Start with Essential ↗", popular: false,
+          bg: "rgba(247,244,237,0.03)", fg: "#F7F4ED", border: "rgba(247,244,237,0.22)", accent: "#A99BF5", muted: "rgba(247,244,237,0.6)", line: "rgba(247,244,237,0.2)", btnBg: "#F7F4ED", btnFg: "#0A0D14",
+          items: ["Premium custom website (5–6 sections)", "High-end UI/UX (desktop + mobile perfected)", "Brand-consistent colors & typography", "Contact / inquiry form", "Basic SEO + fast loading", "Secure deployment"]
+        },
+        {
+          key: "growth", ghost: "essential", popAttr: "true", n: "System 02", name: "Growth Website", who: "Lead generation & conversions", cta: "Start with Growth ↗", popular: true,
+          bg: "#F7F4ED", fg: "#0A0D14", border: "#6B5BE0", accent: "#5B4BD6", muted: "rgba(10,13,20,0.55)", line: "rgba(10,13,20,0.18)", btnBg: "#0A0D14", btnFg: "#F7F4ED",
+          items: ["Everything in Essential Website", "Conversion-focused layout & section flow", "Lead capture forms (inquiry / quote / booking)", "WhatsApp / Email integration", "Automated inquiry flow (auto-reply + follow-up ready)", "Analytics & tracking setup", "CTA-driven sections for higher conversions"]
+        },
+        {
+          key: "smart", ghost: "growth", popAttr: "false", n: "System 03", name: "Smart Website (AI-Powered)", who: "Automation & scale", cta: "Start with Smart Website ↗", popular: false,
+          bg: "rgba(247,244,237,0.03)", fg: "#F7F4ED", border: "rgba(247,244,237,0.22)", accent: "#A99BF5", muted: "rgba(247,244,237,0.6)", line: "rgba(247,244,237,0.2)", btnBg: "#F7F4ED", btnFg: "#0A0D14",
+          items: ["Everything in Growth Website", "AI chat assistant for visitor support", "Smart lead qualification (hot / warm / cold)", "Automated follow-ups (WhatsApp / Email)", "CRM-ready integration (Sheets / Notion / DB)", "Advanced form → workflow logic", "Scalable backend-ready setup"]
+        }
+      ].map((s) => ({ ...s, pick: chosen ? (chosen === s.key ? "on" : "dim") : "none" })),
+      faqs: faqData.map(([q, a], i) => ({
+        q, a,
+        open: this.state.open === i,
+        expanded: this.state.open === i ? "true" : "false",
+        sign: this.state.open === i ? "–" : "+",
+        toggle: () => this.setState((s) => ({ open: s.open === i ? -1 : i }))
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

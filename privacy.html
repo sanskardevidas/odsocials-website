@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Playfair+Display:ital@1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F7F4ED; }
+  * { box-sizing: border-box; }
+  a { color: #3A4FC4; text-decoration: none; }
+  a:hover { color: #0A0D14; }
+  [data-od-nav] a { white-space: nowrap; }
+  @media (max-width: 780px) {
+    [data-od-header] { padding: 10px clamp(14px, 4vw, 20px) !important; gap: 10px !important; }
+    [data-od-nav] { gap: 16px !important; }
+    [data-od-nav] { flex-wrap: nowrap !important; overflow-x: auto; justify-content: flex-start; width: 100%; scrollbar-width: none; }
+    [data-od-nav]::-webkit-scrollbar { display: none; }
+  }
+  @media print {
+    [data-od-header], [data-pv-toc], [data-pv-pill], [data-pv-top], #od-progress, #od-cursor { display: none !important; }
+    [data-pv-summary] { display: block !important; height: auto !important; }
+    * { animation: none !important; transition: none !important; }
+    body { background: #FFFFFF; }
+  }
+  @media (max-width: 1180px) { [data-pv-toc] { display: none !important; } }
+  @media (min-width: 1181px) { [data-pv-pill] { display: none !important; } }
+</style>
+<script>window.ODMotionConfig = { motionIntensity: 0.5, enableCursor: false, playLoaderOnce: true, accent: "#4C7DF0", accent2: "#8FB6F5" };</script>
+<script src="./od-motion.js"></script>
+</helmet>
+
+<div style="font-family: Archivo, Helvetica, sans-serif; background: #F7F4ED; color: #0A0D14; width: 100%; overflow-x: clip;">
+  <div style="height: 4px; background: #4C7DF0;"></div>
+
+  <header data-od-header="" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 72px); border-bottom: 1px solid rgba(10,13,20,0.16); position: sticky; top: 0; background: rgba(247,244,237,0.94); backdrop-filter: blur(10px); z-index: 20; flex-wrap: wrap;">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: #0A0D14;">
+      <span style="background: #F7F4ED; border: 1px solid rgba(10,13,20,0.14); border-radius: 6px; padding: 6px 9px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #4C7DF0; border-left: 1px solid rgba(10,13,20,0.2); padding-left: 10px;">Legal</span>
+    </a>
+    <nav data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.2vw, 28px); flex-wrap: wrap;">
+      <span data-pv-counter="" aria-live="polite" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(10,13,20,0.45); transition: opacity 150ms linear;">01 / 22</span>
+      <a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7); white-space: nowrap;" style-hover="color: #0A0D14;">Home</a>
+      <a href="social-media.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7); white-space: nowrap;" style-hover="color: #0A0D14;">Social Media</a>
+      <a href="website.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7); white-space: nowrap;" style-hover="color: #0A0D14;">Website</a>
+      <a href="ai-automation.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7); white-space: nowrap;" style-hover="color: #0A0D14;">AI Automation</a>
+      <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; background: #0A0D14; color: #F7F4ED; padding: 11px 18px; border-radius: 2px; white-space: nowrap;" style-hover="background: #4C7DF0; color: #FFFFFF;">Start Project ↗</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(28px, 4vw, 48px) clamp(20px, 5vw, 72px) clamp(40px, 5vw, 64px);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(10,13,20,0.55);"><a href="index.html" style="color: rgba(10,13,20,0.55);">Home</a> / <span style="color: #4C7DF0;">Legal</span></div>
+      <h1 style="margin: clamp(28px, 4vw, 44px) 0 0; font-size: clamp(34px, 6vw, 72px); line-height: 0.94; letter-spacing: -0.04em; font-weight: 900; text-transform: uppercase;">Privacy policy <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #3A4FC4;">&amp; terms.</span></h1>
+      <p style="margin: 20px 0 0; max-width: 60ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(10,13,20,0.7); text-wrap: pretty;">How OD Socials collects, uses and protects information when you use this website or work with us, and the terms that apply to our services.</p>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.6);">
+        <span data-pv-chip="" style="border: 1px solid rgba(10,13,20,0.2); padding: 9px 14px; border-radius: 999px;">Last updated: {{ updated }}</span>
+        <button type="button" data-pv-showall="" aria-pressed="false" style="font: inherit; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: #0A0D14; border: 1px solid rgba(10,13,20,0.2); padding: 0 16px; min-height: 40px; border-radius: 999px; cursor: pointer;">Show all summaries</button>
+        <a href="#terms" data-pv-jump="" style="border: 1px solid rgba(10,13,20,0.2); padding: 9px 14px; border-radius: 999px; color: #0A0D14;" style-hover="background: #0A0D14; color: #F7F4ED;">Jump to terms ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 clamp(20px, 5vw, 72px) clamp(48px, 6vw, 80px);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);">01 — Privacy policy</div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ privacy }}" as="p" hint-placeholder-count="10">
+          <div id="{{ p.id }}" data-pv-clause="{{ p.label }}" style="display: grid; grid-template-columns: 1fr; gap: 10px; padding: clamp(24px, 3vw, 34px) 0; border-bottom: 1px solid rgba(10,13,20,0.16); transition: background 600ms ease;">
+            <div data-pv-head="" style="display: flex; align-items: baseline; gap: 14px;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #3A4FC4;">{{ p.n }}</span>
+              <h2 style="margin: 0; font-size: clamp(19px, 2.1vw, 26px); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.1;">{{ p.title }}</h2>
+              <button type="button" data-pv-anchor="{{ p.id }}" aria-label="Copy a link to this clause" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; background: transparent; border: 0; color: #3A4FC4; cursor: pointer; opacity: 0; transition: opacity 200ms ease; padding: 4px 6px;">#</button>
+            </div>
+            <div data-pv-plain="{{ p.plain }}"></div>
+            <p style="margin: 0; max-width: 72ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.65; color: rgba(10,13,20,0.72); text-wrap: pretty;">{{ p.body }}</p>
+            <sc-if value="{{ p.hasList }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+                <sc-for list="{{ p.items }}" as="it">
+                  <div style="display: grid; grid-template-columns: 16px 1fr; gap: 10px; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.6; color: rgba(10,13,20,0.72);">
+                    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #3A4FC4;">+</span>
+                    <span>{{ it }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="terms" style="background: #0A0D14; color: #F7F4ED; padding: clamp(48px, 6vw, 88px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.18);">02 — Terms of service</div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ terms }}" as="t" hint-placeholder-count="8">
+          <div id="{{ t.id }}" data-pv-clause="{{ t.label }}" data-pv-dark="" style="display: grid; grid-template-columns: 1fr; gap: 10px; padding: clamp(24px, 3vw, 34px) 0; border-bottom: 1px solid rgba(247,244,237,0.18); transition: background 600ms ease;">
+            <div data-pv-head="" style="display: flex; align-items: baseline; gap: 14px;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8FB6F5;">{{ t.n }}</span>
+              <h2 style="margin: 0; font-size: clamp(19px, 2.1vw, 26px); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.1;">{{ t.title }}</h2>
+              <button type="button" data-pv-anchor="{{ t.id }}" aria-label="Copy a link to this clause" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; background: transparent; border: 0; color: #8FB6F5; cursor: pointer; opacity: 0; transition: opacity 200ms ease; padding: 4px 6px;">#</button>
+            </div>
+            <div data-pv-plain="{{ t.plain }}"></div>
+            <p style="margin: 0; max-width: 72ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.65; color: rgba(247,244,237,0.78); text-wrap: pretty;">{{ t.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 6vw, 88px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);">03 — Contact us</div>
+      <h2 style="margin: clamp(24px, 3vw, 36px) 0 0; font-size: clamp(26px, 3.4vw, 42px); line-height: 1; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Questions about your data? <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #3A4FC4;">Just ask.</span></h2>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">
+        <a href="mailto:contact@odsocials.com" style="border: 1px solid rgba(10,13,20,0.22); padding: 12px 18px; border-radius: 999px; color: #0A0D14;" style-hover="background: #0A0D14; color: #F7F4ED;">contact@odsocials.com</a>
+        <a href="https://wa.me/447393121595" target="_blank" rel="noopener" style="border: 1px solid rgba(10,13,20,0.22); padding: 12px 18px; border-radius: 999px; color: #0A0D14;" style-hover="background: #0A0D14; color: #F7F4ED;">WhatsApp UK +44 7393 121595</a>
+        <a href="https://wa.me/917499714577" target="_blank" rel="noopener" style="border: 1px solid rgba(10,13,20,0.22); padding: 12px 18px; border-radius: 999px; color: #0A0D14;" style-hover="background: #0A0D14; color: #F7F4ED;">WhatsApp IN +91 74997 14577</a>
+      </div>
+      <p style="margin: 26px 0 0; max-width: 68ch; font-size: 13px; line-height: 1.6; color: rgba(10,13,20,0.55); text-wrap: pretty;">This page is a general template prepared for OD Socials. Before publishing, confirm the registered company details, hosting and analytics tools in use, and have it reviewed by a qualified legal adviser.</p>
+    </div>
+  </section>
+
+  <footer style="background: #0A0D14; color: #F7F4ED; padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 72px) 26px;">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.55);">
+      <span style="display: flex; align-items: center; gap: 12px;"><span style="background: #F7F4ED; border-radius: 6px; padding: 7px 10px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>© 2026 OD Socials</span>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="index.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Home</a>
+        <a href="https://www.instagram.com/od.socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Instagram</a>
+        <a href="https://www.linkedin.com/company/od-socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">LinkedIn</a>
+        <a href="mailto:contact@odsocials.com" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">contact@odsocials.com</a>
+      </span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSummariesByDefault&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reading&quot;},&quot;stickyContents&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reading&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.init();
+    [140, 700, 1800].forEach((t) => setTimeout(() => this.init(), t));
+  }
+  componentDidUpdate() { this.init(); if (window.ODMotion) window.ODMotion.scan(); }
+  componentWillUnmount() { if (this._sync) window.removeEventListener("scroll", this._sync); }
+
+  init() {
+    const M = window.ODMotion;
+    if (!M) return;
+    const reduce = M.reduced();
+    this.plainChips();
+    this.clauseEntrance(reduce);
+    this.toc(reduce);
+    this.anchors();
+    this.trustHighlight(reduce);
+    this.chipPulse(reduce);
+    this.backToTop(reduce);
+    this.progress();
+    M.scan();
+  }
+
+  clauses() { return Array.from(document.querySelectorAll("[data-pv-clause]")); }
+
+  /* 5 — plain-English chips */
+  plainChips() {
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    document.querySelectorAll("[data-pv-plain]").forEach((slot) => {
+      const text = slot.getAttribute("data-pv-plain");
+      if (!text || text.indexOf("{{") !== -1 || slot.children.length) return;
+      const dark = !!slot.closest("[data-pv-dark]");
+      const ink = dark ? "#8FB6F5" : "#3A4FC4";
+      const line = dark ? "rgba(247,244,237,.28)" : "rgba(10,13,20,.22)";
+      const body = dark ? "rgba(247,244,237,.78)" : "rgba(10,13,20,.72)";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("aria-expanded", "false");
+      btn.style.cssText = mono + "font-size:9px;letter-spacing:.14em;text-transform:uppercase;background:transparent;color:" + ink + ";border:1px solid " + line + ";border-radius:999px;padding:0 12px;min-height:34px;cursor:pointer;align-self:flex-start";
+      btn.textContent = "In plain English";
+      const panel = document.createElement("div");
+      panel.setAttribute("data-pv-summary", "");
+      panel.style.cssText = "height:0;overflow:hidden;transition:height 320ms cubic-bezier(.16,1,.3,1)";
+      panel.innerHTML = '<p style="margin:10px 0 0;max-width:72ch;font-size:clamp(14px,1.1vw,16px);line-height:1.6;color:' + body + '">' + text + "</p>";
+      slot.style.display = "flex";
+      slot.style.flexDirection = "column";
+      slot.appendChild(btn);
+      slot.appendChild(panel);
+      const set = (open) => {
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        panel.style.height = open ? panel.firstElementChild.offsetHeight + 10 + "px" : "0px";
+        btn.style.background = open ? ink : "transparent";
+        btn.style.color = open ? (dark ? "#0A0D14" : "#FFFFFF") : ink;
+      };
+      slot.__set = set;
+      btn.addEventListener("click", () => set(btn.getAttribute("aria-expanded") !== "true"));
+      if (this.props.showSummariesByDefault) set(true);
+    });
+    const all = document.querySelector("[data-pv-showall]");
+    if (all && !all.__wired) {
+      all.__wired = true;
+      all.addEventListener("click", () => {
+        const on = all.getAttribute("aria-pressed") !== "true";
+        all.setAttribute("aria-pressed", on ? "true" : "false");
+        all.style.background = on ? "#0A0D14" : "transparent";
+        all.style.color = on ? "#F7F4ED" : "#0A0D14";
+        all.textContent = on ? "Hide all summaries" : "Show all summaries";
+        document.querySelectorAll("[data-pv-plain]").forEach((s) => { if (s.__set) s.__set(on); });
+      });
+    }
+  }
+
+  /* 4 — quiet clause entrance; body text is never hidden */
+  clauseEntrance() {}
+
+  /* 2 / 3 — sticky contents, and a bottom sheet on narrow screens */
+  toc(reduce) {
+    if (this.props.stickyContents === false) return;
+    if (document.querySelector("[data-pv-toc]")) return;
+    const clauses = this.clauses();
+    if (!clauses.length) return;
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    const list = clauses.map((c, i) =>
+      '<button type="button" data-i="' + i + '" style="display:block;width:100%;text-align:left;' + mono + 'font-size:9px;letter-spacing:.12em;text-transform:uppercase;background:transparent;border:0;color:rgba(10,13,20,.5);padding:7px 0 7px 14px;cursor:pointer;line-height:1.35;transition:color 260ms ease">' + c.getAttribute("data-pv-clause") + "</button>"
+    ).join("");
+
+    const toc = document.createElement("nav");
+    toc.setAttribute("data-pv-toc", "");
+    toc.setAttribute("aria-label", "Contents");
+    toc.style.cssText = "position:fixed;right:24px;top:132px;width:190px;max-height:68vh;overflow:auto;z-index:15;padding-left:10px;scrollbar-width:none";
+    toc.innerHTML = '<span data-bar style="position:absolute;left:0;top:0;width:2px;height:22px;background:#8FB6F5;transition:transform 360ms cubic-bezier(.16,1,.3,1);border-radius:999px"></span><div data-list style="position:relative">' + list + "</div>";
+    document.body.appendChild(toc);
+
+    const pill = document.createElement("button");
+    pill.setAttribute("data-pv-pill", "");
+    pill.type = "button";
+    pill.style.cssText = "position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;" + mono + "font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:#0A0D14;color:#F7F4ED;border:0;border-radius:999px;padding:0 20px;min-height:46px;cursor:pointer;box-shadow:0 12px 30px rgba(10,13,20,.28)";
+    pill.textContent = "Sections 01";
+    document.body.appendChild(pill);
+
+    const sheet = document.createElement("div");
+    sheet.style.cssText = "position:fixed;inset:0;z-index:80;background:rgba(10,13,20,.5);opacity:0;pointer-events:none;transition:opacity 260ms ease";
+    sheet.innerHTML = '<div data-panel style="position:absolute;left:0;right:0;bottom:0;max-height:72vh;overflow:auto;background:#F7F4ED;border-radius:16px 16px 0 0;padding:10px 20px calc(20px + env(safe-area-inset-bottom));transform:translateY(100%);transition:transform 320ms cubic-bezier(.16,1,.3,1)"><span style="display:block;width:44px;height:4px;border-radius:999px;background:rgba(10,13,20,.25);margin:6px auto 12px"></span><div data-sheetlist></div></div>';
+    document.body.appendChild(sheet);
+    sheet.querySelector("[data-sheetlist]").innerHTML = clauses.map((c, i) =>
+      '<button type="button" data-i="' + i + '" style="display:block;width:100%;text-align:left;' + mono + 'font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:transparent;border:0;border-bottom:1px solid rgba(10,13,20,.12);color:rgba(10,13,20,.7);min-height:44px;cursor:pointer">' + c.getAttribute("data-pv-clause") + "</button>"
+    ).join("");
+    const openSheet = (on) => {
+      sheet.style.opacity = on ? "1" : "0";
+      sheet.style.pointerEvents = on ? "auto" : "none";
+      sheet.querySelector("[data-panel]").style.transform = on ? "translateY(0)" : "translateY(100%)";
+    };
+    pill.addEventListener("click", () => openSheet(true));
+    sheet.addEventListener("click", (e) => { if (e.target === sheet) openSheet(false); });
+
+    const goto = (i) => {
+      const c = clauses[i];
+      window.scrollTo({ top: c.getBoundingClientRect().top + window.scrollY - 120, behavior: reduce ? "auto" : "smooth" });
+      const dark = c.hasAttribute("data-pv-dark");
+      c.style.background = dark ? "rgba(143,178,245,.14)" : "rgba(76,125,240,.12)";
+      setTimeout(() => { c.style.background = ""; }, 1200);
+      openSheet(false);
+    };
+    toc.querySelectorAll("[data-i]").forEach((b) => b.addEventListener("click", () => goto(parseInt(b.getAttribute("data-i"), 10))));
+    sheet.querySelectorAll("[data-i]").forEach((b) => b.addEventListener("click", () => goto(parseInt(b.getAttribute("data-i"), 10))));
+
+    const bar = toc.querySelector("[data-bar]");
+    const btns = Array.from(toc.querySelectorAll("[data-i]"));
+    const counter = document.querySelector("[data-pv-counter]");
+    let cur = -1;
+    const sync = () => {
+      const mid = window.innerHeight * 0.38;
+      let k = 0;
+      clauses.forEach((c, i) => { if (c.getBoundingClientRect().top <= mid) k = i; });
+      if (k === cur) return;
+      cur = k;
+      btns.forEach((b, i) => { b.style.color = i === k ? "#0A0D14" : "rgba(10,13,20,.5)"; });
+      const b = btns[k];
+      if (b && bar) { bar.style.height = b.offsetHeight + "px"; bar.style.transform = "translateY(" + b.offsetTop + "px)"; }
+      const label = String(k + 1).padStart(2, "0") + " / " + String(clauses.length).padStart(2, "0");
+      if (counter) {
+        counter.style.opacity = "0";
+        setTimeout(() => { counter.textContent = label; counter.style.opacity = "1"; }, 150);
+      }
+      pill.textContent = "Sections " + String(k + 1).padStart(2, "0");
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    this._sync = sync;
+    sync();
+
+    const jump = document.querySelector("[data-pv-jump]");
+    if (jump && !jump.__wired) {
+      jump.__wired = true;
+      jump.addEventListener("click", (e) => {
+        e.preventDefault();
+        const t = document.getElementById("terms");
+        if (!t) return;
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 90, behavior: reduce ? "auto" : "smooth" });
+      });
+    }
+  }
+
+  /* 7 — anchor links */
+  anchors() {
+    document.querySelectorAll("[data-pv-anchor]").forEach((b) => {
+      if (b.__wired) return;
+      const id = b.getAttribute("data-pv-anchor");
+      if (!id || id.indexOf("{{") !== -1) return;
+      b.__wired = true;
+      const head = b.parentElement;
+      const show = (on) => { b.style.opacity = on ? "1" : "0"; };
+      head.addEventListener("pointerenter", () => show(true));
+      head.addEventListener("pointerleave", () => show(false));
+      b.addEventListener("focus", () => show(true));
+      b.addEventListener("blur", () => show(false));
+      b.addEventListener("click", () => {
+        const url = location.href.split("#")[0] + "#" + id;
+        const done = () => { const old = b.textContent; b.textContent = "Copied"; setTimeout(() => { b.textContent = old; }, 1500); };
+        if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, done);
+        else done();
+        history.replaceState(null, "", "#" + id);
+      });
+    });
+  }
+
+  /* 6 — one quiet marker sweep on the trust line */
+  trustHighlight(reduce) {
+    if (reduce || this._trust) return;
+    const target = this.clauses().find((c) => (c.textContent || "").indexOf("We do not sell your personal information") !== -1);
+    if (!target) return;
+    const p = target.querySelector("p");
+    if (!p) return;
+    this._trust = true;
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      io.disconnect();
+      p.style.transition = "background 700ms ease";
+      p.style.backgroundImage = "linear-gradient(90deg, rgba(143,178,245,.5), rgba(143,178,245,.5))";
+      p.style.backgroundRepeat = "no-repeat";
+      p.style.backgroundSize = "0% 100%";
+      requestAnimationFrame(() => { p.style.transition = "background-size 700ms cubic-bezier(.16,1,.3,1)"; p.style.backgroundSize = "100% 100%"; });
+      setTimeout(() => { p.style.backgroundSize = "0% 100%"; }, 2600);
+    }, { threshold: 0.6 });
+    io.observe(target);
+  }
+
+  chipPulse(reduce) {
+    const chip = document.querySelector("[data-pv-chip]");
+    if (!chip || chip.__wired || reduce) return;
+    chip.__wired = true;
+    chip.style.transition = "box-shadow 1000ms ease";
+    chip.style.boxShadow = "0 0 0 6px rgba(76,125,240,.16)";
+    setTimeout(() => { chip.style.boxShadow = "0 0 0 0 rgba(76,125,240,0)"; }, 1000);
+  }
+
+  /* 9 — back to top, ring fills with reading progress */
+  backToTop(reduce) {
+    if (document.querySelector("[data-pv-top]")) return;
+    const b = document.createElement("button");
+    b.setAttribute("data-pv-top", "");
+    b.type = "button";
+    b.setAttribute("aria-label", "Back to top");
+    b.style.cssText = "position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom));z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:#0A0D14;color:#F7F4ED;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 300ms ease;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(10,13,20,.24)";
+    b.innerHTML = '<svg viewBox="0 0 48 48" style="position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)"><circle cx="24" cy="24" r="22" fill="none" stroke="rgba(247,244,237,.25)" stroke-width="2"/><circle class="ring" cx="24" cy="24" r="22" fill="none" stroke="#8FB6F5" stroke-width="2" stroke-linecap="round" stroke-dasharray="138" stroke-dashoffset="138"/></svg><span style="position:relative;font-size:14px">↑</span>';
+    document.body.appendChild(b);
+    b.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }));
+    const ring = b.querySelector(".ring");
+    const sync = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? window.scrollY / max : 0;
+      const on = window.scrollY > window.innerHeight * 0.9;
+      b.style.opacity = on ? "1" : "0";
+      b.style.pointerEvents = on ? "auto" : "none";
+      if (ring) ring.style.strokeDashoffset = String(138 * (1 - p));
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    sync();
+  }
+
+  progress() {
+    const bar = document.getElementById("od-progress");
+    if (bar) bar.style.background = "#4C7DF0";
+  }
+
+  renderVals() {
+    const privacy = [
+      { title: "Who we are", body: "OD Socials is a social media and digital growth agency. We provide social media management, content creation, website design and development, and AI automation services. For anything relating to this policy, contact us at contact@odsocials.com." },
+      { title: "Information we collect", body: "We only collect information you give us or that is needed to run the site:", items: ["Contact details you submit through our enquiry form — name, email address, business name, budget range and project details.", "Information you send us directly by email, WhatsApp or social media.", "Client account information shared with us so we can deliver agreed services.", "Basic technical data such as device type, browser and pages visited, collected by our hosting and analytics providers."] },
+      { title: "How we use it", body: "We use your information to respond to enquiries, prepare proposals, deliver and invoice for agreed services, keep records of our work, and improve the website. We do not sell your personal information to anyone." },
+      { title: "Legal basis", body: "Where UK and EU data protection law applies, we process personal data on the basis of your consent (when you contact us), performance of a contract (when we deliver services), and our legitimate interest in running and improving the business." },
+      { title: "Marketing", body: "We only send marketing messages if you have asked to receive them or are an existing client. You can opt out at any time by replying to any message or emailing contact@odsocials.com, and we will stop." },
+      { title: "Sharing with others", body: "We share information only with service providers who help us operate — for example website hosting, email, cloud storage, scheduling and analytics tools, and the social or advertising platforms we manage on your behalf. They may only use it to provide their service to us. We may also disclose information where the law requires it." },
+      { title: "Cookies and analytics", body: "This website may use cookies and similar technologies to keep the site working correctly and to understand how it is used. You can block or delete cookies in your browser settings; some parts of the site may not work as intended if you do." },
+      { title: "How long we keep it", body: "Enquiries that do not become projects are kept for up to 24 months. Client records are kept for the duration of the engagement and for as long as we are legally required to keep financial records afterwards." },
+      { title: "Keeping it secure", body: "We use reputable providers, access controls and secure accounts to protect the information we hold. No system is completely secure, but we take reasonable steps to prevent unauthorised access, loss or misuse." },
+      { title: "Your rights", body: "Depending on where you live, you may have the right to request a copy of the personal data we hold about you, correct it, delete it, restrict or object to how we use it, or withdraw consent. Email contact@odsocials.com and we will respond within one month. In the UK you may also complain to the Information Commissioner's Office." },
+      { title: "Children", body: "Our services are intended for businesses. We do not knowingly collect personal information from anyone under 16." },
+      { title: "Changes to this policy", body: "We may update this policy as our services change. The current version is always published on this page with the date it was last updated." }
+    ];
+    const terms = [
+      { title: "Agreement", body: "These terms apply to the services OD Socials provides. Specific deliverables, timelines and fees are set out in the proposal or agreement for your project, which takes precedence if anything differs from this page." },
+      { title: "Scope of work", body: "We deliver what is described in the agreed proposal. Work outside that scope is quoted and agreed separately before it begins." },
+      { title: "Your responsibilities", body: "You agree to provide the access, brand assets, approvals and information we need to do the work, and to confirm that any material you supply is accurate and that you hold the rights to use it." },
+      { title: "Fees and payment", body: "Fees, invoicing schedule and payment terms are set out in your proposal. Retainer services are billed monthly in advance unless agreed otherwise. Work may be paused on overdue accounts." },
+      { title: "Ownership and usage", body: "Once a project is paid in full, you own the final deliverables produced for you. We retain ownership of our internal tools, templates, and working files, and may show completed work in our portfolio and on our social channels unless you ask us in writing not to." },
+      { title: "Results", body: "We commit to strategy, quality and consistency. We cannot guarantee specific outcomes such as follower counts, rankings, reach or revenue, as these depend on factors outside our control including platform algorithms and market conditions." },
+      { title: "Third-party platforms", body: "Our services may rely on platforms such as Meta, LinkedIn, Google, WhatsApp and automation tools. We are not responsible for their availability, policy changes, pricing or account decisions." },
+      { title: "Liability", body: "To the extent permitted by law, our total liability in connection with any project is limited to the fees paid for that project, and we are not liable for indirect or consequential losses." },
+      { title: "Ending an engagement", body: "Either side may end an ongoing engagement with 30 days' written notice. Work completed up to the end date remains payable." },
+      { title: "Governing law", body: "These terms are governed by the laws of England and Wales, and the courts of England and Wales have jurisdiction over any dispute." }
+    ];
+    const n = (i) => String(i + 1).padStart(2, "0");
+    const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    const plainPrivacy = [
+      "We're a social media and digital agency. Email us and you'll reach a person.",
+      "We collect what you send us through the form, by message, or as a client — plus basic technical data from hosting and analytics.",
+      "We use your details to reply, quote, deliver and invoice. We don't sell them.",
+      "We only process your data when you've asked us to, when a contract needs it, or to run the business properly.",
+      "We only market to you if you asked, or you're already a client. Reply to opt out and it stops.",
+      "Only the tools that help us run — hosting, email, storage, scheduling, analytics, and the platforms we manage for you.",
+      "Cookies keep the site working and show us how it's used. You can block them in your browser.",
+      "Enquiries: up to 24 months. Client records: for the engagement, plus however long the law requires.",
+      "We use reputable providers and access controls. No system is perfect, but we take it seriously.",
+      "You can ask for a copy, a correction, or a deletion. Email us and we'll reply within a month.",
+      "This is a service for businesses. We don't collect data from under-16s.",
+      "If this policy changes, the current version and its date are always on this page."
+    ];
+    const plainTerms = [
+      "These are the general terms. Your specific proposal wins where the two differ.",
+      "We deliver what the proposal says. Anything extra gets quoted first.",
+      "You give us access, assets and approvals, and confirm you own what you send us.",
+      "Your proposal sets fees and timing. Retainers bill monthly in advance. Overdue accounts can pause work.",
+      "Once paid, the deliverables are yours. We keep our own tools and working files, and may show the work in our portfolio unless you ask us not to.",
+      "We commit to strategy, quality and consistency. We can't promise specific numbers.",
+      "Our work uses third-party platforms. We can't control their outages, policies or pricing.",
+      "Our liability is limited to what you paid for that project.",
+      "Either side can end an ongoing engagement with 30 days' notice. Completed work is still payable.",
+      "English and Welsh law applies."
+    ];
+    return {
+      updated: "September 2026",
+      privacy: privacy.map((p, i) => ({
+        ...p, n: n(i), id: "clause-" + slug(p.title), label: n(i) + " " + p.title,
+        plain: plainPrivacy[i] || "", hasList: !!p.items, items: p.items || []
+      })),
+      terms: terms.map((t, i) => ({
+        ...t, n: n(i), id: "term-" + slug(t.title), label: n(i) + " " + t.title,
+        plain: plainTerms[i] || ""
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

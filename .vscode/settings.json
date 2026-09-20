@@ -1,0 +1,9 @@
+{
+  "liveServer.settings.root": "/",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.associations": { "*.dc.html": "html" },
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "html.format.wrapLineLength": 0,
+  "files.exclude": { "**/.DS_Store": true }
+}

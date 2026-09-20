@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Playfair+Display:ital@1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0F1838; }
+  * { box-sizing: border-box; }
+  a { color: #A9C7FA; text-decoration: none; }
+  a:hover { color: #FFFFFF; }
+  @keyframes ai-left { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @keyframes ai-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+  @keyframes ai-caret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes ai-shimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+  @keyframes ai-scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(1200%); } }
+  @keyframes ai-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @media (prefers-reduced-motion: reduce) { [data-ai-scan], [data-ai-float] { animation: none !important; } }
+  [data-od-nav] a { white-space: nowrap; }
+  @media (max-width: 780px) {
+    [data-od-header] { padding: 10px clamp(14px, 4vw, 20px) !important; gap: 10px !important; }
+    [data-od-nav] { gap: 16px !important; }
+    [data-od-nav] { flex-wrap: nowrap !important; overflow-x: auto; justify-content: flex-start; width: 100%; scrollbar-width: none; }
+    [data-od-nav]::-webkit-scrollbar { display: none; }
+    [data-od-nav] a { white-space: nowrap; }
+  }
+  @media (prefers-reduced-motion: reduce) { [data-ai-track], [data-ai-pulse] { animation: none !important; } }
+  @media (min-width: 900px) { [data-g6] { grid-template-columns: repeat(3, minmax(0,1fr)) !important; } }
+  @media (min-width: 980px) { [data-g8] { grid-template-columns: repeat(4, minmax(0,1fr)) !important; } }
+</style>
+<script>window.ODMotionConfig = { motionIntensity: 1, enableCursor: true, playLoaderOnce: true, accent: "#4C7DF0", accent2: "#8FB6F5" };</script>
+<script src="./od-motion.js"></script>
+</helmet>
+
+<div style="font-family: Archivo, Helvetica, sans-serif; background: #0F1838; color: #F7F4ED; width: 100%; overflow-x: clip;">
+  <div style="height: 4px; background: linear-gradient(90deg, #8FB6F5, #4C7DF0, #6B5BE0);"></div>
+
+  <header data-od-header="" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 72px); border-bottom: 1px solid rgba(247,244,237,0.16); position: sticky; top: 0; background: rgba(15,24,56,0.93); backdrop-filter: blur(10px); z-index: 20; flex-wrap: wrap;">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: #F7F4ED;">
+      <span style="background: #F7F4ED; border-radius: 6px; padding: 6px 9px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; border-left: 1px solid rgba(247,244,237,0.24); padding-left: 10px;">AI</span>
+    </a>
+    <nav data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.2vw, 28px); flex-wrap: wrap;">
+      <span data-od-counter="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(247,244,237,0.4);">01 / 04</span>
+      <a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Home</a>
+      <a href="social-media.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Social Media</a>
+      <a href="website.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Website</a>
+      <a href="ai-automation.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #F7F4ED; border-bottom: 2px solid #8FB6F5; padding-bottom: 2px;">AI Automation</a>
+      <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; background: #F7F4ED; color: #0A0D14; padding: 11px 18px; border-radius: 2px;" style-hover="background: #8FB6F5; color: #0A0D14;">Start Project ↗</a>
+    </nav>
+  </header>
+
+  <section style="background: linear-gradient(158deg, #0F1838 0%, #1B2560 45%, #3A4FC4 100%); padding: clamp(28px, 4vw, 48px) clamp(20px, 5vw, 72px) clamp(48px, 6vw, 84px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.6);"><a href="index.html" style="color: rgba(247,244,237,0.6);">Home</a> / Services / <span style="color: #A9C7FA;">AI Automation</span></div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9C7FA; border-bottom: 1px solid rgba(247,244,237,0.22); padding: clamp(28px, 4vw, 44px) 0 14px;">AI Automation</div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: clamp(30px, 5vw, 64px); align-items: end; padding-top: clamp(32px, 4vw, 52px);">
+        <div style="min-width: 0; container-type: inline-size;">
+          <h1 data-reveal="rise" style="margin: 0; font-size: clamp(36px, 12cqw, 82px); line-height: 0.94; letter-spacing: -0.04em; font-weight: 900; text-transform: uppercase; overflow-wrap: break-word;">Less manual work. <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -0.01em; background: linear-gradient(90deg, #A9C7FA, #FFFFFF, #8FB6F5, #A9C7FA); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: ai-shimmer 6s linear infinite;">More business done.</span></h1>
+          <div style="height: 1px; background: rgba(247,244,237,0.22); margin: clamp(24px, 3vw, 34px) 0 20px;"></div>
+          <p style="margin: 0; max-width: 50ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(247,244,237,0.82); text-wrap: pretty;">We build intelligent automation systems that handle repetitive tasks, respond to leads, connect your tools and keep your business moving — automatically.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px;">
+            <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; background: #F7F4ED; color: #0A0D14; padding: 15px 24px; border-radius: 2px;" style-hover="background: #0A0D14; color: #F7F4ED;" data-magnetic="" data-od-sweep="" data-cursor="START">Automate Your Business <span data-od-arrow="">→</span></a>
+            <a href="#what-we-automate" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(247,244,237,0.4); color: #F7F4ED; padding: 15px 24px; border-radius: 2px;" style-hover="border-color: #F7F4ED; background: rgba(247,244,237,0.1);">Explore Automations ↓</a>
+          </div>
+        </div>
+        <div style="min-width: 0;">
+          <div data-ai-float="" style="position: relative; border: 1px solid rgba(143,178,245,0.5); border-radius: 12px; background: rgba(10,13,20,0.62); overflow: hidden; box-shadow: 0 26px 64px rgba(0,0,0,0.45); animation: ai-float 7s ease-in-out infinite;">
+            <div style="display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-bottom: 1px solid rgba(143,178,245,0.32);">
+              <span style="display: flex; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: rgba(143,178,245,0.55);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: rgba(143,178,245,0.35);"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: rgba(143,178,245,0.25);"></span></span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.6);">od-automation / <span data-ai-scenario="">live</span></span>
+              <span style="margin-left: auto; display: flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #8FB6F5;"><span data-ai-pulse="" style="width: 7px; height: 7px; border-radius: 50%; background: #8FB6F5; animation: ai-pulse 1.6s ease-in-out infinite;"></span>Running</span>
+            </div>
+            <div style="position: relative; padding: clamp(16px, 2.2vw, 26px); min-height: clamp(280px, 30vw, 380px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(12px, 1.05vw, 14px); line-height: 2;">
+              <div data-ai-scan="" style="position: absolute; left: 0; right: 0; top: 0; height: 24px; background: linear-gradient(to bottom, transparent, rgba(143,178,245,0.13), transparent); animation: ai-scan 5.5s linear infinite; pointer-events: none;"></div>
+              <sc-for list="{{ logLines }}" as="l" hint-placeholder-count="4">
+                <div style="color: {{ l.color }};">{{ l.text }}</div>
+              </sc-for>
+              <div style="color: #F7F4ED;">{{ typed }}<span style="color: #8FB6F5; animation: ai-caret 1s steps(1) infinite;">▌</span></div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 14px 22px; padding: 13px 14px; border-top: 1px solid rgba(143,178,245,0.32); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.62);">
+                <span>Avg. reply — <span data-ai-replytimer="" style="color: #8FB6F5;">4.0s</span></span>
+                <span>Manual steps — <span style="color: #8FB6F5;">0</span></span>
+                <span>Uptime — <span style="color: #8FB6F5;">24/7</span></span>
+            </div>
+          </div>
+          <div data-ai-beat="" style="margin-top: 14px;"></div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 1px; background: rgba(247,244,237,0.24); border: 1px solid rgba(247,244,237,0.24); margin-top: clamp(38px, 5vw, 60px);">
+        <sc-for list="{{ badges }}" as="b" hint-placeholder-count="4">
+          <div data-ai-badge="{{ b }}" style="background: rgba(15,24,56,0.6); padding: clamp(18px, 2.2vw, 26px); text-align: center; min-width: 0; transition: background 300ms ease; display: flex; flex-direction: column; align-items: center; gap: 10px;" style-hover="background: rgba(76,125,240,0.22);">
+            <span data-ai-badgeart="" style="display: block; height: 28px;"></span>
+            <div data-decode="" style="font-size: clamp(22px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">{{ b }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #0A0D14; padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.16);" data-od-section="" data-decode="">01 — The old way</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 4vw, 56px); align-items: end; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(32px, 4.4vw, 58px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Your team shouldn't <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #8FB6F5;">work like robots.</span></h2>
+        <p style="margin: 0; max-width: 44ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(247,244,237,0.75); text-wrap: pretty;">Every day, businesses lose hours doing work that follows the same pattern again and again.</p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-top: clamp(30px, 4vw, 46px); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.5);">
+        <span>In the queue</span>
+        <span data-ai-queue="" style="display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 24px; padding: 0 8px; border-radius: 999px; background: rgba(224,92,92,0.18); border: 1px solid rgba(224,92,92,0.5); color: #F2A8A8;">0</span>
+      </div>
+      <div data-ai-chores="" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px;">
+        <sc-for list="{{ chores }}" as="c" hint-placeholder-count="8">
+          <span data-ai-chore="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(247,244,237,0.24); color: rgba(247,244,237,0.72); padding: 10px 14px; border-radius: 999px; transition: transform 620ms cubic-bezier(.16,1,.3,1), opacity 480ms ease;">{{ c }}</span>
+        </sc-for>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(16px, 2vw, 24px); margin-top: clamp(34px, 4vw, 52px);">
+        <div data-ai-race="manual" style="border: 1px solid rgba(247,244,237,0.2); padding: clamp(22px, 2.6vw, 30px); min-width: 0;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,244,237,0.55); padding-bottom: 16px;"><span>Manual</span><span data-ai-clock="" style="color: rgba(247,244,237,0.4);">0.0s</span></div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
+            <sc-for list="{{ manualChain }}" as="m">
+              <span data-ai-node="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; background: rgba(247,244,237,0.08); border: 1px solid rgba(247,244,237,0.18); padding: 8px 11px; border-radius: 3px; color: rgba(247,244,237,0.8); transition: background 300ms ease, border-color 300ms ease, color 300ms ease;">{{ m }}</span>
+              <span style="color: rgba(247,244,237,0.35); font-family: 'IBM Plex Mono', monospace; font-size: 12px;">→</span>
+            </sc-for>
+          </div>
+          <div data-ai-stall="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(242,168,168,0.9); margin-top: 14px; min-height: 14px;"></div>
+        </div>
+        <div data-ai-race="auto" style="border: 1px solid #4C7DF0; background: rgba(76,125,240,0.1); padding: clamp(22px, 2.6vw, 30px); min-width: 0;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; padding-bottom: 16px;"><span>Automated</span><span data-ai-clock="" style="color: rgba(247,244,237,0.5);">0.0s</span></div>
+          <div data-ai-target="" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
+            <span data-ai-node="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; background: rgba(247,244,237,0.08); border: 1px solid rgba(247,244,237,0.2); padding: 8px 11px; border-radius: 3px; transition: background 300ms ease, border-color 300ms ease;">Lead</span>
+            <span style="color: #8FB6F5; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">→</span>
+            <span data-ai-node="" data-ai-hub="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; background: #4C7DF0; color: #FFFFFF; padding: 8px 11px; border-radius: 3px; transition: box-shadow 300ms ease;">OD AI System</span>
+            <span style="color: #8FB6F5; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">→</span>
+            <span data-ai-node="" style="font-size: 14px; font-weight: 700;">Everything handled automatically.</span>
+          </div>
+          <div data-ai-waiting="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #8FB6F5; margin-top: 14px; min-height: 14px;"></div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 18px;">
+        <button type="button" data-ai-replay="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; background: transparent; color: #8FB6F5; border: 1px solid rgba(143,178,245,0.5); border-radius: 999px; padding: 0 16px; min-height: 40px; cursor: pointer;">Replay ↻</button>
+      </div>
+      <p data-ai-words="" style="margin: clamp(26px, 3vw, 38px) 0 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(18px, 2vw, 26px); color: #A9C7FA;">If your team does it again and again, there's a good chance we can automate it.</p>
+    </div>
+  </section>
+
+  <section id="what-we-automate" style="background: #F7F4ED; color: #0A0D14; padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);" data-od-section="" data-decode="">02 — What we build</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 4vw, 56px); align-items: end; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(32px, 4.4vw, 58px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Smarter systems for <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #3A4FC4;">everyday business.</span></h2>
+        <p style="margin: 0; max-width: 44ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(10,13,20,0.7); text-wrap: pretty;">Automation built around what actually slows your team down, not generic templates.</p>
+      </div>
+      <div data-g6="" data-ai-grid="" style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(10,13,20,0.18); border: 1px solid rgba(10,13,20,0.18); margin-top: clamp(30px, 4vw, 48px);">
+        <sc-for list="{{ builds }}" as="b" hint-placeholder-count="6">
+          <div data-ai-card="{{ b.key }}" style="position: relative; background: #F7F4ED; padding: clamp(22px, 2.6vw, 30px); display: flex; flex-direction: column; min-width: 0;" style-hover="background: #FFFFFF;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #3A4FC4;"><span>{{ b.n }}</span><span>↗</span></div>
+            <h3 style="margin: 20px 0 8px; font-size: clamp(19px, 2vw, 25px); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.05;">{{ b.title }}</h3>
+            <p style="margin: 0 0 14px; font-size: 14px; line-height: 1.55; color: rgba(10,13,20,0.68); text-wrap: pretty;">{{ b.body }}</p>
+            <div data-ai-demo="" style="height: 62px; margin-bottom: 14px; position: relative; overflow: hidden; border-radius: 6px; background: rgba(10,13,20,0.05); flex: none;"></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <sc-for list="{{ b.tags }}" as="tg">
+                <span data-ai-tag="" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(10,13,20,0.22); color: rgba(10,13,20,0.6); padding: 6px 9px; border-radius: 999px; transition: background 300ms ease, color 300ms ease, border-color 300ms ease;">{{ tg }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: linear-gradient(152deg, #0F1838 0%, #222C70 60%, #3A4FC4 100%); padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9C7FA; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.22);" data-od-section="" data-decode="">03 — Meet AI agents</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 4vw, 56px); align-items: end; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(32px, 4.4vw, 58px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Not just AI that talks. <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A9C7FA;">AI that acts.</span></h2>
+        <p style="margin: 0; max-width: 42ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(247,244,237,0.8); text-wrap: pretty;">Our AI agents don't just answer questions — they complete the task behind them.</p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: clamp(28px, 3.4vw, 42px);">
+        <sc-for list="{{ scenarios }}" as="sc" hint-placeholder-count="3">
+          <button type="button" data-od-chip="" data-ai-scen="{{ sc.key }}" aria-pressed="{{ sc.on }}" onClick="{{ sc.pick }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.72); border: 1px solid rgba(247,244,237,0.3); border-radius: 999px; padding: 0 16px; min-height: 44px; cursor: pointer;">{{ sc.label }}</button>
+        </sc-for>
+        <button type="button" data-ai-chatreplay="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; background: transparent; color: #A9C7FA; border: 1px solid rgba(169,199,250,0.45); border-radius: 999px; padding: 0 16px; min-height: 44px; cursor: pointer;">Replay ↻</button>
+      </div>
+
+      <div data-ai-agentgrid="" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: clamp(20px, 2.6vw, 30px); align-items: start;">
+        <div style="min-width: 0; position: sticky; top: clamp(96px, 12vh, 132px);">
+          <div data-ai-chat="" style="min-width: 0; border: 1px solid rgba(247,244,237,0.24); border-radius: 12px; background: rgba(10,13,20,0.32); padding: clamp(18px, 2.2vw, 26px); display: flex; flex-direction: column; gap: 12px; min-height: 280px;"></div>
+        </div>
+
+        <div style="min-width: 0;">
+          <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,244,237,0.6); padding-bottom: 16px;">What happens next <span data-ai-pulse="" style="animation: ai-pulse 1.8s ease-in-out infinite; color: #8FB6F5;">•••</span></div>
+          <div style="display: flex; flex-direction: column;">
+            <sc-for list="{{ agentSteps }}" as="s" hint-placeholder-count="7">
+              <div data-ai-step="" style="display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start; padding-bottom: 14px; opacity: 0.45; transition: opacity 420ms ease;">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%;">
+                  <span data-ai-dot="" style="width: 9px; height: 9px; border-radius: 50%; background: {{ s.dot }}; margin-top: 5px; flex: none; transition: transform 320ms cubic-bezier(.22,1.4,.36,1), box-shadow 320ms ease;"></span>
+                  <span style="width: 1px; flex: 1; background: rgba(247,244,237,0.24);"></span>
+                </div>
+                <div style="min-width: 0; padding-bottom: 4px;">
+                  <div style="font-weight: 800; font-size: 15px; letter-spacing: -0.01em;">{{ s.title }}</div>
+                  <div style="font-size: 13px; line-height: 1.5; color: rgba(247,244,237,0.72); margin-top: 3px; text-wrap: pretty;">{{ s.body }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9C7FA; border-top: 1px solid rgba(247,244,237,0.22); padding-top: 16px; margin-top: clamp(24px, 3vw, 36px);">From conversation to action — automatically.</div>
+      <p style="margin: clamp(22px, 3vw, 34px) 0 0; font-size: clamp(20px, 2.4vw, 32px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.025em; line-height: 1.1;">AI handles the <span data-ai-strike="" style="position: relative;">repetitive</span>. <span data-ai-growth="" style="display: inline-block; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A9C7FA; transition: transform 620ms cubic-bezier(.16,1,.3,1), color 620ms ease;">You handle the growth.</span></p>
+
+      <div data-g6="" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(247,244,237,0.22); border: 1px solid rgba(247,244,237,0.22); margin-top: clamp(30px, 4vw, 44px);">
+        <sc-for list="{{ benefits }}" as="bn" hint-placeholder-count="6">
+          <div data-ai-benefit="{{ bn.title }}" style="background: rgba(15,24,56,0.45); padding: clamp(20px, 2.4vw, 28px); min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+            <span data-ai-benefitart="" style="display: block; height: 22px;"></span>
+            <h3 style="margin: 0 0 8px; font-size: clamp(17px, 1.8vw, 21px); font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.05;">{{ bn.title }}</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: rgba(247,244,237,0.76); text-wrap: pretty;">{{ bn.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #0A0D14; padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.16);" data-od-section="" data-decode="">04 — Everything connected</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 4vw, 56px); align-items: end; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(32px, 4.4vw, 58px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Your tools. Finally <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #8FB6F5;">working together.</span></h2>
+        <p style="margin: 0; max-width: 40ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.6; color: rgba(247,244,237,0.75);">One automation layer, connected to everything you already use.</p>
+      </div>
+
+      <div data-ai-hubbar="" style="position: relative; border: 1px solid #4C7DF0; background: rgba(76,125,240,0.1); padding: 18px; margin-top: clamp(30px, 4vw, 46px); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #A9C7FA; overflow: hidden;"><span data-ai-hubsweep="" style="position: absolute; inset: 0; pointer-events: none; opacity: 0; background: linear-gradient(90deg, transparent, rgba(143,178,245,0.34), transparent); transition: opacity 300ms ease;"></span>OD Automation</div>
+
+      <div data-g8="" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(247,244,237,0.16); border: 1px solid rgba(247,244,237,0.16); border-top: 0;">
+        <sc-for list="{{ tools }}" as="tl" hint-placeholder-count="8">
+          <button type="button" data-ai-tool="{{ tl.name }}" style="text-align: left; border: 0; font: inherit; color: inherit; cursor: pointer; background: #0A0D14; padding: clamp(18px, 2.2vw, 26px); min-width: 0; transition: background 320ms ease, box-shadow 320ms ease;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8FB6F5;">{{ tl.name }}</div>
+            <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: rgba(247,244,237,0.72); text-wrap: pretty;">{{ tl.body }}</p>
+          </button>
+        </sc-for>
+      </div>
+      <div data-ai-log="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8FB6F5; border: 1px solid rgba(143,178,245,0.3); border-top: 0; padding: 14px clamp(18px, 2.2vw, 26px); min-height: 46px; line-height: 1.7;"></div>
+      <p data-ai-trigger="" style="margin: clamp(22px, 3vw, 32px) 0 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(17px, 1.9vw, 24px); color: #A9C7FA;">One action in one tool can trigger an entire workflow across the rest.</p>
+    </div>
+  </section>
+
+  <section style="background: linear-gradient(152deg, #0F1838 0%, #222C70 55%, #4C7DF0 100%); padding: clamp(60px, 8vw, 120px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,244,237,0.68); padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.24);">Ready when you are.</div>
+      <h2 style="margin: clamp(28px, 4vw, 44px) 0 0; font-size: clamp(34px, 5.6vw, 82px); line-height: 0.94; letter-spacing: -0.04em; font-weight: 900; text-transform: uppercase; max-width: 18ch;">Still doing it manually? <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A9C7FA;">There's a smarter way.</span></h2>
+      <p style="margin: 24px 0 0; max-width: 48ch; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.55; color: rgba(247,244,237,0.84);">Tell us what takes up your team's time. We'll help you figure out what can be automated.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+        <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; background: #F7F4ED; color: #0A0D14; padding: 16px 26px; border-radius: 2px;" style-hover="background: #0A0D14; color: #F7F4ED;" data-magnetic="" data-od-sweep="" data-cursor="START">Automate With OD <span data-od-arrow="">→</span></a>
+        <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(247,244,237,0.45); color: #F7F4ED; padding: 16px 26px; border-radius: 2px;" style-hover="border-color: #F7F4ED; background: rgba(247,244,237,0.1);" data-magnetic="">Book a Discovery Call <span data-od-arrow="">↗</span></a>
+        <a href="https://wa.me/447393121595" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(247,244,237,0.45); color: #F7F4ED; padding: 16px 26px; border-radius: 2px;" style-hover="border-color: #F7F4ED; background: rgba(247,244,237,0.1);">WhatsApp Us ↗</a>
+      </div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.7); border-top: 1px solid rgba(247,244,237,0.24); margin-top: clamp(38px, 5vw, 60px); padding-top: 18px; line-height: 1.9;"><span data-ai-link="" style="transition: color 420ms ease;">Your Business</span> → <span data-ai-link="" style="transition: color 420ms ease;">OD Automation</span> → <span data-ai-link="" style="transition: color 420ms ease;">Less Repetitive Work</span> → <span data-ai-link="" data-ai-last="" style="color: #F7F4ED; transition: color 420ms ease;">More Time to Grow</span></div>
+    </div>
+  </section>
+
+  <footer style="background: #0A0D14; color: #F7F4ED; padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 72px) 26px;">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.55);">
+      <span style="display: flex; align-items: center; gap: 12px;"><span style="background: #F7F4ED; border-radius: 6px; padding: 7px 10px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>© 2026 OD Socials</span>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="index.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Home</a>
+        <a href="social-media.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Social Media</a>
+        <a href="website.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Website</a>
+        <a href="https://www.instagram.com/od.socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Instagram</a>
+        <a href="https://www.linkedin.com/company/od-socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">LinkedIn</a>
+        <a href="privacy.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Privacy</a>
+        <a href="mailto:contact@odsocials.com" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">contact@odsocials.com</a>
+      </span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:1.5,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;playLoaderOnce&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;enableCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { idx: 0, pos: 0, hold: 0, scen: 0, chat: "book" };
+
+  get SCENARIOS() {
+    return [
+      { name: "dm-lead", lines: [
+        { text: "> new lead captured — instagram dm", color: "rgba(247,244,237,0.72)" },
+        { text: "> qualifying intent … high", color: "rgba(247,244,237,0.72)" },
+        { text: "> reply sent in 4.0s", color: "#8FB6F5" },
+        { text: "> checking calendar … 3 slots open", color: "rgba(247,244,237,0.72)" },
+        { text: "✓ workflow complete — 0 manual steps", color: "#F7F4ED" }
+      ] },
+      { name: "whatsapp", lines: [
+        { text: "> whatsapp enquiry — 23:41, after hours", color: "rgba(247,244,237,0.72)" },
+        { text: "> auto-reply sent in 4.0s", color: "#8FB6F5" },
+        { text: "> booking held — thu 10:30", color: "rgba(247,244,237,0.72)" },
+        { text: "✓ workflow complete — 0 manual steps", color: "#F7F4ED" }
+      ] },
+      { name: "web-form", lines: [
+        { text: "> website form submitted", color: "rgba(247,244,237,0.72)" },
+        { text: "> qualified … budget + timeline matched", color: "rgba(247,244,237,0.72)" },
+        { text: "> crm row added", color: "#8FB6F5" },
+        { text: "> confirmation email sent", color: "rgba(247,244,237,0.72)" },
+        { text: "✓ workflow complete — 0 manual steps", color: "#F7F4ED" }
+      ] },
+      { name: "missed-call", lines: [
+        { text: "> missed call — 14:02", color: "rgba(247,244,237,0.72)" },
+        { text: "> follow-up text sent in 4.0s", color: "#8FB6F5" },
+        { text: "> callback booked — today 16:15", color: "rgba(247,244,237,0.72)" },
+        { text: "✓ workflow complete — 0 manual steps", color: "#F7F4ED" }
+      ] }
+    ];
+  }
+  get LINES() { return this.SCENARIOS[this.state.scen % this.SCENARIOS.length].lines; }
+
+  componentDidMount() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      this.setState({ idx: this.LINES.length, pos: 0 });
+    } else {
+      this._t = setInterval(() => {
+        if (document.hidden || this._offscreen) return;
+        const lines = this.LINES;
+        this.setState((s) => {
+          if (s.idx >= lines.length) {
+            return s.hold > 28
+              ? { idx: 0, pos: 0, hold: 0, scen: (s.scen + 1) % this.SCENARIOS.length }
+              : { hold: s.hold + 1 };
+          }
+          const cur = lines[s.idx].text;
+          if (s.pos < cur.length) return { pos: Math.min(cur.length, s.pos + 2) };
+          return { idx: s.idx + 1, pos: 0 };
+        });
+      }, 42);
+    }
+    this.initMotion();
+    [140, 700, 1800].forEach((t) => setTimeout(() => this.initMotion(), t));
+  }
+  componentDidUpdate() { this.initMotion(); this.renderChat(); if (window.ODMotion) window.ODMotion.scan(); }
+  componentWillUnmount() {
+    clearInterval(this._t);
+    clearInterval(this._reply);
+    ["_chainSync", "_sweepSync"].forEach((k) => { if (this[k]) window.removeEventListener("scroll", this[k]); });
+  }
+
+  initMotion() {
+    const M = window.ODMotion;
+    if (!M) return;
+    M.config.intensity = this.props.motionIntensity ?? 1;
+    M.config.cursor = this.props.enableCursor !== false;
+    const reduce = M.reduced();
+    this.terminalLife(reduce);
+    this.beatTheBot(reduce);
+    this.badgeArt();
+    this.chorePile(reduce);
+    this.race(reduce);
+    this.wordReveal(reduce);
+    this.cardDemos(reduce);
+    this.gridSpotlight(reduce);
+    this.renderChat();
+    this.chatSequence(reduce);
+    this.repetitive(reduce);
+    this.benefitArt();
+    this.toolHub(reduce);
+    this.finalChain(reduce);
+    this.stickyCta();
+    M.scan();
+  }
+
+  /* 1 — scenario name + live reply timer; pause off-screen */
+  terminalLife(reduce) {
+    const term = document.querySelector("[data-ai-scenario]");
+    if (term) term.textContent = this.SCENARIOS[this.state.scen % this.SCENARIOS.length].name;
+    const shell = document.querySelector("[data-ai-float]");
+    if (shell && !shell.__io) {
+      shell.__io = new IntersectionObserver((e) => { this._offscreen = !e[0].isIntersecting; }, { threshold: 0 });
+      shell.__io.observe(shell);
+    }
+    const timer = document.querySelector("[data-ai-replytimer]");
+    if (timer && !this._reply && !reduce) {
+      let v = 0;
+      this._reply = setInterval(() => {
+        if (document.hidden || this._offscreen) return;
+        v = v >= 4 ? 0 : Math.min(4, v + 0.2);
+        timer.textContent = v.toFixed(1) + "s";
+      }, 90);
+    }
+  }
+
+  /* 2 — beat the bot */
+  beatTheBot(reduce) {
+    const slot = document.querySelector("[data-ai-beat]");
+    if (!slot || slot.children.length) return;
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    slot.innerHTML =
+      '<div style="border:1px solid rgba(143,178,245,.32);border-radius:10px;padding:14px;background:rgba(10,13,20,.42)">' +
+        '<div style="' + mono + 'font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,244,237,.55);margin-bottom:8px">New enquiry</div>' +
+        '<div style="font-size:14px;line-height:1.45;margin-bottom:12px">"Do you have space Friday at 8?"</div>' +
+        '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">' +
+          '<button type="button" data-go style="' + mono + 'font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:#F7F4ED;color:#0A0D14;border:0;border-radius:999px;padding:0 16px;min-height:44px;cursor:pointer">Reply</button>' +
+          '<select data-when aria-label="Time of day" style="' + mono + 'font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:rgba(247,244,237,.8);border:1px solid rgba(247,244,237,.3);border-radius:999px;padding:0 12px;min-height:44px;cursor:pointer">' +
+            '<option value="Lunch rush">Lunch rush</option><option value="Evening">Evening</option><option value="2am">2am</option><option value="Weekend">Weekend</option></select>' +
+        "</div>" +
+        '<div data-out style="' + mono + 'font-size:10px;letter-spacing:.1em;color:#8FB6F5;margin-top:10px;min-height:16px"></div>' +
+      "</div>";
+    const btn = slot.querySelector("[data-go]");
+    const out = slot.querySelector("[data-out]");
+    const when = slot.querySelector("[data-when]");
+    let t0 = null;
+    const ctx = { "Lunch rush": "and you were plating twelve covers.", "Evening": "and service had just started.", "2am": "and it's 2am on a Sunday.", "Weekend": "and it's your day off." };
+    btn.addEventListener("pointerenter", () => { t0 = performance.now(); });
+    btn.addEventListener("focus", () => { t0 = performance.now(); });
+    btn.addEventListener("click", () => {
+      const secs = t0 ? Math.max(0.2, (performance.now() - t0) / 1000) : 1.2;
+      out.textContent = "You: " + secs.toFixed(1) + "s. OD AI: 4.0s. " + (secs < 4 ? "You won that one — " : "") + ctx[when.value];
+      t0 = null;
+    });
+  }
+
+  /* 3 — one-shot micro-animations on the four-cell strip */
+  badgeArt() {
+    const art = {
+      "24/7": '<svg viewBox="0 0 28 28" width="26" height="26" fill="none" stroke="#8FB6F5" stroke-width="1.6"><circle cx="14" cy="14" r="11"/><path class="hand" d="M14 14 V7" stroke-linecap="round" style="transform-origin:14px 14px;transition:transform 1200ms cubic-bezier(.16,1,.3,1)"/></svg>',
+      "Automated": '<svg viewBox="0 0 28 28" width="26" height="26" fill="none" stroke="#8FB6F5" stroke-width="1.6"><g class="hand" style="transform-origin:14px 14px;transition:transform 700ms cubic-bezier(.22,1.4,.36,1)"><circle cx="14" cy="14" r="5"/><path d="M14 3v4M14 21v4M3 14h4M21 14h4M6.2 6.2l2.8 2.8M19 19l2.8 2.8M21.8 6.2L19 9M9 19l-2.8 2.8" stroke-linecap="round"/></g></svg>',
+      "Connected": '<svg viewBox="0 0 28 28" width="26" height="26" fill="none" stroke="#8FB6F5" stroke-width="1.6"><circle cx="6" cy="14" r="3.4"/><circle cx="22" cy="14" r="3.4"/><path class="hand" d="M9.4 14h9.2" stroke-linecap="round" stroke-dasharray="10" stroke-dashoffset="10" style="transition:stroke-dashoffset 700ms cubic-bezier(.16,1,.3,1)"/></svg>',
+      "Instant": '<svg viewBox="0 0 28 28" width="26" height="26" fill="none" stroke="#8FB6F5" stroke-width="1.6"><path class="hand" d="M16 3L7 16h6l-1 9 9-13h-6z" stroke-linejoin="round" style="transition:opacity 220ms linear"/></svg>'
+    };
+    document.querySelectorAll("[data-ai-badge]").forEach((cell) => {
+      const key = cell.getAttribute("data-ai-badge");
+      if (!key || key.indexOf("{{") !== -1) return;
+      const slot = cell.querySelector("[data-ai-badgeart]");
+      if (!slot || slot.children.length) return;
+      slot.innerHTML = art[key] || "";
+      const play = () => {
+        const g = slot.querySelector(".hand");
+        if (!g || window.ODMotion.reduced()) return;
+        if (key === "24/7") { g.style.transform = "rotate(0deg)"; requestAnimationFrame(() => { g.style.transform = "rotate(360deg)"; }); }
+        if (key === "Automated") { g.style.transform = "rotate(0deg)"; requestAnimationFrame(() => { g.style.transform = "rotate(45deg)"; }); }
+        if (key === "Connected") { g.style.strokeDashoffset = "10"; requestAnimationFrame(() => { g.style.strokeDashoffset = "0"; }); }
+        if (key === "Instant") { g.style.opacity = "0.2"; setTimeout(() => { g.style.opacity = "1"; }, 120); }
+      };
+      cell.addEventListener("pointerenter", play);
+      const io = new IntersectionObserver((e) => { if (e[0].isIntersecting) { play(); io.disconnect(); } }, { threshold: 0.6 });
+      io.observe(cell);
+    });
+  }
+
+  /* 4 / 5 — the pile builds up, then gets swept into the system */
+  chorePile(reduce) {
+    const wrap = document.querySelector("[data-ai-chores]");
+    const badge = document.querySelector("[data-ai-queue]");
+    if (!wrap || wrap.__wired) return;
+    const chips = Array.from(wrap.querySelectorAll("[data-ai-chore]"));
+    if (!chips.length) return;
+    wrap.__wired = true;
+    if (!reduce) {
+      chips.forEach((c) => {
+        const r = (Math.random() - 0.5) * 2.6;
+        c.style.transform = "rotate(" + r.toFixed(2) + "deg)";
+      });
+    }
+    let n = 0;
+    const tick = () => {
+      if (n >= chips.length) return;
+      n++;
+      if (badge) badge.textContent = String(n);
+      setTimeout(tick, 320);
+    };
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      io.disconnect();
+      if (reduce) { if (badge) badge.textContent = String(chips.length); return; }
+      tick();
+    }, { threshold: 0.4 });
+    io.observe(wrap);
+
+    const target = document.querySelector("[data-ai-hub]");
+    const waiting = document.querySelector("[data-ai-waiting]");
+    const sweep = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      sweep.disconnect();
+      if (reduce) { chips.forEach((c) => { c.style.opacity = "0.25"; }); if (badge) badge.textContent = "0"; if (waiting) waiting.textContent = "0 tasks waiting"; return; }
+      chips.forEach((c, i) => {
+        setTimeout(() => {
+          const cr = c.getBoundingClientRect();
+          const tr = target ? target.getBoundingClientRect() : { left: cr.left, top: cr.top - 200, width: 0, height: 0 };
+          c.style.transform = "translate3d(" + (tr.left + tr.width / 2 - cr.left - cr.width / 2).toFixed(0) + "px," + (tr.top + tr.height / 2 - cr.top - cr.height / 2).toFixed(0) + "px,0) scale(.35)";
+          c.style.opacity = "0";
+          if (badge) badge.textContent = String(Math.max(0, chips.length - i - 1));
+          if (i === chips.length - 1 && waiting) setTimeout(() => { waiting.textContent = "0 tasks waiting"; }, 500);
+        }, i * 130);
+      });
+    }, { threshold: 0.25 });
+    const autoBox = document.querySelector('[data-ai-race="auto"]');
+    if (autoBox) sweep.observe(autoBox);
+  }
+
+  /* 6 — manual vs automated, as a race */
+  race(reduce) {
+    const auto = document.querySelector('[data-ai-race="auto"]');
+    const man = document.querySelector('[data-ai-race="manual"]');
+    const replay = document.querySelector("[data-ai-replay]");
+    if (!auto || !man || auto.__wired) return;
+    auto.__wired = true;
+    const stall = man.querySelector("[data-ai-stall]");
+    const aClock = auto.querySelector("[data-ai-clock]");
+    const mClock = man.querySelector("[data-ai-clock]");
+    const aNodes = Array.from(auto.querySelectorAll("[data-ai-node]"));
+    const mNodes = Array.from(man.querySelectorAll("[data-ai-node]"));
+    const lightAuto = (n) => aNodes.forEach((el, i) => {
+      el.style.background = i <= n ? "rgba(76,125,240,.85)" : "";
+      el.style.borderColor = i <= n ? "#8FB6F5" : "";
+    });
+    const lightMan = (n) => mNodes.forEach((el, i) => {
+      el.style.background = i <= n ? "rgba(247,244,237,.2)" : "";
+      el.style.color = i <= n ? "#F7F4ED" : "";
+    });
+    const end = () => {
+      if (aClock) aClock.textContent = "1.2s";
+      if (mClock) mClock.textContent = "6h 40m";
+      lightAuto(aNodes.length - 1);
+      lightMan(mNodes.length - 1);
+      if (stall) stall.textContent = "…and that's a good day.";
+    };
+    const run = () => {
+      (this._raceTimers || []).forEach(clearTimeout);
+      this._raceTimers = [];
+      lightAuto(-1); lightMan(-1);
+      if (stall) stall.textContent = "";
+      let a = 0, m = 0;
+      aNodes.forEach((_, i) => this._raceTimers.push(setTimeout(() => { lightAuto(i); if (aClock) aClock.textContent = ((i + 1) * 0.4).toFixed(1) + "s"; }, i * 400)));
+      const excuses = ["away from desk", "lunch", "asleep", "on another call"];
+      this._raceTimers.push(setTimeout(() => { lightMan(0); if (mClock) mClock.textContent = "0.4s"; }, 400));
+      excuses.forEach((x, i) => this._raceTimers.push(setTimeout(() => { if (stall) stall.textContent = x + " …"; }, 1100 + i * 1100)));
+      [1, 2, 3, 4, 5].forEach((i, k) => this._raceTimers.push(setTimeout(() => {
+        lightMan(i);
+        if (mClock) mClock.textContent = ["48m", "1h 20m", "2h 40m", "4h 10m", "6h 40m"][k];
+      }, 5600 + k * 900)));
+      this._raceTimers.push(setTimeout(() => { if (stall) stall.textContent = "…and that's a good day."; }, 10500));
+    };
+    if (replay && !replay.__wired) { replay.__wired = true; replay.addEventListener("click", run); }
+    if (reduce) { end(); return; }
+    const io = new IntersectionObserver((e) => { if (e[0].intersectionRatio >= 0.55) { io.disconnect(); run(); } }, { threshold: [0, 0.55] });
+    io.observe(auto);
+  }
+
+  /* 7 — the italic line reveals at reading pace */
+  wordReveal(reduce) {
+    const p = document.querySelector("[data-ai-words]");
+    if (!p || p.__wired) return;
+    p.__wired = true;
+    if (reduce) return;
+    const text = p.textContent;
+    p.textContent = "";
+    const words = text.split(" ");
+    words.forEach((w, i) => {
+      const s = document.createElement("span");
+      s.textContent = w + (i < words.length - 1 ? " " : "");
+      s.style.cssText = "opacity:.18;transition:opacity 420ms ease";
+      if (w.indexOf("automate") === 0) {
+        s.style.position = "relative";
+        s.setAttribute("data-last", "");
+      }
+      p.appendChild(s);
+    });
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      io.disconnect();
+      Array.from(p.children).forEach((s, i) => setTimeout(() => {
+        s.style.opacity = "1";
+        if (s.hasAttribute("data-last")) {
+          const u = document.createElement("span");
+          u.style.cssText = "position:absolute;left:0;right:0;bottom:-2px;height:2px;background:#A9C7FA;transform:scaleX(0);transform-origin:left center;transition:transform 520ms cubic-bezier(.16,1,.3,1)";
+          s.appendChild(u);
+          requestAnimationFrame(() => { u.style.transform = "scaleX(1)"; });
+        }
+      }, i * 120));
+    }, { threshold: 0.35 });
+    io.observe(p);
+  }
+
+  /* 8 — a live micro-demo inside each card */
+  cardDemos(reduce) {
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    const demo = {
+      lead: '<div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;gap:5px;padding:8px">' +
+            '<span class="p" style="width:8px;height:8px;border-radius:50%;background:#3A4FC4;position:absolute;left:50%;top:6px;transition:transform 900ms cubic-bezier(.16,1,.3,1),opacity 900ms ease"></span>' +
+            '<svg viewBox="0 0 120 50" style="width:100%;height:100%" fill="none" stroke="rgba(10,13,20,.28)" stroke-width="1.4"><path d="M18 8 H102 L74 30 V44 L46 34 V30 Z"/></svg></div>',
+      wa: '<div style="position:absolute;inset:0;padding:8px;display:flex;flex-direction:column;gap:5px"><span class="b1" style="align-self:flex-start;background:rgba(10,13,20,.12);border-radius:8px 8px 8px 2px;height:16px;width:56%;opacity:0;transition:opacity 340ms ease"></span><span class="b2" style="align-self:flex-end;background:#3A4FC4;border-radius:8px 8px 2px 8px;height:16px;width:48%;opacity:0;transition:opacity 340ms ease"></span></div>',
+      bot: '<div style="position:absolute;inset:0;padding:10px;display:flex;align-items:center;gap:5px"><span class="d" style="width:7px;height:7px;border-radius:50%;background:rgba(10,13,20,.3);transition:transform 300ms ease"></span><span class="d" style="width:7px;height:7px;border-radius:50%;background:rgba(10,13,20,.3);transition:transform 300ms ease .12s"></span><span class="d" style="width:7px;height:7px;border-radius:50%;background:rgba(10,13,20,.3);transition:transform 300ms ease .24s"></span><span class="r" style="margin-left:8px;' + mono + 'font-size:9px;letter-spacing:.1em;color:#3A4FC4;opacity:0;transition:opacity 340ms ease">Booked ✓</span></div>',
+      voice: '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:3px;padding:8px">' +
+             Array.from({ length: 18 }).map((_, i) => '<span class="w" style="width:3px;height:' + (10 + ((i * 37) % 28)) + '%;background:rgba(58,79,196,.45);border-radius:2px;transition:height 260ms ease ' + (i * 24) + 'ms"></span>').join("") + "</div>",
+      email: '<div style="position:absolute;inset:0;padding:8px;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 28 20" width="26" height="20" fill="none" stroke="rgba(10,13,20,.35)" stroke-width="1.4"><rect x="1" y="1" width="26" height="18" rx="2"/><path d="M1 3l13 9L27 3"/></svg><span class="tr" style="flex:1;height:1px;background:rgba(10,13,20,.2);position:relative;overflow:hidden"><span class="go" style="position:absolute;left:0;top:-2px;width:14px;height:5px;background:#3A4FC4;border-radius:3px;transform:translateX(-20px);transition:transform 900ms cubic-bezier(.16,1,.3,1)"></span></span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(10,13,20,.35)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>',
+      flow: '<div style="position:absolute;inset:0;padding:8px"><svg viewBox="0 0 120 44" style="width:100%;height:100%" fill="none" stroke="rgba(10,13,20,.3)" stroke-width="1.4"><circle cx="12" cy="22" r="5"/><circle cx="46" cy="10" r="5"/><circle cx="80" cy="32" r="5"/><circle cx="110" cy="16" r="5"/><path class="ln" d="M17 21 L41 11 M51 12 L75 30 M85 30 L105 18" stroke-dasharray="90" stroke-dashoffset="90" style="transition:stroke-dashoffset 900ms cubic-bezier(.16,1,.3,1)"/></svg></div>'
+    };
+    const fine = window.ODMotion.fine();
+    document.querySelectorAll("[data-ai-card]").forEach((card) => {
+      const key = card.getAttribute("data-ai-card");
+      if (!key || key.indexOf("{{") !== -1) return;
+      const slot = card.querySelector("[data-ai-demo]");
+      if (!slot || slot.children.length) return;
+      slot.innerHTML = demo[key] || "";
+      const tags = Array.from(card.querySelectorAll("[data-ai-tag]"));
+      const play = () => {
+        if (reduce) return;
+        tags.forEach((t, i) => setTimeout(() => {
+          t.style.background = "#3A4FC4"; t.style.color = "#FFFFFF"; t.style.borderColor = "#3A4FC4";
+          setTimeout(() => { t.style.background = ""; t.style.color = ""; t.style.borderColor = ""; }, 900);
+        }, i * 130));
+        const q = (s) => slot.querySelectorAll(s);
+        if (key === "lead") { const p = slot.querySelector(".p"); if (p) { p.style.transform = "translate3d(0,0,0)"; p.style.opacity = "1"; requestAnimationFrame(() => { p.style.transform = "translate3d(0,42px,0)"; p.style.opacity = "0.2"; }); } }
+        if (key === "wa") { const b1 = slot.querySelector(".b1"), b2 = slot.querySelector(".b2"); if (b1) { b1.style.opacity = "0"; b2.style.opacity = "0"; setTimeout(() => { b1.style.opacity = "1"; }, 100); setTimeout(() => { b2.style.opacity = "1"; }, 460); } }
+        if (key === "bot") { q(".d").forEach((d) => { d.style.transform = "translateY(0)"; requestAnimationFrame(() => { d.style.transform = "translateY(-5px)"; }); setTimeout(() => { d.style.transform = "translateY(0)"; }, 420); }); const r = slot.querySelector(".r"); if (r) { r.style.opacity = "0"; setTimeout(() => { r.style.opacity = "1"; }, 700); } }
+        if (key === "voice") q(".w").forEach((w, i) => { w.style.height = (14 + ((i * 53) % 62)) + "%"; setTimeout(() => { w.style.height = (10 + ((i * 37) % 28)) + "%"; }, 700); });
+        if (key === "email") { const g = slot.querySelector(".go"); if (g) { g.style.transform = "translateX(-20px)"; requestAnimationFrame(() => { g.style.transform = "translateX(160%)"; }); } }
+        if (key === "flow") { const l = slot.querySelector(".ln"); if (l) { l.style.strokeDashoffset = "90"; requestAnimationFrame(() => { l.style.strokeDashoffset = "0"; }); } }
+      };
+      if (fine) card.addEventListener("pointerenter", play);
+      const io = new IntersectionObserver((e) => { if (e[0].intersectionRatio > 0.7) { play(); if (fine) io.disconnect(); } }, { threshold: [0, 0.7] });
+      io.observe(card);
+    });
+  }
+
+  /* 9 — a soft spotlight on the grid hairlines */
+  gridSpotlight(reduce) {
+    const grid = document.querySelector("[data-ai-grid]");
+    if (!grid || grid.__wired || reduce || !window.ODMotion.fine()) return;
+    grid.__wired = true;
+    const spot = document.createElement("span");
+    spot.setAttribute("aria-hidden", "true");
+    spot.style.cssText = "position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 300ms ease;background:radial-gradient(220px circle at 50% 50%,rgba(76,125,240,.35),transparent 70%);z-index:0";
+    grid.insertBefore(spot, grid.firstChild);
+    grid.addEventListener("pointermove", (e) => {
+      const r = grid.getBoundingClientRect();
+      spot.style.opacity = "1";
+      spot.style.background = "radial-gradient(220px circle at " + (e.clientX - r.left) + "px " + (e.clientY - r.top) + "px,rgba(76,125,240,.35),transparent 70%)";
+    });
+    grid.addEventListener("pointerleave", () => { spot.style.opacity = "0"; });
+  }
+
+  /* 10 / 11 — the chat plays the chosen scenario, steps light in sync */
+  renderChat() {
+    const box = document.querySelector("[data-ai-chat]");
+    if (!box) return;
+    const scripts = {
+      book: [
+        { who: "them", text: "I'd like to book a consultation tomorrow.", t: "10:30 AM ✓✓" },
+        { who: "ai", text: "Absolutely. Let me check the available slots.", t: "10:30 AM" },
+        { who: "card", title: "Appointment confirmed", text: "Consultation booked for <strong style=\"font-weight:800\">Tomorrow, 11:00 AM</strong>" }
+      ],
+      pricing: [
+        { who: "them", text: "What do your packages cost?", t: "10:30 AM ✓✓" },
+        { who: "ai", text: "It depends on scope. I can send the three system tiers now.", t: "10:30 AM" },
+        { who: "card", title: "Details sent", text: "Pricing overview delivered and <strong style=\"font-weight:800\">logged against the lead</strong>" }
+      ],
+      reschedule: [
+        { who: "them", text: "Can we move Thursday to next week?", t: "10:30 AM ✓✓" },
+        { who: "ai", text: "Of course. Tuesday 14:00 or Wednesday 10:00?", t: "10:30 AM" },
+        { who: "card", title: "Appointment moved", text: "Rebooked for <strong style=\"font-weight:800\">Tuesday, 14:00</strong>" }
+      ]
+    };
+    const script = scripts[this.state.chat] || scripts.book;
+    const sig = this.state.chat + "|" + (this._chatStep || 0);
+    if (box.__sig === sig) return;
+    box.__sig = sig;
+    const shown = Math.min(script.length, this._chatStep === undefined ? script.length : this._chatStep);
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    box.innerHTML = script.slice(0, shown).map((m) => {
+      if (m.who === "them") return '<div style="align-self:flex-end;max-width:80%;background:#4C7DF0;color:#FFFFFF;padding:12px 15px;border-radius:14px 14px 3px 14px;font-size:14px;line-height:1.4">' + m.text + '<div style="' + mono + 'font-size:9px;letter-spacing:.08em;opacity:.75;margin-top:6px;text-align:right">' + m.t + "</div></div>";
+      if (m.who === "ai") return '<div style="align-self:flex-start;max-width:80%;background:rgba(247,244,237,.1);border:1px solid rgba(247,244,237,.18);padding:12px 15px;border-radius:14px 14px 14px 3px;font-size:14px;line-height:1.4">' + m.text + '<div style="' + mono + 'font-size:9px;letter-spacing:.08em;opacity:.6;margin-top:6px">' + m.t + "</div></div>";
+      return '<div style="border:1px solid #8FB6F5;border-radius:10px;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(143,178,245,.12)"><div><div style="' + mono + 'font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#A9C7FA">' + m.title + '</div><div style="font-size:15px;margin-top:6px">' + m.text + '</div></div><span style="flex:none;width:30px;height:30px;border-radius:50%;background:#8FB6F5;color:#0F1838;display:flex;align-items:center;justify-content:center;font-weight:900">✓</span></div>';
+    }).join("");
+    if (shown < script.length) {
+      const dots = document.createElement("div");
+      dots.style.cssText = "align-self:flex-start;display:flex;gap:4px;padding:10px 14px;background:rgba(247,244,237,.08);border-radius:14px";
+      dots.innerHTML = '<span style="width:6px;height:6px;border-radius:50%;background:#8FB6F5;animation:ai-pulse 1.2s ease-in-out infinite"></span><span style="width:6px;height:6px;border-radius:50%;background:#8FB6F5;animation:ai-pulse 1.2s ease-in-out .2s infinite"></span><span style="width:6px;height:6px;border-radius:50%;background:#8FB6F5;animation:ai-pulse 1.2s ease-in-out .4s infinite"></span>';
+      box.appendChild(dots);
+    }
+  }
+
+  chatSequence(reduce) {
+    const grid = document.querySelector("[data-ai-agentgrid]");
+    const steps = Array.from(document.querySelectorAll("[data-ai-step]"));
+    const replay = document.querySelector("[data-ai-chatreplay]");
+    if (!grid || !steps.length) return;
+    const light = (k) => steps.forEach((s, i) => {
+      s.style.opacity = i <= k ? "1" : "0.45";
+      const d = s.querySelector("[data-ai-dot]");
+      if (d) { d.style.transform = i === k ? "scale(1.5)" : "scale(1)"; d.style.boxShadow = i <= k ? "0 0 0 4px rgba(143,178,245,.18)" : "none"; }
+    });
+    const play = () => {
+      (this._chatTimers || []).forEach(clearTimeout);
+      this._chatTimers = [];
+      this._chatStep = 0;
+      this.renderChat();
+      [0, 1, 2].forEach((i) => this._chatTimers.push(setTimeout(() => { this._chatStep = i + 1; this.renderChat(); }, 500 + i * 1100)));
+      steps.forEach((_, i) => this._chatTimers.push(setTimeout(() => light(i), 700 + i * 700)));
+    };
+    this._chatPlay = play;
+    if (replay && !replay.__wired) { replay.__wired = true; replay.addEventListener("click", play); }
+    if (grid.__wired) return;
+    grid.__wired = true;
+    if (reduce) { this._chatStep = undefined; light(steps.length - 1); return; }
+    const io = new IntersectionObserver((e) => { if (e[0].intersectionRatio > 0.3) { io.disconnect(); play(); } }, { threshold: [0, 0.3] });
+    io.observe(grid);
+  }
+
+  /* 12 — repetitive gets struck through, growth lifts */
+  repetitive(reduce) {
+    const word = document.querySelector("[data-ai-strike]");
+    const growth = document.querySelector("[data-ai-growth]");
+    if (!word || word.__wired) return;
+    word.__wired = true;
+    const line = document.createElement("span");
+    line.setAttribute("aria-hidden", "true");
+    line.style.cssText = "position:absolute;left:0;right:0;top:52%;height:3px;background:#A9C7FA;transform:scaleX(0);transform-origin:left center;transition:transform 520ms cubic-bezier(.7,0,.2,1)";
+    word.appendChild(line);
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      io.disconnect();
+      if (reduce) { line.style.transform = "scaleX(1)"; return; }
+      let on = false;
+      const loop = () => {
+        on = !on;
+        line.style.transformOrigin = on ? "left center" : "right center";
+        line.style.transform = on ? "scaleX(1)" : "scaleX(0)";
+      };
+      loop();
+      this._strike = setInterval(loop, 1400);
+      if (growth) { growth.style.transform = "translate3d(0,-6px,0)"; growth.style.color = "#FFFFFF"; }
+    }, { threshold: 0.5 });
+    io.observe(word);
+
+    const cells = Array.from(document.querySelectorAll("[data-ai-benefit]"));
+    if (cells.length && !reduce) {
+      cells.forEach((c) => { c.style.opacity = "0"; c.style.transform = "translate3d(0,16px,0)"; c.style.transition = "opacity 620ms cubic-bezier(.16,1,.3,1),transform 620ms cubic-bezier(.16,1,.3,1)"; });
+      const io2 = new IntersectionObserver((e) => {
+        if (!e[0].isIntersecting) return;
+        io2.disconnect();
+        cells.forEach((c, i) => setTimeout(() => { c.style.opacity = "1"; c.style.transform = "none"; }, (Math.floor(i / 3) + (i % 3)) * 110));
+      }, { threshold: 0.2 });
+      io2.observe(cells[0]);
+    }
+  }
+
+  benefitArt() {
+    const art = {
+      "Instant Response": '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FB6F5" stroke-width="1.5"><path d="M14 2L6 14h5l-1 8 8-12h-5z" stroke-linejoin="round"/></svg>',
+      "Higher Conversions": '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FB6F5" stroke-width="1.5"><path d="M4 18L10 12l4 4 6-8" stroke-linecap="round"/><path d="M15 6h5v5" stroke-linecap="round"/></svg>',
+      "Less Manual Work": '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FB6F5" stroke-width="1.5"><rect x="2" y="8" width="20" height="9" rx="4.5"/><circle cx="16.5" cy="12.5" r="2.6" fill="#8FB6F5" stroke="none"/></svg>',
+      "Better Organization": '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FB6F5" stroke-width="1.5"><path d="M4 7h16M4 12h11M4 17h7" stroke-linecap="round"/></svg>',
+      "Accurate & Reliable": '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FB6F5" stroke-width="1.5"><path d="M5 12.5l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      "24/7 Availability": '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FB6F5" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>'
+    };
+    document.querySelectorAll("[data-ai-benefit]").forEach((c) => {
+      const k = c.getAttribute("data-ai-benefit");
+      if (!k || k.indexOf("{{") !== -1) return;
+      const slot = c.querySelector("[data-ai-benefitart]");
+      if (!slot || slot.children.length) return;
+      slot.innerHTML = art[k] || "";
+    });
+  }
+
+  /* 13 — the hub fires a workflow across the tools */
+  toolHub(reduce) {
+    const tools = Array.from(document.querySelectorAll("[data-ai-tool]"));
+    const log = document.querySelector("[data-ai-log]");
+    const sweep = document.querySelector("[data-ai-hubsweep]");
+    const trigger = document.querySelector("[data-ai-trigger]");
+    if (!tools.length || !log || log.__wired) return;
+    log.__wired = true;
+    const chain = {
+      WhatsApp: ["WhatsApp message in", "OpenAI drafts reply", "Sheets row added", "Calendar slot held", "CRM updated"],
+      Gmail: ["Email received", "OpenAI summarises", "CRM updated", "Follow-up scheduled"],
+      "Google Sheets": ["Row added", "n8n picks it up", "CRM updated", "Confirmation sent"],
+      "Google Calendar": ["Slot held", "Confirmation sent", "CRM updated"],
+      CRM: ["Lead stage changed", "n8n triggers sequence", "Email sent"],
+      OpenAI: ["Draft generated", "Reply sent", "CRM updated"],
+      n8n: ["Workflow triggered", "APIs called", "Sheets row added", "CRM updated"],
+      APIs: ["API call received", "n8n routes it", "CRM updated"]
+    };
+    let typing = null;
+    const fire = (name) => {
+      clearTimeout(typing);
+      const steps = chain[name] || chain.WhatsApp;
+      tools.forEach((t) => { t.style.background = "#0A0D14"; t.style.boxShadow = "none"; });
+      if (sweep) { sweep.style.opacity = "1"; setTimeout(() => { sweep.style.opacity = "0"; }, 700); }
+      log.textContent = "";
+      const order = [name].concat(tools.map((t) => t.getAttribute("data-ai-tool")).filter((n) => n !== name)).slice(0, steps.length);
+      order.forEach((n, i) => setTimeout(() => {
+        const el = tools.find((t) => t.getAttribute("data-ai-tool") === n);
+        if (el) { el.style.background = "rgba(76,125,240,.2)"; el.style.boxShadow = "inset 0 0 0 1px rgba(143,178,245,.6)"; setTimeout(() => { el.style.background = "#0A0D14"; el.style.boxShadow = "none"; }, 700); }
+      }, i * 260));
+      const text = steps.join(" → ");
+      let k = 0;
+      const type = () => {
+        k += 2;
+        log.textContent = text.slice(0, k);
+        if (k < text.length) typing = setTimeout(type, 18);
+        else if (trigger && !trigger.__typed) { trigger.__typed = true; }
+      };
+      setTimeout(type, 240);
+    };
+    tools.forEach((t) => t.addEventListener("click", () => { clearInterval(this._auto); fire(t.getAttribute("data-ai-tool")); }));
+    if (reduce) { log.textContent = chain.WhatsApp.join(" → "); return; }
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) { clearInterval(this._auto); return; }
+      let i = 0;
+      fire(tools[0].getAttribute("data-ai-tool"));
+      clearInterval(this._auto);
+      this._auto = setInterval(() => {
+        if (document.hidden) return;
+        i = (i + 1) % tools.length;
+        fire(tools[i].getAttribute("data-ai-tool"));
+      }, 5200);
+    }, { threshold: 0.3 });
+    io.observe(log);
+  }
+
+  /* 14 — the closing chain lights left to right */
+  finalChain(reduce) {
+    const links = Array.from(document.querySelectorAll("[data-ai-link]"));
+    if (!links.length || links[0].__wired) return;
+    links[0].__wired = true;
+    links.forEach((l) => { if (!l.hasAttribute("data-ai-last")) l.style.color = "rgba(247,244,237,0.55)"; });
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      io.disconnect();
+      if (reduce) { links.forEach((l) => { l.style.color = "#F7F4ED"; }); return; }
+      links.forEach((l, i) => setTimeout(() => {
+        links.forEach((o, k) => { if (!o.hasAttribute("data-ai-last")) o.style.color = k === i ? "#F7F4ED" : "rgba(247,244,237,0.55)"; });
+        if (i === links.length - 1) {
+          const last = links[links.length - 1];
+          last.style.color = "#F7F4ED";
+          if (!last.__clock) {
+            last.__clock = true;
+            const c = document.createElement("span");
+            c.setAttribute("aria-hidden", "true");
+            c.innerHTML = ' <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#A9C7FA" stroke-width="1.8" style="vertical-align:-1px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>';
+            last.appendChild(c);
+          }
+        }
+      }, i * 560));
+    }, { threshold: 0.5 });
+    io.observe(links[0]);
+  }
+
+  stickyCta() {
+    if (document.querySelector("[data-ai-stickycta]")) return;
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    const bar = document.createElement("div");
+    bar.setAttribute("data-ai-stickycta", "");
+    bar.style.cssText = "position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,13,20,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(247,244,237,.16);transform:translate3d(0,120%,0);transition:transform 420ms cubic-bezier(.16,1,.3,1)";
+    bar.innerHTML =
+      '<a href="index.html#contact" style="flex:1;text-align:center;' + mono + 'font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:#F7F4ED;color:#0A0D14;padding:0 16px;min-height:46px;display:flex;align-items:center;justify-content:center;border-radius:2px;text-decoration:none">Automate With OD →</a>' +
+      '<a href="https://wa.me/447393121595" target="_blank" rel="noopener" style="flex:1;text-align:center;' + mono + 'font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(247,244,237,.45);color:#F7F4ED;padding:0 16px;min-height:46px;display:flex;align-items:center;justify-content:center;border-radius:2px;text-decoration:none">WhatsApp ↗</a>';
+    document.body.appendChild(bar);
+    const sync = () => {
+      const narrow = window.innerWidth < 860;
+      bar.style.display = narrow ? "flex" : "none";
+      if (!narrow) return;
+      const past = window.scrollY > window.innerHeight * 0.8;
+      const nearEnd = window.scrollY + window.innerHeight > document.body.scrollHeight - 420;
+      bar.style.transform = past && !nearEnd ? "translate3d(0,0,0)" : "translate3d(0,120%,0)";
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+  }
+
+  renderVals() {
+    const lines = this.LINES;
+    const { idx, pos } = this.state;
+    const scen = [
+      { key: "book", label: "Book a consultation" },
+      { key: "pricing", label: "Ask about pricing" },
+      { key: "reschedule", label: "Reschedule" }
+    ];
+
+    return {
+      scenarios: scen.map((s) => ({
+        key: s.key,
+        label: s.label,
+        on: this.state.chat === s.key ? "true" : "false",
+        pick: () => this.setState({ chat: s.key }, () => { if (this._chatPlay) this._chatPlay(); })
+      })),
+      logLines: lines.slice(0, idx),
+      typed: idx < lines.length ? lines[idx].text.slice(0, pos) : "",
+      badges: ["24/7", "Automated", "Connected", "Instant"],
+      chores: ["Reply to new leads", "Update spreadsheets", "Send WhatsApp messages", "Book appointments", "Update CRM", "Send reminders", "Follow up with leads", "Move data between tools"],
+      manualChain: ["Lead", "Employee", "WhatsApp", "Sheet", "CRM", "Follow-up"],
+      builds: [
+        { key: "lead", n: "01", title: "Lead Automation", body: "Capturing and qualifying leads the moment they arrive.", tags: ["Lead Capture", "Qualification", "CRM", "Follow-Up"] },
+        { key: "wa", n: "02", title: "WhatsApp Automation", body: "Automated replies and follow-ups, without the manual back-and-forth.", tags: ["Auto-Reply", "Follow-Up", "Broadcast", "Support"] },
+        { key: "bot", n: "03", title: "AI Chatbots", body: "Round-the-clock conversations that actually move things forward.", tags: ["24/7", "Website", "FAQ", "Lead Capture"] },
+        { key: "voice", n: "04", title: "AI Voice Agents", body: "AI that can answer, qualify and route calls automatically.", tags: ["Call Handling", "Booking", "Routing", "Support"] },
+        { key: "email", n: "05", title: "Email Automation", body: "Sequences and replies that run themselves, on schedule.", tags: ["Sequences", "Auto-Reply", "Nurture", "Follow-Up"] },
+        { key: "flow", n: "06", title: "Business Workflows", body: "Connecting your tools so information moves without you.", tags: ["Integrations", "Data Sync", "Triggers", "Automation"] }
+      ],
+      agentSteps: [
+        { title: "Understands Request", body: "AI understands the customer's intent and required action.", dot: "rgba(143,178,245,0.45)" },
+        { title: "Checks Calendar", body: "Cross-references availability in real time.", dot: "rgba(143,178,245,0.55)" },
+        { title: "Finds Available Slots", body: "Identifies the best open time slots to offer.", dot: "rgba(143,178,245,0.65)" },
+        { title: "Books Appointment", body: "Confirms and reserves the slot instantly.", dot: "rgba(143,178,245,0.78)" },
+        { title: "Updates CRM", body: "Logs the new appointment against the lead record.", dot: "rgba(143,178,245,0.88)" },
+        { title: "Sends Confirmation", body: "Delivers a confirmation message to the customer.", dot: "#8FB6F5" },
+        { title: "Done", body: "Task complete — no manual follow-up required.", dot: "#F7F4ED" }
+      ],
+      benefits: [
+        { title: "Instant Response", body: "No waiting — customers get answers the moment they reach out." },
+        { title: "Higher Conversions", body: "Faster responses and follow-ups mean fewer leads slip away." },
+        { title: "Less Manual Work", body: "Your team spends less time on repetitive tasks." },
+        { title: "Better Organization", body: "Every lead and update logged automatically, in order." },
+        { title: "Accurate & Reliable", body: "Consistent responses, without human error creeping in." },
+        { title: "24/7 Availability", body: "Always on, even outside business hours." }
+      ],
+      tools: [
+        { name: "WhatsApp", body: "Conversations & instant replies." },
+        { name: "Gmail", body: "Automated email handling." },
+        { name: "Google Sheets", body: "Data logged automatically." },
+        { name: "Google Calendar", body: "Scheduling, without the back-and-forth." },
+        { name: "CRM", body: "Every lead, tracked and updated." },
+        { name: "OpenAI", body: "The intelligence behind the responses." },
+        { name: "n8n", body: "The automation engine connecting it all." },
+        { name: "APIs", body: "Custom connections, wherever you need them." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

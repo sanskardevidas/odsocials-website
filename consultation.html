@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0A0D14; }
+  * { box-sizing: border-box; }
+  a { color: #8FB6F5; text-decoration: none; }
+  a:hover { color: #FFFFFF; }
+  @media (min-width: 900px) { [data-c3] { grid-template-columns: repeat(3, minmax(0,1fr)) !important; } }
+  @media (min-width: 960px) {
+    [data-hero-text] { position: absolute !important; top: 50% !important; right: 4% !important; transform: translateY(-50%) !important; width: 46% !important; padding: 0 !important; }
+  }
+  [data-od-nav] a { white-space: nowrap; }
+  @media (max-width: 900px) { [data-cn-takeaway] { grid-template-columns: minmax(0, 1fr) !important; } [data-cn-fan] { position: static !important; } }
+  @media (max-width: 780px) {
+    [data-od-header] { padding: 10px clamp(14px, 4vw, 20px) !important; gap: 10px !important; }
+    [data-od-nav] { gap: 16px !important; }
+    [data-od-nav] { flex-wrap: nowrap !important; overflow-x: auto; justify-content: flex-start; width: 100%; scrollbar-width: none; }
+    [data-od-nav]::-webkit-scrollbar { display: none; }
+    [data-od-nav] a { white-space: nowrap; }
+  }
+</style>
+<script>window.ODMotionConfig = { motionIntensity: 0.85, enableCursor: true, playLoaderOnce: true, accent: "#3A4FC4", accent2: "#8FB6F5" };</script>
+<script src="./od-motion.js"></script>
+</helmet>
+
+<div style="font-family: Archivo, Helvetica, sans-serif; background: #F7F4ED; color: #0A0D14; width: 100%; overflow-x: clip;">
+
+  <header data-od-header="" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 72px); border-bottom: 1px solid rgba(247,244,237,0.14); position: sticky; top: 0; background: rgba(10,13,20,0.93); backdrop-filter: blur(10px); z-index: 20; flex-wrap: wrap;">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: #F7F4ED;">
+      <span style="background: #F7F4ED; border-radius: 6px; padding: 6px 9px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; border-left: 1px solid rgba(247,244,237,0.2); padding-left: 10px;">Consult</span>
+    </a>
+    <nav data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.2vw, 28px); flex-wrap: wrap;">
+      <span data-od-counter="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(247,244,237,0.4);">01 / 05</span>
+      <a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Home</a>
+      <a href="social-media.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Social Media</a>
+      <a href="website.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Website</a>
+      <a href="ai-automation.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">AI Automation</a>
+      <a href="#book" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; background: #3A4FC4; color: #FFFFFF; padding: 11px 18px; border-radius: 2px;" style-hover="background: #F7F4ED; color: #0A0D14;">Book a Consultation ↗</a>
+    </nav>
+  </header>
+
+  <section style="background: #FFFFFF; color: #0A0D14; position: relative;">
+    <div style="position: relative; width: 100%;">
+      <img data-cn-hero="" src="images/hero-bg.jpg" alt="Omkar Devidas" style="width: 100%; height: auto; display: block;" />
+      <div data-hero-text="" data-cn-herotext="" style="padding: clamp(24px, 5vw, 44px) clamp(20px, 5vw, 72px) 0;">
+        <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 1.05vw, 13px); letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4;">Hey there, I'm</p>
+        <h1 data-reveal="rise" style="margin: 10px 0 0; font-size: clamp(38px, 4.6vw, 72px); line-height: 0.9; letter-spacing: -0.04em; font-weight: 900; text-transform: uppercase;">Omkar Devidas</h1>
+        <p style="margin: 14px 0 0; font-size: clamp(15px, 1.3vw, 19px); font-weight: 700; letter-spacing: -0.01em; color: #0A0D14;">Marketing Consultant &amp; Founder of OD Socials</p>
+        <div style="height: 1px; background: rgba(10,13,20,0.18); margin: clamp(18px, 2.4vw, 26px) 0 18px;"></div>
+        <p style="margin: 0; max-width: 34ch; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(19px, 2.1vw, 28px); line-height: 1.22; color: #3A4FC4;">Helping small and medium-sized businesses find <span data-cn-ink="" style="position: relative;">clarity</span> in their marketing and <span data-cn-ink="" style="position: relative;">confidence</span> in their next steps.</p>
+        <p style="margin: 18px 0 0; max-width: 48ch; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.65; color: rgba(10,13,20,0.75); text-wrap: pretty;">Through one-to-one consultations, we'll explore your social media, content and brand strategy, with practical advice shaped around your goals, time and budget.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+          <a href="#book" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; background: #0A0D14; color: #F7F4ED; padding: 15px 24px; border-radius: 2px;" style-hover="background: #3A4FC4; color: #FFFFFF;" data-magnetic="" data-od-sweep="" data-cursor="BOOK">Let's Talk Marketing <span data-od-arrow="">↗</span></a>
+          <a href="#covered" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid rgba(10,13,20,0.3); color: #0A0D14; padding: 15px 24px; border-radius: 2px;" style-hover="border-color: #0A0D14; background: rgba(10,13,20,0.05);">Explore What We'll Cover</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px);">
+      <div data-c3="" style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1px; background: rgba(10,13,20,0.16); border-top: 1px solid rgba(10,13,20,0.16); margin-top: clamp(20px, 3vw, 36px);">
+        <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+          <div data-cn-fact="{{ f.k }}" style="background: #FFFFFF; padding: clamp(18px, 2.2vw, 26px) 0; min-width: 0; display: flex; align-items: center; gap: 16px;">
+            <span data-cn-factart="" style="flex: none;"></span>
+            <span style="min-width: 0;">
+              <span style="display: block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #3A4FC4;">{{ f.k }}</span>
+              <span style="display: block; font-size: clamp(18px, 2vw, 26px); font-weight: 900; letter-spacing: -0.025em; text-transform: uppercase; margin-top: 10px; line-height: 1.05;">{{ f.v }}</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(10,13,20,0.55); border-top: 1px solid rgba(10,13,20,0.16); padding: 16px 0 clamp(26px, 3vw, 38px);"><span data-cn-dot="" aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #3A4FC4; flex: none;"></span>Complimentary consultations currently available.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);" data-od-section="" data-decode="">02 — Who it's for</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(22px, 4vw, 56px); align-items: start; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(30px, 4.2vw, 56px); line-height: 0.96; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">For business owners looking for <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #3A4FC4;">clearer marketing direction.</span></h2>
+        <div style="min-width: 0;">
+          <p style="margin: 0; max-width: 50ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.65; color: rgba(10,13,20,0.75); text-wrap: pretty;">Designed for small and medium-sized business owners who want practical support with social media, content, branding and marketing. Whether you're getting started, managing things yourself or supporting a small team, this session will help you understand where to focus your efforts.</p>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(10,13,20,0.5); margin-top: 26px;">Which one sounds like you?</div>
+          <div data-cn-chips="" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;">
+            <sc-for list="{{ audience }}" as="a" hint-placeholder-count="7">
+              <button type="button" data-od-chip="" data-od-chip-dark="" data-cn-chip="" aria-pressed="{{ a.on }}" onClick="{{ a.pick }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; border: 1px solid rgba(10,13,20,0.24); color: rgba(10,13,20,0.75); padding: 0 16px; min-height: 44px; cursor: pointer;">{{ a.label }}</button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ pickedLine }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 14px 0 0; max-width: 50ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.6; color: #3A4FC4; text-wrap: pretty;">{{ pickedLine }}</p>
+          </sc-if>
+          <p style="margin: 26px 0 0; border-top: 1px solid rgba(10,13,20,0.16); padding-top: 18px; max-width: 50ch; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.6; color: rgba(10,13,20,0.7); text-wrap: pretty;">Looking for ongoing support? We can also explore how the OD Socials team could help with content creation and marketing management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="covered" style="background: linear-gradient(158deg, #0F1838 0%, #1B2560 45%, #3A4FC4 100%); color: #F7F4ED; padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9C7FA; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.22);">
+        <span data-od-section="" data-decode="">03 — What we'll cover</span>
+        <span style="color: rgba(247,244,237,0.6);">A suggested structure</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 4vw, 56px); align-items: end; margin-top: clamp(26px, 4vw, 40px);">
+        <h2 style="margin: 0; font-size: clamp(30px, 4.2vw, 56px); line-height: 0.96; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">An hour focused on <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A9C7FA;">your business and your goals.</span></h2>
+        <p style="margin: 0; max-width: 44ch; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.65; color: rgba(247,244,237,0.82); text-wrap: pretty;">Each session is shaped around your priorities. Here's how we can use our time together.</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; margin-top: clamp(28px, 3.4vw, 40px);">
+        <span data-cn-clock="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #A9C7FA; flex: none;">00:00</span>
+        <span data-cn-bar="" style="flex: 1; display: flex; gap: 3px; height: 6px;"></span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: rgba(247,244,237,0.45); flex: none;">01:00</span>
+      </div>
+      <div style="display: flex; flex-direction: column; margin-top: clamp(20px, 2.6vw, 30px); border-top: 1px solid rgba(247,244,237,0.22);">
+        <sc-for list="{{ agenda }}" as="a" hint-placeholder-count="5">
+          <div data-cn-block="" style="display: grid; grid-template-columns: 54px minmax(0, 1fr) 96px; gap: clamp(12px, 2vw, 22px); align-items: baseline; padding: clamp(18px, 2.4vw, 28px) 0; border-bottom: 1px solid rgba(247,244,237,0.22); opacity: 0.55; transition: opacity 520ms ease;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A9C7FA;">{{ a.n }}</span>
+            <span style="min-width: 0;">
+              <span style="display: block; font-weight: 900; font-size: clamp(18px, 2vw, 26px); line-height: 1.1; letter-spacing: -0.025em; text-transform: uppercase;">{{ a.title }}</span>
+              <span style="display: block; font-size: clamp(14px, 1.05vw, 16px); line-height: 1.6; color: rgba(247,244,237,0.78); margin-top: 9px; text-wrap: pretty;">{{ a.body }}</span>
+            </span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,237,0.5); text-align: right;">{{ a.mins }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p data-reveal="block" style="margin: 20px 0 0; transition-delay: 500ms; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,237,0.55);">Timings are a guide — we'll adapt them to what your business needs most.</p>
+    </div>
+  </section>
+
+  <section style="padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);" data-od-section="" data-decode="">04 — What you'll take away</div>
+      <h2 style="margin: clamp(26px, 4vw, 40px) 0 0; font-size: clamp(30px, 4.2vw, 56px); line-height: 0.96; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase; max-width: 24ch;">Clear direction and <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #3A4FC4;">practical next steps.</span></h2>
+      <div data-cn-takeaway="" style="display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr); gap: clamp(24px, 4vw, 56px); align-items: start; margin-top: clamp(28px, 4vw, 44px);">
+      <div style="display: flex; flex-direction: column; border-top: 1px solid rgba(10,13,20,0.16); min-width: 0;">
+        <sc-for list="{{ deliverables }}" as="d" hint-placeholder-count="5">
+          <div data-cn-item="" style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: clamp(16px, 2vw, 24px) 0; border-bottom: 1px solid rgba(10,13,20,0.16);">
+            <span data-cn-mark="" style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #3A4FC4; transition: transform 420ms cubic-bezier(.22,1.4,.36,1);">+</span>
+            <span style="min-width: 0;">
+              <span style="display: block; font-weight: 900; font-size: clamp(16px, 1.7vw, 22px); letter-spacing: -0.02em; line-height: 1.15; text-transform: uppercase;">{{ d.title }}</span>
+              <span style="display: block; font-size: clamp(14px, 1.05vw, 16px); line-height: 1.6; color: rgba(10,13,20,0.7); margin-top: 8px; text-wrap: pretty;">{{ d.body }}</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+      <div data-cn-fan="" style="min-width: 0; position: sticky; top: clamp(100px, 13vh, 140px); height: clamp(230px, 28vw, 300px);"></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #0A0D14; color: #F7F4ED; padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.16);" data-od-section="" data-decode="">05 — Meet your consultant</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(30px, 5vw, 64px); align-items: center; margin-top: clamp(30px, 4vw, 48px);">
+        <div style="min-width: 0;">
+          <div style="position: relative; width: 100%; max-width: 520px; margin-inline: auto;">
+            <div style="width: 100%; aspect-ratio: 4 / 5; max-height: clamp(340px, 58vh, 600px); overflow: hidden;">
+              <img data-develop="" data-cn-portrait="" src="images/omkar-laptop.jpg" alt="Omkar Devidas working" style="width: 100%; height: 100%; object-fit: cover; object-position: 42% 50%; display: block; transition: transform 9s linear;" />
+            </div>
+            <sc-for list="{{ skills }}" as="s" hint-placeholder-count="6">
+              <button type="button" data-cn-tag="{{ s.label }}" style="position: absolute; top: {{ s.top }}; left: {{ s.left }}; transform: translate(-50%, -50%); background: {{ s.bg }}; color: {{ s.fg }}; border: 0; cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: clamp(8px, 1vw, 10px); letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 13px; white-space: nowrap; box-shadow: 0 8px 24px rgba(10,13,20,0.4); transition: transform 520ms cubic-bezier(.16,1,.3,1), box-shadow 420ms ease;">{{ s.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="min-width: 0;">
+          <div data-cn-tagnote="" aria-live="polite" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8FB6F5; min-height: 18px; margin-bottom: 12px;"></div>
+          <h2 style="margin: 0; font-size: clamp(27px, 3.6vw, 46px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Creative experience. <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #8FB6F5;">Practical marketing guidance.</span></h2>
+          <p style="margin: 24px 0 0; max-width: 50ch; font-size: clamp(16px, 1.35vw, 19px); line-height: 1.6; color: rgba(247,244,237,0.86); text-wrap: pretty;">I'm Omkar, founder of OD Socials. My work brings together marketing strategy, social media and hands-on content creation to help businesses communicate what makes them worth choosing.</p>
+          <div style="height: 1px; background: rgba(247,244,237,0.2); margin: clamp(22px, 3vw, 30px) 0 20px;"></div>
+          <p data-cn-read="" style="margin: 0; max-width: 50ch; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.65; color: rgba(247,244,237,0.74); text-wrap: pretty; opacity: 0.4; transition: opacity 520ms ease;">From planning campaigns to photographing businesses and producing videos, I work closely with business owners to turn their ideas into content with a clear purpose.</p>
+          <p data-cn-read="" style="margin: 16px 0 0; max-width: 50ch; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.65; color: rgba(247,244,237,0.74); text-wrap: pretty; opacity: 0.4; transition: opacity 520ms ease;">My experience spans hospitality, healthcare, education and local businesses. I understand that marketing needs to fit around the realities of running a business, including limited time, budgets and resources.</p>
+          <p data-cn-read="" style="margin: 16px 0 0; max-width: 50ch; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.65; color: rgba(247,244,237,0.74); text-wrap: pretty; opacity: 0.4; transition: opacity 520ms ease;">During our consultation, you'll speak directly with me about your goals and receive <span data-cn-ink2="" style="position: relative;">straightforward, thoughtful recommendations</span> tailored to your situation. If you need wider support with content, websites or automation, we can also discuss how the OD Socials team could help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" style="background: linear-gradient(152deg, #0F1838 0%, #222C70 55%, #3A4FC4 100%); color: #F7F4ED; padding: clamp(56px, 7vw, 110px) clamp(20px, 5vw, 72px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,244,237,0.68); padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.24);" data-od-section="" data-decode="">06 — Booking</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(28px, 5vw, 64px); align-items: start; margin-top: clamp(28px, 4vw, 44px);">
+        <div style="min-width: 0;">
+          <h2 style="margin: 0; font-size: clamp(34px, 5.2vw, 76px); line-height: 0.92; letter-spacing: -0.04em; font-weight: 900; text-transform: uppercase;">Let's talk about <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #A9C7FA;">your business.</span></h2>
+          <p style="margin: 24px 0 0; max-width: 46ch; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.6; color: rgba(247,244,237,0.84); text-wrap: pretty;">Book a complimentary 60-minute consultation to explore your marketing goals and identify your next steps. Share a little about your business and what you'd like support with so I can prepare for our conversation.</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: clamp(26px, 3vw, 36px); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(247,244,237,0.75);">
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; border-top: 1px solid rgba(247,244,237,0.24); padding-top: 12px;">
+              <a href="https://wa.me/447393121595" target="_blank" rel="noopener" style="flex: 1; min-width: 200px; display: flex; justify-content: space-between; gap: 14px; color: rgba(247,244,237,0.75);" style-hover="color: #FFFFFF;"><span>WhatsApp UK — +44 7393 121595</span><span data-od-arrow="">↗</span></a>
+              <span data-cn-time="Europe/London" style="color: #A9C7FA;">UK --:--</span>
+              <button type="button" data-cn-copy="+447393121595" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.6); border: 1px solid rgba(247,244,237,0.28); border-radius: 999px; padding: 0 12px; min-height: 36px; cursor: pointer;">Copy</button>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; border-top: 1px solid rgba(247,244,237,0.24); padding-top: 12px;">
+              <a href="https://wa.me/917499714577" target="_blank" rel="noopener" style="flex: 1; min-width: 200px; display: flex; justify-content: space-between; gap: 14px; color: rgba(247,244,237,0.75);" style-hover="color: #FFFFFF;"><span>WhatsApp IN — +91 74997 14577</span><span data-od-arrow="">↗</span></a>
+              <span data-cn-time="Asia/Kolkata" style="color: #A9C7FA;">IN --:--</span>
+              <button type="button" data-cn-copy="+917499714577" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.6); border: 1px solid rgba(247,244,237,0.28); border-radius: 999px; padding: 0 12px; min-height: 36px; cursor: pointer;">Copy</button>
+            </div>
+            <a href="https://www.instagram.com/od.socials/" target="_blank" rel="noopener" style="border-top: 1px solid rgba(247,244,237,0.24); padding-top: 12px; display: flex; justify-content: space-between; gap: 14px; color: rgba(247,244,237,0.75);" style-hover="color: #FFFFFF;"><span>Instagram</span><span>↗</span></a>
+            <a href="https://www.linkedin.com/company/od-socials/" target="_blank" rel="noopener" style="border-top: 1px solid rgba(247,244,237,0.24); padding-top: 12px; display: flex; justify-content: space-between; gap: 14px; color: rgba(247,244,237,0.75);" style-hover="color: #FFFFFF;"><span>LinkedIn</span><span>↗</span></a>
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; border-top: 1px solid rgba(247,244,237,0.24); padding-top: 12px;">
+              <a href="mailto:contact@odsocials.com" style="flex: 1; min-width: 200px; display: flex; justify-content: space-between; gap: 14px; color: rgba(247,244,237,0.75);" style-hover="color: #FFFFFF;"><span>contact@odsocials.com</span><span data-od-arrow="">↗</span></a>
+              <button type="button" data-cn-copy="contact@odsocials.com" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.6); border: 1px solid rgba(247,244,237,0.28); border-radius: 999px; padding: 0 12px; min-height: 36px; cursor: pointer;">Copy</button>
+            </div>
+            <span style="border-top: 1px solid rgba(247,244,237,0.24); padding-top: 12px; text-transform: none; letter-spacing: 0.04em; font-size: 12px; line-height: 1.6;">Available online, with in-person consultations by arrangement for local businesses.</span>
+          </div>
+        </div>
+
+        <div style="min-width: 0;">
+        <div data-cn-chat="" style="display: none; border: 1px solid rgba(247,244,237,0.28); background: rgba(10,13,20,0.32); padding: clamp(22px, 3vw, 34px);"></div>
+        <div style="display: flex; justify-content: flex-end; padding-bottom: 10px;">
+          <button type="button" data-cn-toggle="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.7); border: 1px solid rgba(247,244,237,0.28); border-radius: 999px; padding: 0 16px; min-height: 40px; cursor: pointer;">Try the conversation</button>
+        </div>
+        <form data-cn-form="" onSubmit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 18px; min-width: 0; border: 1px solid rgba(247,244,237,0.28); background: rgba(10,13,20,0.32); padding: clamp(22px, 3vw, 34px);">
+          <label style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.62);">Your name</span>
+            <input data-cn-field="name" required="" type="text" style="font-family: Archivo, sans-serif; font-size: 16px; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(247,244,237,0.34); background: transparent; color: #F7F4ED; outline: none; width: 100%;" style-focus="border-bottom-color: #A9C7FA;" />
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.62);">Business name and what you do</span>
+            <input data-cn-field="business" required="" type="text" style="font-family: Archivo, sans-serif; font-size: 16px; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(247,244,237,0.34); background: transparent; color: #F7F4ED; outline: none; width: 100%;" style-focus="border-bottom-color: #A9C7FA;" />
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.62);">Email address or WhatsApp number</span>
+            <input data-cn-field="contact" required="" type="text" style="font-family: Archivo, sans-serif; font-size: 16px; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(247,244,237,0.34); background: transparent; color: #F7F4ED; outline: none; width: 100%;" style-focus="border-bottom-color: #A9C7FA;" />
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.62);">Website or social media link</span>
+            <input data-cn-field="link" type="text" style="font-family: Archivo, sans-serif; font-size: 16px; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(247,244,237,0.34); background: transparent; color: #F7F4ED; outline: none; width: 100%;" style-focus="border-bottom-color: #A9C7FA;" />
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.62);">What would you like help with?</span>
+            <textarea data-cn-field="help" required="" rows="4" style="font-family: Archivo, sans-serif; font-size: 16px; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(247,244,237,0.34); background: transparent; color: #F7F4ED; outline: none; width: 100%; resize: vertical;" style-focus="border-bottom-color: #A9C7FA;"></textarea>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 7px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.62);">Preferred consultation format</span>
+            <select data-cn-field="format" style="font-family: Archivo, sans-serif; font-size: 16px; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(247,244,237,0.34); background: transparent; color: #F7F4ED; outline: none; width: 100%;" style-focus="border-bottom-color: #A9C7FA;">
+              <option style="color: #0A0D14;">Online</option>
+              <option style="color: #0A0D14;">In person — subject to availability</option>
+            </select>
+          </label>
+          <button type="submit" data-cn-submit="" data-magnetic="" data-cursor="SEND" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; background: #F7F4ED; color: #0A0D14; border: 0; padding: 16px 24px; cursor: pointer; margin-top: 4px; border-radius: 2px;" style-hover="background: #A9C7FA;">{{ submitLabel }}</button>
+          <span data-cn-note="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,237,0.52);">{{ formNote }}</span>
+        </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="background: #0A0D14; color: #F7F4ED; padding: clamp(34px, 5vw, 58px) clamp(20px, 5vw, 72px) 0;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <p data-cn-signoff="" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(22px, 3vw, 40px); color: #A9C7FA; min-height: 1.3em;">See you soon. Omkar</p>
+    </div>
+  </div>
+
+  <footer style="background: #0A0D14; color: #F7F4ED; padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 72px) 26px;">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.55);">
+      <span style="display: flex; align-items: center; gap: 12px;"><span style="background: #F7F4ED; border-radius: 6px; padding: 7px 10px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;" /></span>© 2026 OD Socials</span>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="index.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Home</a>
+        <a href="social-media.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Social Media</a>
+        <a href="website.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Website</a>
+        <a href="ai-automation.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">AI Automation</a>
+        <a href="https://www.instagram.com/od.socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Instagram</a>
+        <a href="https://www.linkedin.com/company/od-socials/" target="_blank" rel="noopener" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">LinkedIn</a>
+        <a href="privacy.html" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">Privacy</a>
+        <a href="mailto:contact@odsocials.com" style="color: rgba(247,244,237,0.55);" style-hover="color: #FFFFFF;">contact@odsocials.com</a>
+      </span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motionIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.85,&quot;min&quot;:0,&quot;max&quot;:1.5,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;greetingBubble&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;enableCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false, who: "", name: "" };
+
+  componentDidMount() {
+    this.initMotion();
+    [140, 700, 1800].forEach((t) => setTimeout(() => this.initMotion(), t));
+  }
+  componentDidUpdate() { this.initMotion(); if (window.ODMotion) window.ODMotion.scan(); }
+  componentWillUnmount() {
+    ["_heroSync", "_agendaSync", "_readSync", "_fanSync"].forEach((k) => { if (this[k]) window.removeEventListener("scroll", this[k]); });
+    clearInterval(this._clockT);
+  }
+
+  initMotion() {
+    const M = window.ODMotion;
+    if (!M) return;
+    M.config.intensity = this.props.motionIntensity ?? 0.85;
+    M.config.cursor = this.props.enableCursor !== false;
+    const reduce = M.reduced();
+    this.heroParallax(reduce);
+    this.greeting(reduce);
+    this.inkUnderlines(reduce);
+    this.availabilityDot(reduce);
+    this.factArt(reduce);
+    this.agendaTimeline(reduce);
+    this.takeaways(reduce);
+    this.skillTags(reduce);
+    this.readAlong(reduce);
+    this.clocks();
+    this.copyRows();
+    this.chatForm();
+    this.signoff(reduce);
+    this.stickyCta();
+    M.scan();
+  }
+
+  /* 1 — the portrait settles as you scroll */
+  heroParallax(reduce) {
+    const img = document.querySelector("[data-cn-hero]");
+    if (!img || img.__wired || reduce) return;
+    img.__wired = true;
+    const sync = () => {
+      const r = img.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      const p = (r.top / window.innerHeight) * 10 * window.ODMotion.intensity();
+      img.style.transform = "translate3d(0," + p.toFixed(1) + "px,0) scale(1.02)";
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    this._heroSync = sync;
+    sync();
+  }
+
+  /* 2 — a greeting by the visitor's local time */
+  greeting(reduce) {
+    if (this.props.greetingBubble === false) return;
+    const anchor = document.querySelector("[data-cn-herotext]");
+    if (!anchor || anchor.__greeted) return;
+    anchor.__greeted = true;
+    const hh = new Date().getHours();
+    const word = hh < 12 ? "Good morning." : hh < 18 ? "Good afternoon." : "Good evening.";
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    const b = document.createElement("div");
+    b.setAttribute("role", "status");
+    b.style.cssText = "position:relative;display:inline-flex;flex-direction:column;gap:3px;background:#0A0D14;color:#F7F4ED;border-radius:12px 12px 12px 3px;padding:12px 15px;margin-bottom:14px;opacity:0;transform:translate3d(0,8px,0);transition:opacity 520ms cubic-bezier(.16,1,.3,1),transform 620ms cubic-bezier(.16,1,.3,1);cursor:pointer;max-width:100%";
+    b.innerHTML = '<span style="font-size:15px;font-weight:700;letter-spacing:-0.01em">' + word + '</span><span style="' + mono + 'font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,244,237,.6)">Let\'s talk marketing.</span>';
+    anchor.insertBefore(b, anchor.firstChild);
+    b.addEventListener("click", () => { b.style.opacity = "0"; b.style.transform = "translate3d(0,8px,0)"; setTimeout(() => b.remove(), 520); });
+    setTimeout(() => { b.style.opacity = "1"; b.style.transform = "none"; }, reduce ? 0 : 1200);
+  }
+
+  /* 3 — hand-drawn underlines */
+  inkUnderlines(reduce) {
+    const path = (w) => {
+      const d = "M2 7 C " + (w * 0.24).toFixed(0) + " 1.5, " + (w * 0.46).toFixed(0) + " 10, " + (w * 0.68).toFixed(0) + " 4.5 S " + (w - 6) + " 8.5, " + (w - 2) + " 5.5";
+      return d;
+    };
+    document.querySelectorAll("[data-cn-ink],[data-cn-ink2]").forEach((el) => {
+      if (el.__inked) return;
+      el.__inked = true;
+      const w = Math.max(40, el.offsetWidth);
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 " + w + " 12");
+      svg.setAttribute("aria-hidden", "true");
+      svg.style.cssText = "position:absolute;left:0;bottom:-8px;width:100%;height:12px;overflow:visible";
+      const stroke = el.hasAttribute("data-cn-ink2") ? "#8FB6F5" : "#3A4FC4";
+      svg.innerHTML = '<path d="' + path(w) + '" fill="none" stroke="' + stroke + '" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="' + (reduce ? 0 : 100) + '" style="transition:stroke-dashoffset 900ms cubic-bezier(.16,1,.3,1)"/>';
+      el.appendChild(svg);
+      if (reduce) return;
+      const io = new IntersectionObserver((e) => {
+        if (!e[0].isIntersecting) return;
+        io.disconnect();
+        setTimeout(() => { svg.querySelector("path").style.strokeDashoffset = "0"; }, 260);
+      }, { threshold: 0.6 });
+      io.observe(el);
+    });
+  }
+
+  availabilityDot(reduce) {
+    const d = document.querySelector("[data-cn-dot]");
+    if (!d || d.__wired || reduce) return;
+    d.__wired = true;
+    d.style.transition = "opacity 1000ms ease";
+    let on = true;
+    setInterval(() => { if (document.hidden) return; on = !on; d.style.opacity = on ? "1" : "0.28"; }, 1000);
+  }
+
+  /* 5 — facts strip */
+  factArt(reduce) {
+    document.querySelectorAll("[data-cn-fact]").forEach((cell) => {
+      const k = cell.getAttribute("data-cn-fact");
+      if (!k || k.indexOf("{{") !== -1) return;
+      const slot = cell.querySelector("[data-cn-factart]");
+      if (!slot || slot.children.length) return;
+      if (k === "Duration") {
+        const segs = [10, 10, 15, 15, 10];
+        const R0 = 17, C = 2 * Math.PI * R0;
+        let off = 0, paths = "";
+        segs.forEach((m) => {
+          const len = (m / 60) * C - 2;
+          paths += '<circle class="sg" cx="21" cy="21" r="' + R0 + '" fill="none" stroke="#3A4FC4" stroke-width="3.4" stroke-linecap="butt" transform="rotate(-90 21 21)" stroke-dasharray="' + len + " " + (C - len) + '" stroke-dashoffset="' + (-off) + '" opacity="' + (reduce ? 1 : 0) + '" style="transition:opacity 420ms ease"/>';
+          off += (m / 60) * C;
+        });
+        slot.innerHTML = '<svg viewBox="0 0 42 42" width="42" height="42"><circle cx="21" cy="21" r="17" fill="none" stroke="rgba(10,13,20,.14)" stroke-width="3.4"/>' + paths + "</svg>";
+        if (!reduce) {
+          const io = new IntersectionObserver((e) => {
+            if (!e[0].isIntersecting) return;
+            io.disconnect();
+            slot.querySelectorAll(".sg").forEach((s, i) => setTimeout(() => { s.style.opacity = "1"; }, i * 240));
+          }, { threshold: 0.6 });
+          io.observe(cell);
+        }
+      } else if (k === "Format") {
+        slot.innerHTML = '<span style="position:relative;display:block;width:42px;height:42px">' +
+          '<svg class="f1" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#3A4FC4" stroke-width="1.6" style="position:absolute;left:6px;top:6px;transition:opacity 620ms ease"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg>' +
+          '<svg class="f2" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#3A4FC4" stroke-width="1.6" style="position:absolute;left:6px;top:6px;opacity:0;transition:opacity 620ms ease"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.4-4 4.2-6 7.5-6s6.1 2 7.5 6"/></svg>' + "</span>";
+        if (!reduce) {
+          let on = false;
+          setInterval(() => {
+            if (document.hidden) return;
+            on = !on;
+            const a = slot.querySelector(".f1"), b = slot.querySelector(".f2");
+            if (a && b) { a.style.opacity = on ? "0" : "1"; b.style.opacity = on ? "1" : "0"; }
+          }, 2600);
+        }
+      } else {
+        slot.innerHTML = '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#3A4FC4" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M15 9.2c-.7-.9-1.8-1.4-3-1.4-1.9 0-3 1-3 2.2 0 2.8 6 1.4 6 4.2 0 1.3-1.2 2.2-3 2.2-1.3 0-2.4-.5-3-1.4M12 6v12" stroke-linecap="round"/></svg>';
+        if (!reduce) cell.setAttribute("data-od-sweep", "");
+      }
+    });
+  }
+
+  /* 8 — the hour, mapped */
+  agendaTimeline(reduce) {
+    const bar = document.querySelector("[data-cn-bar]");
+    const clock = document.querySelector("[data-cn-clock]");
+    const blocks = Array.from(document.querySelectorAll("[data-cn-block]"));
+    if (!bar || !blocks.length || bar.children.length) return;
+    const mins = [10, 10, 15, 15, 10];
+    const marks = ["00:00", "00:10", "00:20", "00:35", "00:50"];
+    blocks.forEach((b, i) => {
+      const seg = document.createElement("button");
+      seg.type = "button";
+      seg.setAttribute("aria-label", "Jump to block " + (i + 1) + ", " + mins[i] + " minutes");
+      seg.style.cssText = "flex:" + mins[i] + ";height:6px;padding:0;border:0;border-radius:999px;background:rgba(247,244,237,.2);overflow:hidden;cursor:pointer;transition:background 420ms ease";
+      seg.innerHTML = '<span style="display:block;height:100%;width:0;background:#A9C7FA;transition:width 520ms cubic-bezier(.16,1,.3,1)"></span>';
+      seg.addEventListener("click", () => window.scrollTo({ top: b.getBoundingClientRect().top + window.scrollY - 160, behavior: reduce ? "auto" : "smooth" }));
+      bar.appendChild(seg);
+    });
+    let cur = -1;
+    const sync = () => {
+      const mid = window.innerHeight * 0.5;
+      let k = -1;
+      blocks.forEach((b, i) => { if (b.getBoundingClientRect().top <= mid) k = i; });
+      if (k === cur) return;
+      cur = k;
+      blocks.forEach((b, i) => { b.style.opacity = i === k ? "1" : "0.55"; });
+      Array.from(bar.children).forEach((s, i) => { s.firstElementChild.style.width = i <= k ? "100%" : "0%"; });
+      if (clock) clock.textContent = k < 0 ? "00:00" : (k === blocks.length - 1 ? "01:00" : marks[k + 1]);
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    this._agendaSync = sync;
+    sync();
+  }
+
+  /* 9 — ticks + the fanned deliverables */
+  takeaways(reduce) {
+    const items = Array.from(document.querySelectorAll("[data-cn-item]"));
+    const fan = document.querySelector("[data-cn-fan]");
+    if (!items.length) return;
+    items.forEach((it, i) => {
+      if (it.__wired) return;
+      it.__wired = true;
+      const mark = it.querySelector("[data-cn-mark]");
+      const io = new IntersectionObserver((e) => {
+        if (!e[0].isIntersecting) return;
+        io.disconnect();
+        if (mark) {
+          mark.textContent = "✓";
+          if (!reduce) { mark.style.transform = "rotate(-90deg) scale(1.3)"; setTimeout(() => { mark.style.transform = "none"; }, 300); }
+        }
+        if (i === items.length - 1 && !it.__badge) {
+          it.__badge = true;
+          const b = document.createElement("span");
+          b.style.cssText = "display:inline-block;margin-left:10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;background:#3A4FC4;color:#fff;border-radius:999px;padding:5px 9px;opacity:0;transform:scale(.8);transition:opacity 420ms ease,transform 520ms cubic-bezier(.22,1.4,.36,1)";
+          b.textContent = "+7 days";
+          const title = it.querySelector("span span");
+          if (title) title.appendChild(b);
+          requestAnimationFrame(() => { b.style.opacity = "1"; b.style.transform = "none"; });
+        }
+      }, { threshold: 0.7 });
+      io.observe(it);
+    });
+
+    if (fan && !fan.children.length) {
+      const names = ["Content action plan", "Written summary", "Priority platforms", "Tool recommendations", "Follow-up check-in"];
+      fan.innerHTML = names.map((n, i) =>
+        '<span data-card style="position:absolute;left:0;right:0;top:' + (i * 8) + 'px;background:#FFFFFF;border:1px solid rgba(10,13,20,.18);border-radius:8px;padding:14px 16px;font-family:\'IBM Plex Mono\',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(10,13,20,.7);box-shadow:0 10px 26px rgba(10,13,20,.08);transform:rotate(0deg) translateY(0);transition:transform 720ms cubic-bezier(.16,1,.3,1)">' + n + "</span>"
+      ).join("");
+      const cards = Array.from(fan.querySelectorAll("[data-card]"));
+      const sync = () => {
+        const r = fan.getBoundingClientRect();
+        const p = Math.max(0, Math.min(1, 1.15 - (r.top + r.height * 0.3) / window.innerHeight));
+        cards.forEach((c, i) => {
+          const t = reduce ? 1 : p;
+          c.style.transform = "rotate(" + ((i - 2) * 2.4 * t).toFixed(2) + "deg) translateY(" + (i * 42 * t).toFixed(1) + "px)";
+        });
+      };
+      window.addEventListener("scroll", sync, { passive: true });
+      this._fanSync = sync;
+      sync();
+    }
+  }
+
+  /* 10 — tags bob and lean, lock on tap */
+  skillTags(reduce) {
+    const notes = {
+      "Content strategy": "Planning what to post, and why.",
+      "Photography": "Shooting the business as it actually looks.",
+      "Reels & video": "Short-form built for watch time.",
+      "Brand direction": "A consistent look and tone across channels.",
+      "Paid social": "Putting budget behind what already works.",
+      "AI workflows": "Tools that take the repetitive work off your plate."
+    };
+    const note = document.querySelector("[data-cn-tagnote]");
+    const tags = Array.from(document.querySelectorAll("[data-cn-tag]"));
+    if (!tags.length || tags[0].getAttribute("data-cn-tag").indexOf("{{") !== -1) return;
+    tags.forEach((t, i) => {
+      if (t.__wired) return;
+      t.__wired = true;
+      const label = t.getAttribute("data-cn-tag");
+      const base = "translate(-50%, -50%)";
+      if (!reduce) {
+        let p = i * 1.1;
+        setInterval(() => {
+          if (document.hidden || t.__locked) return;
+          p += 0.08;
+          t.style.transform = base + " translateY(" + (Math.sin(p) * 4).toFixed(2) + "px)";
+        }, 90);
+      }
+      const show = () => {
+        tags.forEach((o) => { o.__locked = false; o.style.boxShadow = "0 8px 24px rgba(10,13,20,0.4)"; });
+        t.__locked = true;
+        t.style.transform = base + " scale(1.08)";
+        t.style.boxShadow = "0 0 0 2px #8FB6F5, 0 10px 30px rgba(10,13,20,.5)";
+        if (note) note.textContent = notes[label] || "";
+      };
+      t.addEventListener("pointerenter", show);
+      t.addEventListener("click", show);
+      t.addEventListener("focus", show);
+    });
+    const portrait = document.querySelector("[data-cn-portrait]");
+    if (portrait && !portrait.__ken && !reduce) {
+      portrait.__ken = true;
+      const io = new IntersectionObserver((e) => {
+        if (!e[0].isIntersecting) return;
+        io.disconnect();
+        portrait.style.transform = "scale(1.04)";
+      }, { threshold: 0.4 });
+      io.observe(portrait);
+    }
+  }
+
+  /* 11 — bio brightens line by line */
+  readAlong(reduce) {
+    const ps = Array.from(document.querySelectorAll("[data-cn-read]"));
+    if (!ps.length || this._readSync) return;
+    if (reduce) { ps.forEach((p) => { p.style.opacity = "1"; }); return; }
+    const sync = () => {
+      const mid = window.innerHeight * 0.62;
+      ps.forEach((p) => {
+        const r = p.getBoundingClientRect();
+        p.style.opacity = r.top < mid ? "1" : "0.4";
+      });
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    this._readSync = sync;
+    sync();
+  }
+
+  clocks() {
+    const els = Array.from(document.querySelectorAll("[data-cn-time]"));
+    if (!els.length || this._clockT) return;
+    const tick = () => els.forEach((el) => {
+      const tz = el.getAttribute("data-cn-time");
+      const label = tz === "Europe/London" ? "UK" : "IN";
+      try {
+        el.textContent = label + " " + new Intl.DateTimeFormat("en-GB", { timeZone: tz, hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
+      } catch (e) { el.textContent = ""; }
+    });
+    tick();
+    this._clockT = setInterval(tick, 20000);
+  }
+
+  copyRows() {
+    document.querySelectorAll("[data-cn-copy]").forEach((b) => {
+      if (b.__wired) return;
+      b.__wired = true;
+      b.addEventListener("click", () => {
+        const v = b.getAttribute("data-cn-copy");
+        const done = () => { const old = b.textContent; b.textContent = "Copied"; setTimeout(() => { b.textContent = old; }, 1600); };
+        if (navigator.clipboard) navigator.clipboard.writeText(v).then(done, done);
+        else done();
+      });
+    });
+  }
+
+  /* 12 — the same questions, as a conversation */
+  chatForm() {
+    const chat = document.querySelector("[data-cn-chat]");
+    const form = document.querySelector("[data-cn-form]");
+    const toggle = document.querySelector("[data-cn-toggle]");
+    if (!chat || !form || !toggle || toggle.__wired) return;
+    toggle.__wired = true;
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    const qs = [
+      { k: "name", q: "What's your name?" },
+      { k: "business", q: "Nice to meet you. What do you do?" },
+      { k: "link", q: "Where can I find you online?" },
+      { k: "help", q: "What would you like help with?" },
+      { k: "format", q: "Online or in person?" },
+      { k: "contact", q: "And the best email or WhatsApp number?" }
+    ];
+    let step = 0;
+    const field = (k) => form.querySelector('[data-cn-field="' + k + '"]');
+    const render = () => {
+      chat.innerHTML = '<div style="display:flex;flex-direction:column;gap:12px">' +
+        '<div style="height:3px;background:rgba(247,244,237,.2);border-radius:999px;overflow:hidden"><span style="display:block;height:100%;width:' + Math.round((step / qs.length) * 100) + '%;background:#A9C7FA;transition:width 420ms cubic-bezier(.16,1,.3,1)"></span></div>' +
+        qs.slice(0, step + 1).map((item, i) => {
+          const answered = i < step;
+          const val = answered ? (field(item.k) ? field(item.k).value : "") : "";
+          return '<div style="align-self:flex-start;max-width:85%;background:rgba(247,244,237,.1);border:1px solid rgba(247,244,237,.18);padding:11px 14px;border-radius:13px 13px 13px 3px;font-size:14px;line-height:1.45">' + (i === 1 && field("name") && field("name").value ? "Nice to meet you, " + field("name").value + ". What do you do?" : item.q) + "</div>" +
+            (answered && val ? '<div style="align-self:flex-end;max-width:85%;background:#3A4FC4;color:#fff;padding:11px 14px;border-radius:13px 13px 3px 13px;font-size:14px;line-height:1.45">' + val + "</div>" : "");
+        }).join("") +
+        (step < qs.length
+          ? '<div style="display:flex;gap:8px;align-items:center;margin-top:4px"><input data-chatin type="text" aria-label="' + qs[step].q + '" style="flex:1;font-family:Archivo,sans-serif;font-size:16px;padding:12px 0;border:0;border-bottom:1px solid rgba(247,244,237,.34);background:transparent;color:#F7F4ED;outline:none"><button type="button" data-chatnext style="' + mono + 'font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:#F7F4ED;color:#0A0D14;border:0;border-radius:999px;padding:0 16px;min-height:44px;cursor:pointer">Send</button></div>'
+          : '<button type="button" data-chatdone style="' + mono + 'font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:#F7F4ED;color:#0A0D14;border:0;padding:16px 24px;border-radius:2px;cursor:pointer;margin-top:6px">Request a Consultation</button>') +
+        "</div>";
+      const inp = chat.querySelector("[data-chatin]");
+      const next = chat.querySelector("[data-chatnext]");
+      if (inp && next) {
+        inp.focus({ preventScroll: true });
+        const go = () => {
+          const f = field(qs[step].k);
+          if (f) { f.value = inp.value; f.dispatchEvent(new Event("input", { bubbles: true })); }
+          if (qs[step].k === "name") this.setState({ name: inp.value });
+          step++;
+          render();
+        };
+        next.addEventListener("click", go);
+        inp.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); go(); } });
+      }
+      const done = chat.querySelector("[data-chatdone]");
+      if (done) done.addEventListener("click", () => { this.setState({ sent: true }); });
+    };
+    toggle.addEventListener("click", () => {
+      const on = chat.style.display === "none";
+      chat.style.display = on ? "block" : "none";
+      form.style.display = on ? "none" : "flex";
+      toggle.textContent = on ? "Prefer the classic form?" : "Try the conversation";
+      if (on) render();
+    });
+  }
+
+  signoff(reduce) {
+    const p = document.querySelector("[data-cn-signoff]");
+    if (!p || p.__wired) return;
+    p.__wired = true;
+    if (reduce) return;
+    const real = p.textContent;
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      io.disconnect();
+      p.textContent = "";
+      const caret = document.createElement("span");
+      caret.className = "od-caret";
+      caret.setAttribute("aria-hidden", "true");
+      p.appendChild(caret);
+      let i = 0;
+      const tick = () => {
+        i++;
+        caret.insertAdjacentText("beforebegin", real[i - 1]);
+        if (i < real.length) setTimeout(tick, 62);
+        else setTimeout(() => caret.remove(), 1600);
+      };
+      setTimeout(tick, 240);
+    }, { threshold: 0.5 });
+    io.observe(p);
+  }
+
+  stickyCta() {
+    if (document.querySelector("[data-cn-stickycta]")) return;
+    const mono = "font-family:'IBM Plex Mono',monospace;";
+    const bar = document.createElement("div");
+    bar.setAttribute("data-cn-stickycta", "");
+    bar.style.cssText = "position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,13,20,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(247,244,237,.16);transform:translate3d(0,120%,0);transition:transform 420ms cubic-bezier(.16,1,.3,1)";
+    bar.innerHTML = '<a href="#book" style="display:flex;align-items:center;justify-content:center;' + mono + 'font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:#F7F4ED;color:#0A0D14;min-height:46px;border-radius:2px;text-decoration:none">Request a Consultation ↗</a>';
+    document.body.appendChild(bar);
+    const book = document.getElementById("book");
+    const sync = () => {
+      const narrow = window.innerWidth < 860;
+      bar.style.display = narrow ? "block" : "none";
+      if (!narrow) return;
+      const past = window.scrollY > window.innerHeight * 0.8;
+      const inBook = book && book.getBoundingClientRect().top < window.innerHeight * 0.85;
+      bar.style.transform = past && !inBook ? "translate3d(0,0,0)" : "translate3d(0,120%,0)";
+    };
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+  }
+
+  renderVals() {
+    const who = this.state.who;
+    const lines = {
+      "Restaurants": "For restaurants we'd usually look at your local search presence, menu content and how your reviews are handled.",
+      "Cafés": "For cafés we'd usually look at your local search, Instagram grid and menu content.",
+      "Clinics": "For clinics we'd usually look at trust signals, enquiry handling and how clearly your services are explained.",
+      "Hospitality businesses": "For hospitality we'd usually look at seasonal campaigns, short-form video and how bookings come in.",
+      "Personal brands": "For personal brands we'd usually look at your content pillars, posting rhythm and what you want to be known for.",
+      "Start-ups": "For start-ups we'd usually look at positioning, the first channels worth your time and what to measure.",
+      "Local service providers": "For local services we'd usually look at local search, proof of work and how quickly enquiries get a reply."
+    };
+    const audienceList = ["Restaurants", "Cafés", "Clinics", "Hospitality businesses", "Personal brands", "Start-ups", "Local service providers"];
+
+    return {
+      submitLabel: this.state.sent
+        ? "Thanks" + (this.state.name ? ", " + this.state.name : "") + ". I'll get back to you to arrange a suitable time."
+        : "Request a Consultation",
+      formNote: this.state.sent && who ? "Looking forward to talking " + who.toLowerCase() + "." : "I'll get back to you to arrange a suitable time.",
+      pickedLine: who ? lines[who] : "",
+      onSubmit: (e) => {
+        e.preventDefault();
+        const n = document.querySelector('[data-cn-field="name"]');
+        this.setState({ sent: true, name: n ? n.value : this.state.name });
+      },
+      facts: [
+        { k: "Duration", v: "60 minutes" },
+        { k: "Format", v: "Online or in person" },
+        { k: "Cost", v: "Currently complimentary" }
+      ],
+      skills: [
+        { label: "Content strategy", top: "9%", left: "30%", bg: "#F7F4ED", fg: "#0A0D14" },
+        { label: "Photography", top: "23%", left: "74%", bg: "#3A4FC4", fg: "#FFFFFF" },
+        { label: "Reels & video", top: "45%", left: "22%", bg: "#3A4FC4", fg: "#FFFFFF" },
+        { label: "Brand direction", top: "61%", left: "76%", bg: "#F7F4ED", fg: "#0A0D14" },
+        { label: "Paid social", top: "80%", left: "28%", bg: "#F7F4ED", fg: "#0A0D14" },
+        { label: "AI workflows", top: "92%", left: "70%", bg: "#3A4FC4", fg: "#FFFFFF" }
+      ],
+      audience: audienceList.map((a) => ({
+        label: a,
+        on: who === a ? "true" : "false",
+        pick: () => {
+          const next = who === a ? "" : a;
+          this.setState({ who: next }, () => {
+            const f = document.querySelector('[data-cn-field="business"]');
+            if (f && next && !f.value) { f.value = next; f.dispatchEvent(new Event("input", { bubbles: true })); }
+          });
+        }
+      })),
+      agenda: [
+        { n: "01", title: "Understanding your business", body: "We'll discuss your audience, goals and current marketing activity, including what's working well and where you would welcome support.", mins: "10 minutes" },
+        { n: "02", title: "Identifying opportunities", body: "We'll explore where your messaging, platforms or content could be strengthened to better connect with your customers.", mins: "10 minutes" },
+        { n: "03", title: "Building your content approach", body: "We'll discuss relevant content ideas, suitable formats and a realistic posting schedule that fits your time and resources.", mins: "15 minutes" },
+        { n: "04", title: "Exploring useful tools and AI", body: "We'll look at where tools could simplify planning, content creation and everyday tasks while keeping your brand's personality at the centre.", mins: "15 minutes" },
+        { n: "05", title: "Agreeing your next steps", body: "Together, we'll prioritise two or three practical actions to help you move forward with confidence.", mins: "10 minutes" }
+      ],
+      deliverables: [
+        { title: "A focused content action plan", body: "Suggested themes, formats and a manageable posting schedule tailored to your business." },
+        { title: "A written session summary", body: "Key recommendations and agreed actions, gathered in one place for easy reference." },
+        { title: "Guidance on your priority platforms", body: "Clarity on which channels deserve your attention based on your audience, goals and resources." },
+        { title: "Relevant tool recommendations", body: "A shortlist of useful tools, including AI where appropriate, with guidance on how they could support your workflow." },
+        { title: "A follow-up check-in", body: "A check-in one week later to see how you're getting on and answer any follow-up questions." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
