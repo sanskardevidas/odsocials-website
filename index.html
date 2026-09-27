@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<script src="./od-nav.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -26,11 +27,13 @@
   @media (prefers-reduced-motion: reduce) { [data-od-tilt], [data-od-drum-inner] { transform: none !important; } }
   [data-od-drum]:active { cursor: grabbing; }
   [data-od-nav] a { white-space: nowrap; }
+  [data-od-nav-toggle] { display: none; color: #F7F4ED; }
   @media (max-width: 780px) {
     [data-od-header] { padding: 10px clamp(14px, 4vw, 20px) !important; gap: 10px !important; }
-    [data-od-nav] { gap: 16px !important; }
-    [data-od-nav] { flex-wrap: nowrap !important; overflow-x: auto; justify-content: flex-start; width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    [data-od-nav]::-webkit-scrollbar { display: none; }
+    [data-od-nav-toggle] { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; padding: 10px; border: 1px solid currentColor; border-radius: 2px; background: transparent; cursor: pointer; }
+    [data-od-nav-toggle] span { display: block; width: 22px; height: 2px; background: currentColor; }
+    [data-od-nav] { display: none !important; flex-direction: column; align-items: flex-start !important; gap: 16px !important; flex-wrap: nowrap !important; width: 100%; padding: 12px 0; }
+    [data-od-nav-toggle][aria-expanded="true"] + [data-od-nav] { display: flex !important; }
   }
   @media (min-width: 720px) { [data-od-work] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
   @media (min-width: 1080px) { [data-od-work] { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } }
@@ -46,7 +49,8 @@
       <span style="background: #F7F4ED; border-radius: 6px; padding: 7px 10px; display: flex; align-items: center;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 19px; width: auto; display: block;"></span>
       <span style="font-weight: 800; font-size: 16px; letter-spacing: -0.02em;">OD Socials</span>
     </div>
-    <nav data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.4vw, 30px); flex-wrap: wrap;">
+    <button type="button" data-od-nav-toggle="" aria-label="Toggle navigation" aria-expanded="false" aria-controls="od-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+    <nav id="od-navigation" data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.4vw, 30px); flex-wrap: wrap;">
       <span data-od-counter="" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(247,244,237,0.42);">01 / 06</span>
       <a href="social-media.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Social Media</a>
       <a href="website.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.72);" style-hover="color: #FFFFFF;">Website</a>
@@ -99,7 +103,6 @@
         <sc-for list="{{ sectors }}" as="sx" hint-placeholder-count="3">
           <button type="button" data-od-chip="" aria-pressed="{{ sx.on }}" onClick="{{ sx.pick }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; background: transparent; color: rgba(247,244,237,0.66); border: 1px solid rgba(247,244,237,0.3); border-radius: 999px; padding: 0 16px; min-height: 44px; cursor: pointer;">{{ sx.label }}</button>
         </sc-for>
-        <span data-od-reelhint="" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.42);">Move your cursor</span>
       </div>
 
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,244,237,0.6); border-top: 1px solid rgba(247,244,237,0.2); margin-top: clamp(40px, 5vw, 64px); padding: 16px 0;">
@@ -158,7 +161,6 @@
       </div>
       <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,244,237,0.55);">
         <span><span style="color: #8FB6F5;"><span data-count="20" data-count-flash="">20</span> brands</span> — healthcare, hospitality, restaurants, real estate, retail, agency, education</span>
-        <span data-od-railhint="">Hover a logo for colour</span>
       </div>
     </div>
   </section>
@@ -217,7 +219,6 @@
           </div>
         </sc-for>
       </div>
-      <div data-reveal="block" style="margin-top: clamp(20px, 2.4vw, 28px); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,237,0.45); transition-delay: 600ms;">How we measure this — our own figures, tracked over the first 90 days of each engagement.</div>
     </div>
   </section>
 

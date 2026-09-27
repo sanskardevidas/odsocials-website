@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<script src="./od-nav.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -29,11 +30,13 @@
   @media (prefers-reduced-motion: reduce) { [data-sm-grid] { display: none; } }
   [data-od-nav] a { white-space: nowrap; }
   @media (max-width: 900px) { [data-sm-incgrid] { grid-template-columns: minmax(0, 1fr) !important; } [data-sm-phonewrap] { position: static !important; } }
+  [data-od-nav-toggle] { display: none; color: #0A0D14; }
   @media (max-width: 780px) {
     [data-od-header] { padding: 10px clamp(14px, 4vw, 20px) !important; gap: 10px !important; }
-    [data-od-nav] { gap: 16px !important; }
-    [data-od-nav] { flex-wrap: nowrap !important; overflow-x: auto; justify-content: flex-start; width: 100%; scrollbar-width: none; }
-    [data-od-nav]::-webkit-scrollbar { display: none; }
+    [data-od-nav-toggle] { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; padding: 10px; border: 1px solid currentColor; border-radius: 2px; background: transparent; cursor: pointer; }
+    [data-od-nav-toggle] span { display: block; width: 22px; height: 2px; background: currentColor; }
+    [data-od-nav] { display: none !important; flex-direction: column; align-items: flex-start !important; gap: 16px !important; flex-wrap: nowrap !important; width: 100%; padding: 12px 0; }
+    [data-od-nav-toggle][aria-expanded="true"] + [data-od-nav] { display: flex !important; }
     [data-od-nav] a { white-space: nowrap; }
   }
 </style>
@@ -49,11 +52,13 @@
       <span style="background: #F7F4ED; border: 1px solid rgba(10,13,20,0.14); border-radius: 6px; padding: 6px 9px; display: flex;"><img src="images/od-socials-mark.png" alt="OD Socials" style="height: 18px; width: auto; display: block;"></span>
       <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #4C7DF0; border-left: 1px solid rgba(10,13,20,0.2); padding-left: 10px;">Social</span>
     </a>
-    <nav data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.2vw, 28px); flex-wrap: wrap;">
+    <button type="button" data-od-nav-toggle="" aria-label="Toggle navigation" aria-expanded="false" aria-controls="od-navigation"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+    <nav id="od-navigation" data-od-nav="" style="display: flex; align-items: center; gap: clamp(14px, 2.2vw, 28px); flex-wrap: wrap;">
       <a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7);" style-hover="color: #0A0D14;">Home</a>
       <a href="social-media.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #0A0D14; border-bottom: 2px solid #4C7DF0; padding-bottom: 2px;">Social Media</a>
       <a href="website.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7);" style-hover="color: #0A0D14;">Website</a>
       <a href="ai-automation.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7);" style-hover="color: #0A0D14;">AI Automation</a>
+      <a href="consultation.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(10,13,20,0.7);" style-hover="color: #0A0D14;">Consultation</a>
       <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; background: #0A0D14; color: #F7F4ED; padding: 11px 18px; border-radius: 2px;" style-hover="background: #4C7DF0; color: #FFFFFF;">Start Project ↗</a>
     </nav>
   </header>
@@ -87,7 +92,6 @@
             <a href="index.html#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; background: #2F4FD8; color: #FFFFFF; padding: 17px 30px; border-radius: 999px; white-space: nowrap;" style-hover="background: #0A0D14; color: #F7F4ED;" data-magnetic="" data-od-sweep="" data-cursor="START">Let's Grow Your Brand <span data-od-arrow="">↗</span></a>
             <a href="#featured-work" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; border: 1px solid rgba(10,13,20,0.35); color: #0A0D14; padding: 17px 30px; border-radius: 999px; white-space: nowrap;" style-hover="border-color: #0A0D14; background: rgba(10,13,20,0.05);" data-magnetic="">Explore Our Work <span data-od-arrow="">↗</span></a>
           </div>
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(10,13,20,0.5);">OD Socials &nbsp;/&nbsp; Creative growth partner</div>
         </div>
       </div>
     </div>
