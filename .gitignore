@@ -5,3 +5,4 @@ node_modules/
 !.vscode/extensions.json
 !.vscode/settings.json
 .vercel
+.claude/
