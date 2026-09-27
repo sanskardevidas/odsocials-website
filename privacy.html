@@ -72,7 +72,7 @@
 
   <section style="padding: 0 clamp(20px, 5vw, 72px) clamp(48px, 6vw, 80px);">
     <div style="max-width: 900px; margin: 0 auto;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);">01 — Privacy policy</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);">01 Privacy policy</div>
       <div style="display: flex; flex-direction: column;">
         <sc-for list="{{ privacy }}" as="p" hint-placeholder-count="10">
           <div id="{{ p.id }}" data-pv-clause="{{ p.label }}" style="display: grid; grid-template-columns: 1fr; gap: 10px; padding: clamp(24px, 3vw, 34px) 0; border-bottom: 1px solid rgba(10,13,20,0.16); transition: background 600ms ease;">
@@ -101,7 +101,7 @@
 
   <section id="terms" style="background: #0A0D14; color: #F7F4ED; padding: clamp(48px, 6vw, 88px) clamp(20px, 5vw, 72px);">
     <div style="max-width: 900px; margin: 0 auto;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.18);">02 — Terms of service</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8FB6F5; padding-bottom: 14px; border-bottom: 1px solid rgba(247,244,237,0.18);">02 Terms of service</div>
       <div style="display: flex; flex-direction: column;">
         <sc-for list="{{ terms }}" as="t" hint-placeholder-count="8">
           <div id="{{ t.id }}" data-pv-clause="{{ t.label }}" data-pv-dark="" style="display: grid; grid-template-columns: 1fr; gap: 10px; padding: clamp(24px, 3vw, 34px) 0; border-bottom: 1px solid rgba(247,244,237,0.18); transition: background 600ms ease;">
@@ -120,7 +120,7 @@
 
   <section style="padding: clamp(48px, 6vw, 88px) clamp(20px, 5vw, 72px);">
     <div style="max-width: 900px; margin: 0 auto;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);">03 — Contact us</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3A4FC4; padding-bottom: 14px; border-bottom: 1px solid rgba(10,13,20,0.16);">03 Contact us</div>
       <h2 style="margin: clamp(24px, 3vw, 36px) 0 0; font-size: clamp(26px, 3.4vw, 42px); line-height: 1; letter-spacing: -0.03em; font-weight: 900; text-transform: uppercase;">Questions about your data? <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; color: #3A4FC4;">Just ask.</span></h2>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">
         <a href="mailto:contact@odsocials.com" style="border: 1px solid rgba(10,13,20,0.22); padding: 12px 18px; border-radius: 999px; color: #0A0D14;" style-hover="background: #0A0D14; color: #F7F4ED;">contact@odsocials.com</a>
@@ -392,11 +392,11 @@ class Component extends DCLogic {
   renderVals() {
     const privacy = [
       { title: "Who we are", body: "OD Socials is a social media and digital growth agency. We provide social media management, content creation, website design and development, and AI automation services. For anything relating to this policy, contact us at contact@odsocials.com." },
-      { title: "Information we collect", body: "We only collect information you give us or that is needed to run the site:", items: ["Contact details you submit through our enquiry form — name, email address, business name, budget range and project details.", "Information you send us directly by email, WhatsApp or social media.", "Client account information shared with us so we can deliver agreed services.", "Basic technical data such as device type, browser and pages visited, collected by our hosting and analytics providers."] },
+      { title: "Information we collect", body: "We only collect information you give us or that is needed to run the site:", items: ["Contact details you submit through our enquiry form, name, email address, business name, budget range and project details.", "Information you send us directly by email, WhatsApp or social media.", "Client account information shared with us so we can deliver agreed services.", "Basic technical data such as device type, browser and pages visited, collected by our hosting and analytics providers."] },
       { title: "How we use it", body: "We use your information to respond to enquiries, prepare proposals, deliver and invoice for agreed services, keep records of our work, and improve the website. We do not sell your personal information to anyone." },
       { title: "Legal basis", body: "Where UK and EU data protection law applies, we process personal data on the basis of your consent (when you contact us), performance of a contract (when we deliver services), and our legitimate interest in running and improving the business." },
       { title: "Marketing", body: "We only send marketing messages if you have asked to receive them or are an existing client. You can opt out at any time by replying to any message or emailing contact@odsocials.com, and we will stop." },
-      { title: "Sharing with others", body: "We share information only with service providers who help us operate — for example website hosting, email, cloud storage, scheduling and analytics tools, and the social or advertising platforms we manage on your behalf. They may only use it to provide their service to us. We may also disclose information where the law requires it." },
+      { title: "Sharing with others", body: "We share information only with service providers who help us operate, for example website hosting, email, cloud storage, scheduling and analytics tools, and the social or advertising platforms we manage on your behalf. They may only use it to provide their service to us. We may also disclose information where the law requires it." },
       { title: "Cookies and analytics", body: "This website may use cookies and similar technologies to keep the site working correctly and to understand how it is used. You can block or delete cookies in your browser settings; some parts of the site may not work as intended if you do." },
       { title: "How long we keep it", body: "Enquiries that do not become projects are kept for up to 24 months. Client records are kept for the duration of the engagement and for as long as we are legally required to keep financial records afterwards." },
       { title: "Keeping it secure", body: "We use reputable providers, access controls and secure accounts to protect the information we hold. No system is completely secure, but we take reasonable steps to prevent unauthorised access, loss or misuse." },
@@ -420,11 +420,11 @@ class Component extends DCLogic {
     const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
     const plainPrivacy = [
       "We're a social media and digital agency. Email us and you'll reach a person.",
-      "We collect what you send us through the form, by message, or as a client — plus basic technical data from hosting and analytics.",
+      "We collect what you send us through the form, by message, or as a client, plus basic technical data from hosting and analytics.",
       "We use your details to reply, quote, deliver and invoice. We don't sell them.",
       "We only process your data when you've asked us to, when a contract needs it, or to run the business properly.",
       "We only market to you if you asked, or you're already a client. Reply to opt out and it stops.",
-      "Only the tools that help us run — hosting, email, storage, scheduling, analytics, and the platforms we manage for you.",
+      "Only the tools that help us run, hosting, email, storage, scheduling, analytics, and the platforms we manage for you.",
       "Cookies keep the site working and show us how it's used. You can block them in your browser.",
       "Enquiries: up to 24 months. Client records: for the engagement, plus however long the law requires.",
       "We use reputable providers and access controls. No system is perfect, but we take it seriously.",
