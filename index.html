@@ -401,7 +401,6 @@ class Component extends DCLogic {
     this.railVelocity(reduce);
     this.spotlightBand();
     this.stairs();
-    this.servicePreview();
     this.heartBurst();
     this.payoffDrift(reduce);
     this.formProgress();
@@ -528,49 +527,6 @@ class Component extends DCLogic {
       });
     }, { threshold: [0, 0.45, 0.8] });
     Array.from(grid.children).forEach((c) => io.observe(c));
-  }
-
-  /* desktop: a preview card follows the cursor across the service rows */
-  servicePreview() {
-    if (!window.ODMotion.fine() || window.ODMotion.reduced()) return;
-    const rows = Array.from(document.querySelectorAll("[data-od-srow]"));
-    if (!rows.length) return;
-    const art = {
-      "01": { img: "images/w01.jpg", tag: "Reel frame" },
-      "02": { img: "images/p09.jpg", tag: "Carousel slide" },
-      "03": { img: "images/web-hero.jpg", tag: "Live site" },
-      "04": { svg: '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;line-height:1.9;color:#8FB6F5;padding:16px;background:#0A0D14;height:100%">&gt; lead.intent = high<br>&gt; reply sent &nbsp;4.0s<br>&gt; slot held &nbsp;&nbsp;&nbsp;✓<span class="od-caret"></span></div>', tag: "Terminal" },
-      "05": { svg: '<svg viewBox="0 0 160 100" style="width:100%;height:100%;background:#0A0D14"><polyline points="12,84 44,70 74,56 104,34 148,16" fill="none" stroke="#8FB6F5" stroke-width="2.5"/><line x1="12" y1="92" x2="148" y2="92" stroke="rgba(247,244,237,0.3)"/></svg>', tag: "Growth curve" }
-    };
-    const card = document.createElement("div");
-    card.style.cssText = "position:fixed;z-index:60;width:210px;pointer-events:none;opacity:0;transform:translate3d(0,0,0) scale(.96);transition:opacity 260ms cubic-bezier(.16,1,.3,1),transform 260ms cubic-bezier(.16,1,.3,1);border-radius:10px;overflow:hidden;border:1px solid rgba(10,13,20,0.2);box-shadow:0 24px 60px rgba(10,13,20,0.28);background:#0A0D14";
-    document.body.appendChild(card);
-    let active = null;
-    const place = (e) => {
-      card.style.left = Math.min(window.innerWidth - 230, e.clientX + 24) + "px";
-      card.style.top = Math.min(window.innerHeight - 200, e.clientY - 70) + "px";
-    };
-    rows.forEach((row) => {
-      const key = row.getAttribute("data-od-srow");
-      row.addEventListener("pointerenter", (e) => {
-        const a = art[key];
-        if (!a) return;
-        active = key;
-        card.innerHTML = (a.img
-          ? '<div style="aspect-ratio:4/5;overflow:hidden"><img src="' + a.img + '" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
-          : '<div style="aspect-ratio:4/5">' + a.svg + '</div>')
-          + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,244,237,.7);padding:9px 11px">' + a.tag + '</div>';
-        place(e);
-        card.style.opacity = "1";
-        card.style.transform = "scale(1)";
-      });
-      row.addEventListener("pointermove", place);
-      row.addEventListener("pointerleave", () => {
-        active = null;
-        card.style.opacity = "0";
-        card.style.transform = "scale(.96)";
-      });
-    });
   }
 
   /* double-tap a work tile for a line-art heart (decorative, nothing stored) */
